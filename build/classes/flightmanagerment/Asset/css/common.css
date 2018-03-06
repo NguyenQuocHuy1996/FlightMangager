@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 11, 2018, 4:20:25 PM
+    Author     : Quoc Huy
+*/
+
+.root{
+    -fx-background-image: url(../img/plane.jpg);
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+.label,
+.button{
+    -fx-font-size: 14px;
+}
+.text-field {
+    -fx-background-color: #a9a9a9 , white , white;
+}
+
+.text-field:focused {
+    -fx-background-color: #a9a9a9 , white , white;
+}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-border-radius: 50px;
+    -fx-border-style: solid;
+    -fx-border-width:1px;
+}
+.button:hover{
+    -fx-border-radius: 16px;
+    -fx-border-style: solid;
+    -fx-border-width:1px;
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
