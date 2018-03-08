@@ -29,6 +29,8 @@ public class Home extends Application {
         
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.resizableProperty().setValue(Boolean.FALSE);
         stage.show();
     }
 
