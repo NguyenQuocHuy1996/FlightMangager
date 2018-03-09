@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="761.0" prefWidth="1120.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.Main.MainController">
+   <top>
+      <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button alignment="TOP_RIGHT" mnemonicParsing="false" text="Quản lý tài khoản" textAlignment="RIGHT" />
+            <Button alignment="TOP_RIGHT" mnemonicParsing="false" text="Đăng xuất" textAlignment="RIGHT" />
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="225.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" text="Tra cứu chuyến bay" />
+            <Button mnemonicParsing="false" text="Quản lý chuyến bay" />
+            <Button mnemonicParsing="false" text="Lịch sử đặt vé" />
+            <Button mnemonicParsing="false" text="Lịch sử đặt  vé của khách hàng" />
+            <Button mnemonicParsing="false" text="Báo cáo" />
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </right>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+   </center>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package flightmanagerment.Home;
+package flightmanagerment.Form.Home.Main;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -20,12 +20,12 @@ import javafx.util.Duration;
  *
  * @author Quoc Huy
  */
-public class Home extends Application {
+public class Main extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
         
-        Parent root = FXMLLoader.load(getClass().getResource("HomeUI.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("MainUI.fxml"));
         
         Scene scene = new Scene(root);
         stage.setScene(scene);

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package flightmanagerment.Account.Login;
+package flightmanagerment.Form.Account.Login;
 
 import java.io.IOException;
 import java.net.URL;
@@ -37,17 +37,17 @@ public class LoginController implements Initializable {
     @FXML
     private void Login(ActionEvent event) throws IOException {
         //Load new windown and hide current windown
-        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Home/HomeUI.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Main/MainUI.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.hide();
         stage.setScene(scene);
-        stage.setTitle("Home");
+        stage.setTitle("Main");
         stage.show();
         
         //Load new windown
 //        FXMLLoader fxmlLoader = new FXMLLoader();
-//        fxmlLoader.setLocation(getClass().getResource("/flightmanagerment/Home/HomeUI.fxml"));
+//        fxmlLoader.setLocation(getClass().getResource("/flightmanagerment/Form/Home/Main/MainUI.fxml"));
 //        //Set new Scene
 //        Scene scene = new Scene(fxmlLoader.load());
 //        

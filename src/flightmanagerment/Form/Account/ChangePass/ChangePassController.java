@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package flightmanagerment.Home;
+package flightmanagerment.Form.Account.ChangePass;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,7 +20,7 @@ import javafx.scene.control.TextField;
  *
  * @author Quoc Huy
  */
-public class HomeController implements Initializable {
+public class ChangePassController implements Initializable {
 
 //    @FXML
 //    private TextField txtEmail;
@@ -28,7 +28,7 @@ public class HomeController implements Initializable {
 //    private TextField txtPass;
 //    
 //    @FXML
-//    private void Home(ActionEvent event) {
+//    private void ChangePass(ActionEvent event) {
 //        if((txtEmail.getText().equals("admin")) && (txtPass.getText().equals("admin123"))){
 //            Alert alert = new Alert(Alert.AlertType.INFORMATION);
 //            alert.setTitle("Dang nhap thanh cong");

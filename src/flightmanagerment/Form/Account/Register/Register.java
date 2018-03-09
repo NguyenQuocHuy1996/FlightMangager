@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package flightmanagerment.Account.Register;
+package flightmanagerment.Form.Account.Register;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
