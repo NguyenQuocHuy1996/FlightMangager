@@ -18,7 +18,7 @@
    <left>
       <VBox prefHeight="200.0" prefWidth="225.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Tra cứu chuyến bay" />
+            <Button mnemonicParsing="false" onAction="#Test" text="Tra cứu chuyến bay" />
             <Button mnemonicParsing="false" text="Quản lý chuyến bay" />
             <Button mnemonicParsing="false" text="Lịch sử đặt vé" />
             <Button mnemonicParsing="false" text="Lịch sử đặt  vé của khách hàng" />

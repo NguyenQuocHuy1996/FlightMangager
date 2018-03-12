@@ -15,12 +15,12 @@
             <Label text="Mật khẩu:" GridPane.rowIndex="3" />
             <Label text="Nhập lại mật khẩu:" GridPane.rowIndex="4" />
             <Label text="Tên:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
-            <PasswordField GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
-            <PasswordField GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" text="Đăng ký" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="firstName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="lastName" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="email" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+            <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+            <PasswordField fx:id="confirm_password" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#Register" text="Đăng ký" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Button mnemonicParsing="false" text="Đăng nhập" GridPane.columnIndex="2" GridPane.rowIndex="5" />
             <Button mnemonicParsing="false" text="Về trang chủ" GridPane.columnIndex="3" GridPane.rowIndex="5" />
             <Label alignment="CENTER" contentDisplay="CENTER" text="Đăng ký tài khoản" textAlignment="CENTER" GridPane.columnSpan="4" />
