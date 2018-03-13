@@ -24,6 +24,7 @@
             <Button mnemonicParsing="false" text="Đăng nhập" GridPane.columnIndex="2" GridPane.rowIndex="5" />
             <Button mnemonicParsing="false" text="Về trang chủ" GridPane.columnIndex="3" GridPane.rowIndex="5" />
             <Label alignment="CENTER" contentDisplay="CENTER" text="Đăng ký tài khoản" textAlignment="CENTER" GridPane.columnSpan="4" />
+            <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="5" />
          </children>
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
