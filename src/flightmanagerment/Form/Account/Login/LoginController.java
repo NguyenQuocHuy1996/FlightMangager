@@ -30,21 +30,14 @@ import javafx.stage.Stage;
 public class LoginController implements Initializable {
 
     @FXML
-    private TextField txtEmail;
+    private TextField email;
     @FXML
-    private TextField txtPass;
+    private TextField password;
 
     @FXML
-    private void Login(ActionEvent event) throws IOException {
+    private void btn_Login(ActionEvent event) throws IOException {
         //Load new windown and hide current windown
-        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Main/MainUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setTitle("Main");
-        stage.show();
-        
+
         //Load new windown
 //        FXMLLoader fxmlLoader = new FXMLLoader();
 //        fxmlLoader.setLocation(getClass().getResource("/flightmanagerment/Form/Home/Main/MainUI.fxml"));
@@ -58,6 +51,11 @@ public class LoginController implements Initializable {
 //        
 //        //Show new windown
 //        stage.show();
+    }
+
+    @FXML
+    private void btn_Register(ActionEvent event) {
+        
     }
 
     @Override

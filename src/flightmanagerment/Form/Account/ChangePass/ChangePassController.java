@@ -35,11 +35,26 @@ public class ChangePassController implements Initializable {
 //            alert.show();
 //        }
 //    }
-    
+    @FXML
+    private TextField oldPassword;
+    @FXML
+    private TextField newPassword;
+    @FXML
+    private TextField confirm_newPassword;
+
+    @FXML
+    private void btn_changedPassword(ActionEvent event) {
+
+    }
+
+    @FXML
+    private void btn_back(ActionEvent event) {
+        
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }
