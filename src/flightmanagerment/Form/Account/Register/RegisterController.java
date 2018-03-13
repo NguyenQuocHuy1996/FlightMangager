@@ -33,13 +33,27 @@ public class RegisterController implements Initializable {
 //            Alert alert = new Alert(Alert.AlertType.INFORMATION);
 //            alert.setTitle("Dang nhap thanh cong");
 //            alert.show();
-//        }
-//    }
-    
+//        
+//    
+    @FXML
+    private TextField email;
+    @FXML
+    private TextField password;
+    @FXML
+    private TextField firstName;
+    @FXML
+    private TextField lastName;
+    @FXML
+    private TextField confirm_password;
+
+    @FXML
+    private void btn_Register(ActionEvent event) {
+
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }
