@@ -16,7 +16,6 @@ public class Customer {
     private int idAccount;
     private String email;
     private String password;
-    private boolean isActive;
     private String firstName;
     private String lastName;
     private Date dateOfBirth;
@@ -24,8 +23,39 @@ public class Customer {
     private String homeTown;
     private String sex;
     private String phoneNumber;
+    private byte[] image;
+    private String address_number;
+    private String address_street;
+    private String address_district;
+    private String address_city;
 
     public Customer() {
+    }
+
+    public Customer(int idAccount, String email, String password, String firstName, String lastName, Date dateOfBirth, String ic_Card, String homeTown, String sex, String phoneNumber, byte[] image, String address_number, String address_street, String address_district, String address_city) {
+        this.idAccount = idAccount;
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.ic_Card = ic_Card;
+        this.homeTown = homeTown;
+        this.sex = sex;
+        this.phoneNumber = phoneNumber;
+        this.image = image;
+        this.address_number = address_number;
+        this.address_street = address_street;
+        this.address_district = address_district;
+        this.address_city = address_city;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     public Customer(String email, String password, String firstName, String lastName) {
@@ -35,24 +65,40 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public Customer(int idAccount, String email, String password, boolean isActive, String firstName, String lastName,
-            Date dateOfBirth, String ic_Card, String homeTown, String sex, String phoneNumber) {
-        super();
-        this.idAccount = idAccount;
-        this.email = email;
-        this.password = password;
-        this.isActive = isActive;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-        this.ic_Card = ic_Card;
-        this.homeTown = homeTown;
-        this.sex = sex;
-        this.phoneNumber = phoneNumber;
-    }
-
     public int getIdAccount() {
         return idAccount;
+    }
+
+    public String getAddress_number() {
+        return address_number;
+    }
+
+    public void setAddress_number(String address_number) {
+        this.address_number = address_number;
+    }
+
+    public String getAddress_street() {
+        return address_street;
+    }
+
+    public void setAddress_street(String address_street) {
+        this.address_street = address_street;
+    }
+
+    public String getAddress_district() {
+        return address_district;
+    }
+
+    public void setAddress_district(String address_district) {
+        this.address_district = address_district;
+    }
+
+    public String getAddress_city() {
+        return address_city;
+    }
+
+    public void setAddress_city(String address_city) {
+        this.address_city = address_city;
     }
 
     public void setIdAccount(int idAccount) {
@@ -73,14 +119,6 @@ public class Customer {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public boolean isActive() {
-        return isActive;
-    }
-
-    public void setActive(boolean isActive) {
-        this.isActive = isActive;
     }
 
     public String getFirstName() {
