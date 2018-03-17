@@ -35,11 +35,24 @@ public class InfoController implements Initializable {
 //            alert.show();
 //        }
 //    }
-    
+    @FXML
+    private void btn_update(ActionEvent event) {
+
+    }
+
+    @FXML
+    private void btn_reset(ActionEvent event) {
+
+    }
+
+    @FXML
+    private void btn_back(ActionEvent event) {
+
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }
