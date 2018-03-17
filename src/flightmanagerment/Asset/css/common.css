@@ -8,37 +8,166 @@ and open the template in the editor.
     Author     : Quoc Huy
 */
 
-.root{
-    -fx-background-image: url(../img/plane.jpg);
-    -fx-background-repeat: no-repeat;
-    -fx-background-size: cover;
+
+/*Common CSS*/
+@font-face {
+    font-family: Century;
+    src: url('../font/CenturyGothic.ttf');
 }
-.label,
-.button{
+
+.root{
+/*    -fx-background-image: url(../img/plane.jpg);
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;*/
+    -fx-background-color: rgb(51,51,51);
+    
+}
+.text,.button,.label{
+    -fx-font-family: 'Century';
+    -fx-font-style: Plain;
+    -fx-text-fill: white;    
+/*    -fx-font-size: 20px ;*/
+}
+
+.btnGreen,
+.btnLightGreen,
+.btnDarkGreen,
+.btnMagenta,
+.btnLightPurple,
+.btnPurple,
+.btnDarkPurple,
+.btnDarken,
+.btnTeal,
+.btnLightBlue,
+.btnBlue,
+.btnDarkBlue,
+.btnYellow,
+.btnOrange,
+.btnDarkOrange,
+.btnRed,
+.btnDarkRed{    
+    -fx-border-style: none;
+    -fx-pref-width:200px;
+    -fx-pref-height:200px;
+    -fx-alignment: center;    
+    -fx-wrap-text: true;
+    -fx-content-display: top;
+/*    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );*/
+}
+.btnGreen{
+    -fx-background-color: #00a300;    
+}
+.btnLightGreen{
+    -fx-background-color: #99b433;
+}
+.btnDarkGreen{
+    -fx-background-color: #1e7145;
+}
+.btnMagenta{
+    -fx-background-color: #ff0097;    
+}
+.btnLightPurple{
+    -fx-background-color: #9f00a7;
+}
+.btnPurple{
+    -fx-background-color: #7e3878;
+}
+.btnDarkPurple{
+    -fx-background-color: #603cba;
+}
+.btnDarken{
+    -fx-background-color: #1d1d1d;
+}
+.btnTeal{
+    -fx-background-color: #00aba9;
+}
+.btnLightBlue{
+    -fx-background-color: #eff4ff;
+}
+.btnBlue{
+    -fx-background-color: #2d89ef;
+}
+.btnDarkBlue{
+    -fx-background-color: #2b5797;
+}
+.btnYellow{
+    -fx-background-color: #ffc40d;
+}
+.btnOrange{
+    -fx-background-color: #e3a21a;
+}
+.btnDarkOrange{
+    -fx-background-color: #da532c;
+}
+.btnRed{
+    -fx-background-color: #ee1111;
+}
+.btnDarkRed{
+    -fx-background-color: #b91d47;
+}
+
+.userName{
+    -fx-alignment: TOP_RIGHT;
+    -fx-text-fill: black;        
+    -fx-font-size: 12px ;
+}
+.textField{
+    -fx-text-fill:black;
+    -fx-padding: 30 0 15 0;
+}
+.inputField{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 15 10 15 10;
+}
+.btnSubmit{
+    -fx-text-fill: black;
+    -fx-border-style: none;
+    -fx-pref-width:200px;
+    -fx-pref-height:50px;
+    -fx-alignment: center;
+    -fx-wrap-text: true;
+}
+.separatorForm *.line{
+/*    -fx-padding: 20 0 0 0;*/
+    -fx-border-color: red;
+}
+.flightWrapper{    
+    -fx-padding: 10;
+    -fx-pref-width: 220px;
+    -fx-pref-height: 300px;
+}
+.flightInfoHeight{
+    -fx-pref-height: 30px;
+    -fx-padding: 10 0 0 0;
+}
+.flightInfo{
+/*    -fx-text-fill:black;*/
+/*    -fx-padding: 15 0 15 0;*/
     -fx-font-size: 14px;
 }
-.text-field {
-    -fx-background-color: #a9a9a9 , white , white;    
-    -fx-pref-width: 225px;
-    -fx-pref-height:50px;
+.formTitle{
+    -fx-font-size: 20px;
 }
-
-.text-field:focused {
-    -fx-background-color: #a9a9a9 , white , white;
+/*Custom CSS*/
+.btnFindFlight{
+    -fx-graphic: url('../img/icon/search-45x45.png');
 }
-
-.button {
-    -fx-background-color: transparent;
-    -fx-border-radius: 50px;
-    -fx-border-style: solid;
-    -fx-border-width:1px;
-    -fx-pref-width: 225px;
-    -fx-pref-height:50px;
+.btnFlightManager{
+    -fx-graphic: url('../img/icon/flight-manager-45x45.png');
 }
-.button:hover{
-    -fx-border-radius: 16px;
-    -fx-border-style: solid;
-    -fx-border-width:1px;
-    -fx-background-color: black;
-    -fx-text-fill: white;
+.btnReport{
+    -fx-graphic: url('../img/icon/report-45x45.png');
+}
+.btnHistoryBooking{
+    -fx-graphic: url('../img/icon/history-booking-45x45.png');    
+}
+.btnCustomerHistoryBooking{
+    -fx-graphic: url('../img/icon/history-45x45.png');
+}
+.btnChangePass{
+    -fx-graphic: url('../img/icon/change-pass-45x45.png');
+}
+.btnInfo{
+    -fx-graphic: url('../img/icon/info-45x45.png');
 }
