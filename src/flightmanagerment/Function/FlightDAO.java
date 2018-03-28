@@ -25,9 +25,8 @@ public class FlightDAO {
     private static Connection conn = null;
     private static ConnectDB connectDB;
     private static PreparedStatement prest = null;
-    private static String confirm_password = null;
     private static ResultSet rs;
-
+    private static Statement st;
     ///return -1: thiếu điểm đi, return -2: thiếu điểm đến, return -3: thiếu thời gian đi
     ///return -4: thiếu số hành khách, return -5: thiếu thương hiệu máy bay, return -6: thiếu mã số chuyến bay
     ///return -7: thiếu ngày đến, return -8: thiếu giờ đến, return -9: thiếu giờ đi, return -10: thiếu giá
@@ -97,6 +96,43 @@ public class FlightDAO {
         }
     }
 
+    ///return 1: get thành công, return 0: get thất bại
+    public static int getAllFlight() throws SQLException {
+        connectDB = new ConnectDB();
+        conn = connectDB.getConnect();
+        String sql = "select * from flight";
+        st = conn.createStatement();
+        rs = st.executeQuery(sql);
+        while (rs.next()) {
+            int idFlight = rs.getInt("idFlight");
+            String origin = rs.getString("origin");
+            String destination = rs.getString("destination");
+            Date depart = rs.getDate("depart");
+            Date arrival = rs.getDate("arrival");
+            int passenger = rs.getInt("passenger");
+            String brand = rs.getString("brand");
+            String flight_number = rs.getString("flight_number");
+            String flight_depart = rs.getString("flight_depart");
+            String flight_arrival = rs.getString("flight_arrival");
+            double price = rs.getDouble("price");
+
+            System.out.println("--------------------");
+            System.out.println("idFlight: " + idFlight);
+            System.out.println("origin: " + origin);
+            System.out.println("destination: " + destination);
+            System.out.println("depart: " + depart);
+            System.out.println("arrival: " + arrival);
+            System.out.println("passenger: " + passenger);
+            System.out.println("brand: " + brand);
+            System.out.println("flight_number: " + flight_number);
+            System.out.println("flight_depart: " + flight_depart);
+            System.out.println("flight_arrival: " + flight_arrival);
+            System.out.println("price: " + price);
+            return 1;
+        }
+        return 0;
+    }
+
     public static int Edit() throws SQLException {
         try {
             Flight f = new Flight();
@@ -152,6 +188,8 @@ public class FlightDAO {
                 String _flight_arrival = rs.getString("flight_arrival");
                 String _flight_depart = rs.getString("flight_depart");
                 Double _price = rs.getDouble("price");
+                
+                
                 System.out.println("id: " + id);
                 System.out.println("origin: " + origin);
                 System.out.println("destination: " + destination);
