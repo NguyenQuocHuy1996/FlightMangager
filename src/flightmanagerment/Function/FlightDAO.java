@@ -27,6 +27,7 @@ public class FlightDAO {
     private static PreparedStatement prest = null;
     private static ResultSet rs;
     private static Statement st;
+
     ///return -1: thiếu điểm đi, return -2: thiếu điểm đến, return -3: thiếu thời gian đi
     ///return -4: thiếu số hành khách, return -5: thiếu thương hiệu máy bay, return -6: thiếu mã số chuyến bay
     ///return -7: thiếu ngày đến, return -8: thiếu giờ đến, return -9: thiếu giờ đi, return -10: thiếu giá
@@ -58,8 +59,9 @@ public class FlightDAO {
                 String sql = " insert into flight (origin, destination, depart, arrival, passenger, brand, flight_number, flight_depart, flight_arrival, price)"
                         + " values (?,?,?,?,?,?,?,?,?,?)";
                 // st = connection.createStatement();
-
-                prest = conn.prepareStatement(sql);
+                String query = "insert into seat_ticket(code, status, firstName, lastName, ic_Card, old, idFlight)"
+                        + " values (?,?,?,?,?,?,?)";
+                prest = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
                 prest.setString(1, flight.getOrigin());
                 prest.setString(2, flight.getDestination());
                 prest.setDate(3, flight.getDepart());
@@ -71,6 +73,23 @@ public class FlightDAO {
                 prest.setString(9, flight.getFlight_arrival());
                 prest.setDouble(10, flight.getPrice());
                 prest.execute();
+                rs = prest.getGeneratedKeys();
+                int generatedKey = 0;
+                while (rs.next()) {
+                    generatedKey = rs.getInt(1);
+                    System.out.println(generatedKey);
+                }
+                for (int i = 0; i < flight.getPassenger(); i++) {
+                    prest = conn.prepareStatement(query);
+                    prest.setString(1, "");
+                    prest.setBoolean(2, false);
+                    prest.setString(3, "");
+                    prest.setString(4, "");
+                    prest.setString(5, "");
+                    prest.setInt(6, 0);
+                    prest.setInt(7, generatedKey);
+                    prest.execute();
+                }
                 if (null != prest) {
                     prest.close();
                 }
@@ -128,7 +147,7 @@ public class FlightDAO {
             System.out.println("flight_depart: " + flight_depart);
             System.out.println("flight_arrival: " + flight_arrival);
             System.out.println("price: " + price);
-        
+
         }
         return 1;
     }
@@ -188,8 +207,7 @@ public class FlightDAO {
                 String _flight_arrival = rs.getString("flight_arrival");
                 String _flight_depart = rs.getString("flight_depart");
                 Double _price = rs.getDouble("price");
-                
-                
+
                 System.out.println("id: " + id);
                 System.out.println("origin: " + origin);
                 System.out.println("destination: " + destination);
