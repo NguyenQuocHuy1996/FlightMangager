@@ -96,7 +96,7 @@ public class FlightDAO {
         }
     }
 
-    ///return 1: get thành công, return 0: get thất bại
+    ///return 1: get thành công
     public static int getAllFlight() throws SQLException {
         connectDB = new ConnectDB();
         conn = connectDB.getConnect();
@@ -128,9 +128,9 @@ public class FlightDAO {
             System.out.println("flight_depart: " + flight_depart);
             System.out.println("flight_arrival: " + flight_arrival);
             System.out.println("price: " + price);
-            return 1;
+        
         }
-        return 0;
+        return 1;
     }
 
     public static int Edit() throws SQLException {
