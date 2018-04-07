@@ -13,7 +13,28 @@ public class Seat_Ticket {
 
     private int idSeat;
     private String code;
-    private boolean status;
+    private Boolean status;
+    private String firstName;
+    private String lastName;
+    private String ic_Card;
+    private int old;
+    private int idFlight;
+
+    public Seat_Ticket() {
+    }
+
+    public Seat_Ticket(int idSeat, String code, Boolean status, String firstName, String lastName, String ic_Card, int old,
+            int idFlight) {
+        super();
+        this.idSeat = idSeat;
+        this.code = code;
+        this.status = status;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.ic_Card = ic_Card;
+        this.old = old;
+        this.idFlight = idFlight;
+    }
 
     public int getIdSeat() {
         return idSeat;
@@ -31,20 +52,51 @@ public class Seat_Ticket {
         this.code = code;
     }
 
-    public boolean isStatus() {
+    public Boolean getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(Boolean status) {
         this.status = status;
     }
 
-    public Seat_Ticket() {
+    public String getFirstName() {
+        return firstName;
     }
 
-    public Seat_Ticket(int idSeat, String code, boolean status) {
-        this.idSeat = idSeat;
-        this.code = code;
-        this.status = status;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getIc_Card() {
+        return ic_Card;
+    }
+
+    public void setIc_Card(String ic_Card) {
+        this.ic_Card = ic_Card;
+    }
+
+    public int getOld() {
+        return old;
+    }
+
+    public void setOld(int old) {
+        this.old = old;
+    }
+
+    public int getIdFlight() {
+        return idFlight;
+    }
+
+    public void setIdFlight(int idFlight) {
+        this.idFlight = idFlight;
     }
 }

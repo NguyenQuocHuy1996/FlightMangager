@@ -5,7 +5,8 @@
  */
 package flightmanagerment.Model;
 
-import java.util.Date;
+import java.sql.Blob;
+import java.sql.Date;
 
 /**
  *
@@ -22,11 +23,10 @@ public class Employee {
     private String ic_Card;
     private String education_level;
     private String department;
-    private String position;
     private String homeTown;
-    private String sex;
+    private Boolean sex;
     private String phoneNumber;
-    private byte[] image;
+    private Blob image;
     private String address_number;
     private String address_street;
     private String address_district;
@@ -104,14 +104,6 @@ public class Employee {
         this.department = department;
     }
 
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
     public String getHomeTown() {
         return homeTown;
     }
@@ -120,11 +112,11 @@ public class Employee {
         this.homeTown = homeTown;
     }
 
-    public String getSex() {
+    public Boolean getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(Boolean sex) {
         this.sex = sex;
     }
 
@@ -171,15 +163,15 @@ public class Employee {
     public Employee() {
     }
 
-    public byte[] getImage() {
+    public Blob getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(Blob image) {
         this.image = image;
     }
 
-    public Employee(int idAccount, String email, String password, String firstName, String lastName, Date dateOfBirth, String ic_Card, String education_level, String department, String position, String homeTown, String sex, String phoneNumber, byte[] image, String address_number, String address_street, String address_district, String address_city) {
+    public Employee(int idAccount, String email, String password, String firstName, String lastName, Date dateOfBirth, String ic_Card, String education_level, String department, String homeTown, Boolean sex, String phoneNumber, Blob image, String address_number, String address_street, String address_district, String address_city) {
         this.idAccount = idAccount;
         this.email = email;
         this.password = password;
@@ -189,7 +181,6 @@ public class Employee {
         this.ic_Card = ic_Card;
         this.education_level = education_level;
         this.department = department;
-        this.position = position;
         this.homeTown = homeTown;
         this.sex = sex;
         this.phoneNumber = phoneNumber;
