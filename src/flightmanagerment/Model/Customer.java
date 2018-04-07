@@ -5,7 +5,8 @@
  */
 package flightmanagerment.Model;
 
-import java.util.Date;
+import java.sql.Blob;
+import java.sql.Date;
 
 /**
  *
@@ -21,9 +22,9 @@ public class Customer {
     private Date dateOfBirth;
     private String ic_Card;
     private String homeTown;
-    private String sex;
+    private Boolean sex;
     private String phoneNumber;
-    private byte[] image;
+    private Blob image;
     private String address_number;
     private String address_street;
     private String address_district;
@@ -32,7 +33,7 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int idAccount, String email, String password, String firstName, String lastName, Date dateOfBirth, String ic_Card, String homeTown, String sex, String phoneNumber, byte[] image, String address_number, String address_street, String address_district, String address_city) {
+    public Customer(int idAccount, String email, String password, String firstName, String lastName, Date dateOfBirth, String ic_Card, String homeTown, Boolean sex, String phoneNumber, Blob image, String address_number, String address_street, String address_district, String address_city) {
         this.idAccount = idAccount;
         this.email = email;
         this.password = password;
@@ -50,11 +51,11 @@ public class Customer {
         this.address_city = address_city;
     }
 
-    public byte[] getImage() {
+    public Blob getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(Blob image) {
         this.image = image;
     }
 
@@ -161,11 +162,11 @@ public class Customer {
         this.homeTown = homeTown;
     }
 
-    public String getSex() {
+    public Boolean getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(Boolean sex) {
         this.sex = sex;
     }
 
