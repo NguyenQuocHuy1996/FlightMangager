@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="885.0" prefWidth="1242.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="885.0" prefWidth="1242.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.Confirmed_Find_Flight.ConfirmedFindFlightController">
    <top>
       <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="114.0" prefWidth="1242.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -62,17 +62,17 @@
             <VBox prefHeight="582.0" prefWidth="852.0" GridPane.columnIndex="1">
                <children>
                   <Label styleClass="textField" text="ĐIỂM ĐI" />
-                  <TextField promptText="Hồ Chí Minh" styleClass="inputField" />
+                  <TextField fx:id="origin" promptText="Hồ Chí Minh" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
                   <Label styleClass="textField" text="ĐIỂM ĐẾN" />
-                  <TextField promptText="Hà Nội" styleClass="inputField" />
+                  <TextField fx:id="destination" promptText="Hà Nội" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
                   <Label styleClass="textField" text="NGÀY ĐI" />
-                  <TextField promptText="30/10/2018" styleClass="inputField" />
+                  <TextField fx:id="depart" promptText="30/10/2018" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
                   <Pane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="211.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Tìm chuyến bay" textAlignment="CENTER" textFill="#511919">
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="211.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btn_flightSearch" text="Tìm chuyến bay" textAlignment="CENTER" textFill="#511919">
                            <styleClass>
                               <String fx:value="btnSubmit" />
                               <String fx:value="btnDarkPurple" />

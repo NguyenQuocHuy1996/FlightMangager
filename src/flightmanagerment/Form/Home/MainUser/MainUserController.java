@@ -7,7 +7,7 @@ package flightmanagerment.Form.Home.MainUser;
 
 import flightmanagerment.Function.CustomerDAO;
 import flightmanagerment.Model.Customer;
-import flightmanagerment.Model.USER;
+import flightmanagerment.Model.Variable_Static;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -36,8 +36,6 @@ public class MainUserController implements Initializable {
     @FXML
     private Label lbl_userName;
 
-  
-
 //    @FXML
 //    private TextField txtEmail;
 //    @FXML
@@ -51,27 +49,31 @@ public class MainUserController implements Initializable {
 //            alert.show();
 //        }
 //    }
- 
-    
     @FXML
-    private void btn_flightSearch(ActionEvent event) {
-         
-        
+    private void btn_flightSearch(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Confirmed_Find_Flight/ConfirmedFindFlightUI.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.hide();
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setTitle("Find Flight ");
+        stage.show();
     }
-
 
     @FXML
     private void btn_logout(ActionEvent event) throws IOException {
-        USER.USERNAME = "";
+        Variable_Static.USERNAME = "";
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Login/LoginUI.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.hide();
-            stage.setScene(scene);
-            stage.setMaximized(true);
-            stage.resizableProperty().setValue(Boolean.FALSE);
-            stage.setTitle("Login ");
-            stage.show();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.hide();
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setTitle("Login ");
+        stage.show();
     }
 
     @Override
@@ -79,11 +81,45 @@ public class MainUserController implements Initializable {
         // TODO
         Customer cus = new Customer();
         try {
-            cus = CustomerDAO.getCus(USER.USERNAME);
-            lbl_userName.setText(cus.getLastName());
+            cus = CustomerDAO.getCus(Variable_Static.USERNAME);
+            lbl_userName.setText(cus.getFirstName());
         } catch (SQLException ex) {
 //            Logger.getLogger(MainUserController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void btn_historyBooking(ActionEvent event) {
+    }
+
+    @FXML
+    private void btn_changePassword(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/ChangePass/ChangePassUI.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.hide();
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setTitle("Change Password");
+        stage.show();
+    }
+
+    @FXML
+    private void btn_infoAccount(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Info/InfoUI.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.hide();
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setTitle("Info Customer ");
+        stage.show();
+    }
+
+    @FXML
+    private void btn_notification(ActionEvent event) {
     }
 
 }

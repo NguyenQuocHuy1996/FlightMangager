@@ -35,41 +35,6 @@ public class MainFilghtController implements Initializable {
 //            alert.show();
 //        }
 //    }
-    @FXML
-    private void btn_flightSearch(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_flightManagement(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_historyBooking(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_historyBookingOfEmployee(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_report(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_infomation(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_logout(ActionEvent event) {
-
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

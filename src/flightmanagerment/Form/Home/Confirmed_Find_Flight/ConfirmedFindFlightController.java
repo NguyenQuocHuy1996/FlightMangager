@@ -22,6 +22,13 @@ import javafx.scene.control.TextField;
  */
 public class ConfirmedFindFlightController implements Initializable {
 
+    @FXML
+    private TextField origin;
+    @FXML
+    private TextField destination;
+    @FXML
+    private TextField depart;
+
 //    @FXML
 //    private TextField txtEmail;
 //    @FXML
@@ -40,35 +47,6 @@ public class ConfirmedFindFlightController implements Initializable {
 
     }
 
-    @FXML
-    private void btn_flightManagement(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_historyBooking(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_historyBookingOfEmployee(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_report(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_infomation(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_logout(ActionEvent event) {
-
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

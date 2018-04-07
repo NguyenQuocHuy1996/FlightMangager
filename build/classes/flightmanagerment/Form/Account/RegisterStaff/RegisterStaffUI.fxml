@@ -39,17 +39,17 @@
                      </children>
                   </HBox>
                   <Label styleClass="textField" text="Email:" />
-                  <TextField fx:id="email112" promptText="Nhập email của nhân viên" styleClass="inputField" />
+                  <TextField fx:id="email" promptText="Nhập email của nhân viên" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
                   <Label styleClass="textField" text="Mật khẩu:" />
-                  <PasswordField fx:id="password11" promptText="Nhập mật khẩu" styleClass="inputField" />
+                  <PasswordField fx:id="password" promptText="Nhập mật khẩu" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
                   <Label styleClass="textField" text="Nhập lại mật khẩu" />
-                  <PasswordField fx:id="password1" promptText="Xác nhận mật khẩu" styleClass="inputField" />
+                  <PasswordField fx:id="confirm_password" promptText="Xác nhận mật khẩu" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
                   <Pane prefHeight="183.0" prefWidth="375.0">
                      <children>
-                        <Button alignment="CENTER" layoutX="103.0" layoutY="26.0" mnemonicParsing="false" text="Tạo tài khoản">
+                        <Button alignment="CENTER" layoutX="103.0" layoutY="26.0" mnemonicParsing="false" onAction="#btn_RegisterStaff" text="Tạo tài khoản">
                            <styleClass>
                               <String fx:value="btnSubmit" />
                               <String fx:value="btnRed" />
@@ -67,19 +67,19 @@
                   <VBox prefHeight="200.0" prefWidth="100.0" styleClass="mainRegisterStaffScrollPane">
                      <children>
                         <Label styleClass="textField" text="Họ:" />
-                        <TextField fx:id="email1" promptText="Nhập họ của nhân viên" styleClass="inputField" />
+                        <TextField fx:id="firstName" promptText="Nhập họ của nhân viên" styleClass="inputField" />
                         <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Tên" />
-                        <TextField fx:id="email11" promptText="Nhập tên của nhân viên" styleClass="inputField" />
                         <Separator prefWidth="200.0" styleClass="separatorForm" />
+                        <TextField fx:id="lastName" promptText="Nhập tên của nhân viên" styleClass="inputField" />
                         <Label styleClass="textField" text="CMND: " />
-                        <TextField fx:id="email111" promptText="Nhập chứng minh nhân dân" styleClass="inputField" />
+                        <TextField fx:id="ic_card" promptText="Nhập chứng minh nhân dân" styleClass="inputField" />
                         <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Số điện thoại: " />
-                        <TextField fx:id="email1113" promptText="Nhập số điện thoại" styleClass="inputField" />
+                        <TextField fx:id="phoneNumber" promptText="Nhập số điện thoại" styleClass="inputField" />
                         <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Ngày sinh:" />
-                        <DatePicker promptText="Chọn ngày sinh">
+                        <DatePicker fx:id="dateOfBirth" promptText="Chọn ngày sinh">
                            <styleClass>
                               <String fx:value="selectBox" />
                               <String fx:value="selectBoxRegister" />
@@ -89,13 +89,13 @@
                         <Label styleClass="textField" text="Giới tính:" />
                         <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
                            <children>
-                              <RadioButton mnemonicParsing="false" text="Nam">
+                              <RadioButton fx:id="sex_male" mnemonicParsing="false" text="Nam">
                                  <styleClass>
                                     <String fx:value="selectBox" />
                                     <String fx:value="selectBoxRegister" />
                                  </styleClass>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="Nữ">
+                              <RadioButton fx:id="sex_female" mnemonicParsing="false" text="Nữ">
                                  <styleClass>
                                     <String fx:value="selectBox" />
                                     <String fx:value="selectBoxRegister" />
@@ -105,10 +105,10 @@
                         </HBox>
                         <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Bằng cấp: " />
-                        <TextField fx:id="email1112" promptText="Nhập bằng cấp nhân viên" styleClass="inputField" />
+                        <TextField fx:id="education_level" promptText="Nhập bằng cấp nhân viên" styleClass="inputField" />
                         <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Chức vụ:" />
-                        <ComboBox prefWidth="150.0" promptText="Chọn chức vụ">
+                        <ComboBox fx:id="department" prefWidth="150.0" promptText="Chọn chức vụ">
                            <styleClass>
                               <String fx:value="selectBox" />
                               <String fx:value="selectBoxRegister" />
@@ -116,7 +116,7 @@
                         </ComboBox>
                         <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Quê quán:" />
-                        <ComboBox prefWidth="150.0" promptText="Chọn quê quán">
+                        <ComboBox fx:id="homeTown" prefWidth="150.0" promptText="Chọn quê quán">
                            <styleClass>
                               <String fx:value="selectBox" />
                               <String fx:value="selectBoxRegister" />
@@ -124,13 +124,13 @@
                         </ComboBox>
                         <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Số nhà: " />
-                        <TextField fx:id="email1111" promptText="Nhập số nhà" styleClass="inputField" />
+                        <TextField fx:id="add_number" promptText="Nhập số nhà" styleClass="inputField" />
                         <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Tên đường: " />
-                        <TextField fx:id="email11111" promptText="Nhập tên đường" styleClass="inputField" />
+                        <TextField fx:id="add_Street" promptText="Nhập tên đường" styleClass="inputField" />
                         <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Tỉnh/Thành:" />
-                        <ComboBox prefWidth="150.0" promptText="Chọn Tỉnh/Thành phố">
+                        <ComboBox fx:id="add_city" prefWidth="150.0" promptText="Chọn Tỉnh/Thành phố">
                            <styleClass>
                               <String fx:value="selectBox" />
                               <String fx:value="selectBoxRegister" />
@@ -138,7 +138,7 @@
                         </ComboBox>
                         <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Quận/Huyện:" />
-                        <ComboBox prefWidth="150.0" promptText="Chọn Quận/Huyện">
+                        <ComboBox fx:id="add_district" prefWidth="150.0" promptText="Chọn Quận/Huyện">
                            <styleClass>
                               <String fx:value="selectBox" />
                               <String fx:value="selectBoxRegister" />

@@ -52,7 +52,7 @@
                               <String fx:value="btnRed" />
                            </styleClass>
                         </Button>
-                        <Button layoutX="216.0" layoutY="13.0" mnemonicParsing="false" text="Đăng nhập">
+                        <Button layoutX="216.0" layoutY="13.0" mnemonicParsing="false" onAction="#btn_Login" text="Đăng nhập">
                            <styleClass>
                               <String fx:value="btnSubmit" />
                               <String fx:value="btnTeal" />

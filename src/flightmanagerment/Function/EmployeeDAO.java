@@ -155,4 +155,8 @@ public class EmployeeDAO {
         return null;
 
     }
+
+    public static Employee getEmp(String USERNAME) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

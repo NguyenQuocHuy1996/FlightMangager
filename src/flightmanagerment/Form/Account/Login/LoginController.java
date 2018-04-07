@@ -6,7 +6,7 @@
 package flightmanagerment.Form.Account.Login;
 
 import flightmanagerment.Function.AccountDAO;
-import flightmanagerment.Model.USER;
+import flightmanagerment.Model.Variable_Static;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -53,35 +53,52 @@ public class LoginController implements Initializable {
 
     @FXML
     private void btn_Login(ActionEvent event) throws IOException, SQLException {
-        int function = AccountDAO.checkRole(email.getText());
-        if (function == 1) {
-            USER.USERNAME = email.getText();
-            AccountDAO.loginCus(email.getText(), password.getText());
-            Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainUser/MainUserUI.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.hide();
-            stage.setScene(scene);
-            stage.setMaximized(true);
-            stage.resizableProperty().setValue(Boolean.FALSE);
-            stage.setTitle("Login ");
-            stage.show();
-        } else if (function == 2) {
-            AccountDAO.loginEmp(email.getText(), password.getText());
-            Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.hide();
-            stage.setScene(scene);
-            stage.setMaximized(true);
-            stage.resizableProperty().setValue(Boolean.FALSE);
-            stage.setTitle("Login ");
-            stage.show();
-        } else {
-            Alert a = new Alert(Alert.AlertType.ERROR);
-            a.setTitle("Lỗi trong quá trình đăng nhập");
-            a.setContentText("Nội dung");
+        Alert a = new Alert(Alert.AlertType.ERROR);
+        if (email.getText().equals("") || (password.getText().equals(""))) {
+            a.setTitle("ERROR");
+            a.setContentText("Vui lòng nhập đủ thông tin!");
             a.show();
+        } else {
+            int function = AccountDAO.checkRole(email.getText());
+            if (function == 1) {
+                Variable_Static.USERNAME = email.getText();
+                if (AccountDAO.loginCus(email.getText(), password.getText()) == 1) {
+                    Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainUser/MainUserUI.fxml"));
+                    Scene scene = new Scene(root);
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    stage.hide();
+                    stage.setScene(scene);
+                    stage.setMaximized(true);
+                    stage.resizableProperty().setValue(Boolean.FALSE);
+                    stage.setTitle("Main Customer ");
+                    stage.show();
+                } else {
+                    a.setContentText("Mật khẩu không chính xác");
+                    a.show();
+                }
+
+            } else if (function == 2) {
+                Variable_Static.USERNAME = email.getText();
+                if (AccountDAO.loginEmp(email.getText(), password.getText()) == 1) {
+                    Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
+                    Scene scene = new Scene(root);
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    stage.hide();
+                    stage.setScene(scene);
+                    stage.setMaximized(true);
+                    stage.resizableProperty().setValue(Boolean.FALSE);
+                    stage.setTitle("Main Staff ");
+                    stage.show();
+                } else {
+                    a.setContentText("Mật khẩu không chính xác");
+                    a.show();
+                }
+
+            } else {
+                a.setTitle("Lỗi trong quá trình đăng nhập");
+                a.setContentText("Sai tên đăng nhập hoặc mật khẩu");
+                a.show();
+            }
         }
     }
 

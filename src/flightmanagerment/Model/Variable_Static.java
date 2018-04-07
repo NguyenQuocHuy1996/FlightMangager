@@ -9,8 +9,8 @@ package flightmanagerment.Model;
  *
  * @author Admin
  */
-public final class USER {
+public final class Variable_Static {
     public static String USERNAME = "";
-    public static String PASSWORD = "";
+    public static int IDFLIGHT = 0;
     
 }

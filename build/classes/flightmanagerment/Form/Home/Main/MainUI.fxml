@@ -18,7 +18,7 @@
                   <String fx:value="btnMagenta" />
                   <String fx:value="btnMetro" />
                </styleClass></Label>
-            <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" text="Tra cứu chuyến bay" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
+            <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" onAction="#btn_flightSearch" text="Tra cứu chuyến bay" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
