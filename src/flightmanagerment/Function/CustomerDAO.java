@@ -88,6 +88,49 @@ public class CustomerDAO {
         return 1;
     }
 
+    public static Customer getCus(String email) throws SQLException {
+        try {
+            connectDB = new ConnectDB();
+            conn = connectDB.getConnect();
+            String sql = "select * from customer where email = ?";
+            prest = conn.prepareStatement(sql);
+            prest.setString(1, email);
+            rs = prest.executeQuery();
+            while (rs.next()) {
+                int idAccount = rs.getInt("idAccount");
+
+                String password = rs.getString("password");
+                String firstName = rs.getString("firstName");
+                String lastName = rs.getString("lastName");
+                Date dateOfBirth = rs.getDate("dateOfBirth");
+                String ic_Card = rs.getString("ic_Card");
+                String homeTown = rs.getString("homeTown");
+                Boolean sex = rs.getBoolean("sex");
+                String phoneNumber = rs.getString("phoneNumber");
+                Blob image = rs.getBlob("image");
+                String address_number = rs.getString("address_number");
+                String address_street = rs.getString("address_street");
+                String address_district = rs.getString("address_district");
+                String address_city = rs.getString("address_city");
+
+                Customer cus = new Customer(idAccount, email, password, firstName, lastName, dateOfBirth, ic_Card, homeTown, sex, phoneNumber, image, address_number, address_street, address_district, address_city);
+                return cus;
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+            // TODO: handle exception
+        } finally {
+            if (null != prest) {
+                prest.close();
+            }
+            if (null != conn) {
+                conn.close();
+            }
+        }
+        return null;
+
+    }
+
     public static Customer getCus(int idAccount) throws SQLException {
         try {
             connectDB = new ConnectDB();

@@ -31,9 +31,12 @@ public class AccountDAO {
             if (getUserCus(userName) == 1) {
                 System.out.println("1");
                 return 1;
-            } else {
+            } else if (getUserCus(userName) == 2) {
                 System.out.println("2");
                 return 2;
+            }
+            else {
+                return 0;
             }
         } catch (SQLException e) {
             System.out.println(e);

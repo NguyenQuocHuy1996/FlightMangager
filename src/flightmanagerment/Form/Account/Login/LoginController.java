@@ -6,6 +6,7 @@
 package flightmanagerment.Form.Account.Login;
 
 import flightmanagerment.Function.AccountDAO;
+import flightmanagerment.Model.USER;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -54,6 +55,7 @@ public class LoginController implements Initializable {
     private void btn_Login(ActionEvent event) throws IOException, SQLException {
         int function = AccountDAO.checkRole(email.getText());
         if (function == 1) {
+            USER.USERNAME = email.getText();
             AccountDAO.loginCus(email.getText(), password.getText());
             Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainUser/MainUserUI.fxml"));
             Scene scene = new Scene(root);
@@ -64,7 +66,7 @@ public class LoginController implements Initializable {
             stage.resizableProperty().setValue(Boolean.FALSE);
             stage.setTitle("Login ");
             stage.show();
-        } else {
+        } else if (function == 2) {
             AccountDAO.loginEmp(email.getText(), password.getText());
             Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
             Scene scene = new Scene(root);
@@ -75,8 +77,12 @@ public class LoginController implements Initializable {
             stage.resizableProperty().setValue(Boolean.FALSE);
             stage.setTitle("Login ");
             stage.show();
+        } else {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setTitle("Lỗi trong quá trình đăng nhập");
+            a.setContentText("Nội dung");
+            a.show();
         }
-
     }
 
     @Override

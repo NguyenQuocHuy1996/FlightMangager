@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="730.0" prefWidth="769.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="730.0" prefWidth="769.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.MainUser.MainUserController">
    <center>
       <GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="mainWrapper" vgap="15.0" BorderPane.alignment="CENTER">
          <children>
@@ -19,12 +19,12 @@
                   <String fx:value="btnMagenta" />
                   <String fx:value="btnHistoryBooking" />
                </styleClass></Button>
-            <Button mnemonicParsing="false" text="Đăng xuất" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#btn_logout" text="Đăng xuất" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <styleClass>
                   <String fx:value="btnMagenta" />
                   <String fx:value="btnCustomerHistoryBooking" />
                </styleClass></Button>
-            <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" text="Tra cứu chuyến bay" textAlignment="CENTER" wrapText="true">
+            <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" onAction="#btn_flightSearch" text="Tra cứu chuyến bay" textAlignment="CENTER" wrapText="true">
                <styleClass>
                   <String fx:value="btnMagenta" />
                   <String fx:value="btnFindFlight" />
@@ -83,7 +83,7 @@
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <Label styleClass="userName" text="Xin chào" />
-                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="User" textAlignment="RIGHT" />
+                        <Label fx:id="lbl_userName" alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="User" textAlignment="RIGHT" />
                      </children>
                   </VBox>
                   <ImageView fitHeight="46.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
