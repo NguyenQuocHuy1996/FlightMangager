@@ -70,12 +70,9 @@
                   <Label styleClass="textField" text="NGÀY ĐI" />
                   <TextField promptText="30/10/2018" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
-                  <Label styleClass="textField" text="NGÀY VỀ" />
-                  <TextField promptText="30/10/2019" styleClass="inputField" />
-                  <Separator prefWidth="200.0" styleClass="separatorForm" />
                   <Pane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="211.0" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Tìm chuyến bay" textAlignment="CENTER" textFill="#511919">
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="211.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Tìm chuyến bay" textAlignment="CENTER" textFill="#511919">
                            <styleClass>
                               <String fx:value="btnSubmit" />
                               <String fx:value="btnDarkPurple" />

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,97 +9,248 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="797.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.Info.InfoController">
-   <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0">
-         <center>
-            <GridPane BorderPane.alignment="CENTER">
-              <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="848.0" prefWidth="1300.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <GridPane hgap="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="mainInfo" vgap="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="btnGreen">
                <children>
-                  <Label text="Quê quán:" GridPane.rowIndex="9" />
-                  <Label text="Số điện thoại:" GridPane.rowIndex="5" />
-                  <Label text="Số nhà:" GridPane.rowIndex="10" />
-                  <Label text="Tên đường:" GridPane.rowIndex="11" />
-                  <Label text="Tỉnh/Thành:" GridPane.rowIndex="12" />
-                  <Label text="Quận/Huyện:" GridPane.rowIndex="13" />
-                  <Button mnemonicParsing="false" text="Cập nhật" GridPane.columnIndex="1" GridPane.rowIndex="14" />
-                  <TextField GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-                  <TextField GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                  <TextField GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="10" />
-                  <TextField GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="11" />
-                  <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="9" />
-                  <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="12" />
-                  <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="13" />
-                  <DatePicker GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6" />
-                  <Button mnemonicParsing="false" text="Hủy bỏ" GridPane.columnIndex="2" GridPane.rowIndex="14" />
-                  <TextField GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <Label text="Thông tin khác" GridPane.columnSpan="3" GridPane.rowIndex="8" />
-                  <Label text="Thông tin cá nhân" GridPane.columnSpan="3" />
-                  <Label text="Họ:" GridPane.rowIndex="1" />
-                  <Label text="Tên:" GridPane.rowIndex="2" />
-                  <Label text="Giới tính:" GridPane.rowIndex="3" />
-                  <Label text="CMND:" GridPane.rowIndex="4" />
-                  <RadioButton mnemonicParsing="false" text="Nam" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <RadioButton mnemonicParsing="false" text="Nữ" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <Label text="Ngày sinh:" GridPane.rowIndex="6" />
-                  <TextField GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-               </children>
-            </GridPane>
-         </center>
-         <top>
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: ;" styleClass="userImg">
-                     <image>
-                        <Image url="@../../../Asset/img/icon/user.png" />
-                     </image>
-                  </ImageView>
-                  <GridPane alignment="BOTTOM_CENTER" prefHeight="150.0" prefWidth="268.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <Label styleClass="textField" text="THÔNG TIN TÀI KHOẢN">
+                     <font>
+                        <Font name="Sitka Small" size="12.0" />
+                     </font></Label>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" styleClass="btnFix" />
+                  <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <TextField alignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                        <Label text="Thông tin tài khoản" GridPane.columnSpan="2" />
-                        <Label text="Email:" GridPane.rowIndex="1" />
-                        <Label text="Mật khẩu:" GridPane.rowIndex="2" />
-                        <TextField prefHeight="0.0" prefWidth="107.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                        <Label styleClass="textField" text="Ảnh đại diện: " />
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: ;" styleClass="userImg">
+                                 <image>
+                                    <Image url="@../../../Asset/img/icon/user.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </StackPane>
                      </children>
-                  </GridPane>
+                  </VBox>
+                  <HBox prefHeight="45.0" prefWidth="387.0">
+                     <children>
+                        <Label styleClass="textField" text="Email:" />
+                        <TextField alignment="CENTER" disable="true" promptText="Nhập vào Email" text="nguyenquochuy1996.ou@gmail.com">
+                           <styleClass>
+                              <String fx:value="inputField" />
+                              <String fx:value="inputFieldInfo" />
+                           </styleClass>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Label styleClass="textField" text="Mật khẩu:" />
+                        <PasswordField disable="true" promptText="Nhập vào mật khẩu" text="123456">
+                           <styleClass>
+                              <String fx:value="inputField" />
+                              <String fx:value="inputFieldInfo" />
+                           </styleClass>
+                        </PasswordField>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="btnDarkGreen" GridPane.columnIndex="1">
+               <children>
+                  <Label styleClass="textField" text="THÔNG TIN CÁ NHÂN">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" styleClass="btnFix" />
+                  <HBox prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Label styleClass="textField" text="Họ:">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font></Label>
+                        <TextField disable="true" prefHeight="60.0" prefWidth="150.0" promptText="Nhập vào họ của bạn" text="Nguyễn">
+                           <styleClass>
+                              <String fx:value="inputField" />
+                              <String fx:value="inputFieldInfo" />
+                           </styleClass>
+                        </TextField>
+                        <Label styleClass="textField" text="Tên:">
+                           <font>
+                              <Font name="Segoe UI Emoji" size="12.0" />
+                           </font></Label>
+                        <TextField disable="true" prefHeight="60.0" prefWidth="150.0" promptText="Nhập vào tên của bạn" text="Quốc Huy">
+                           <styleClass>
+                              <String fx:value="inputField" />
+                              <String fx:value="inputFieldInfo" />
+                           </styleClass>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Label styleClass="textField" text="Số điện thoại:">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font></Label>
+                        <TextField disable="true" prefHeight="60.0" prefWidth="150.0" promptText="Nhập vào số điện thoại" text="01265655532">
+                           <styleClass>
+                              <String fx:value="inputField" />
+                              <String fx:value="inputFieldInfo" />
+                           </styleClass>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="172.0" prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Label styleClass="textField" text="CMND:">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font></Label>
+                        <TextField disable="true" prefHeight="60.0" prefWidth="150.0" promptText="Nhập vào chứng minh nhân dân" text="0256185925">
+                           <styleClass>
+                              <String fx:value="inputField" />
+                              <String fx:value="inputFieldInfo" />
+                           </styleClass>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="266.0" prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Ngày sinh:">
+                           <styleClass>
+                              <String fx:value="textField" />
+                              <String fx:value="textFieldDisTrict" />
+                           </styleClass>
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font>
+                        </Label>
+                        <DatePicker disable="true" promptText="Chọn ngày sinh" styleClass="selectBox">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </DatePicker>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="45.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label styleClass="textField" text="Giới tính:">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font></Label>
+                        <RadioButton disable="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="126.0" styleClass="selectBox" text="Nam">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </RadioButton>
+                        <RadioButton disable="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="115.0" styleClass="selectBox" text="Nữ" />
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="141.0" prefWidth="367.0" />
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="btnGreen" GridPane.columnIndex="2">
+               <children>
+                  <Label styleClass="textField" text="THÔNG TIN KHÁC" />
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" styleClass="btnFix" />
+                  <HBox prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Label styleClass="textField" text="Số nhà:" />
+                        <TextField disable="true" promptText="Nhập vào số nhà" text="371">
+                           <styleClass>
+                              <String fx:value="inputField" />
+                              <String fx:value="inputFieldInfo" />
+                           </styleClass>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Label styleClass="textField" text="Tên đường:" />
+                        <TextField disable="true" promptText="Nhập vào tên đường" text="Nguyễn Kiệm">
+                           <styleClass>
+                              <String fx:value="inputField" />
+                              <String fx:value="inputFieldInfo" />
+                           </styleClass>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Quê quán:">
+                           <styleClass>
+                              <String fx:value="textField" />
+                              <String fx:value="textFieldDisTrict" />
+                           </styleClass>
+                        </Label>
+                        <ComboBox disable="true" prefHeight="62.0" prefWidth="260.0" promptText="Chọn quê quán" styleClass="selectBox">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ComboBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Tỉnh/Thành:">
+                           <styleClass>
+                              <String fx:value="textField" />
+                              <String fx:value="textFieldDisTrict" />
+                           </styleClass>
+                        </Label>
+                        <ComboBox disable="true" prefHeight="62.0" prefWidth="260.0" promptText="Chọn tỉnh hoặc thành phố" styleClass="selectBox" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Quận/Huyện:">
+                           <styleClass>
+                              <String fx:value="textField" />
+                              <String fx:value="textFieldDisTrict" />
+                           </styleClass>
+                        </Label>
+                        <ComboBox disable="true" prefHeight="62.0" prefWidth="260.0" promptText="Chọn quận hoặc huyện" styleClass="selectBox" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </VBox>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+   </center>
+   <bottom>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+               <children>
+                  <Button mnemonicParsing="false" styleClass="btnSubmit" text="Cập nhật" />
+                  <Button mnemonicParsing="false" styleClass="btnSubmit" text="Hủy bỏ" />
                </children>
             </HBox>
-         </top>
-         <left>
-            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-         </left>
-      </BorderPane>
-   </children>
-</StackPane>
+         </children>
+      </StackPane>
+   </bottom>
+</BorderPane>

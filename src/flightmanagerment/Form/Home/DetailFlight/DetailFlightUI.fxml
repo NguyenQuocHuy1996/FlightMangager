@@ -61,7 +61,7 @@
    <center>
       <Pane prefHeight="427.0" prefWidth="1338.0" styleClass="btnGreen" BorderPane.alignment="CENTER">
          <children>
-            <HBox layoutX="371.0" layoutY="74.0" prefHeight="16.0" prefWidth="850.0">
+            <HBox layoutX="292.0" layoutY="24.0" prefHeight="16.0" prefWidth="850.0">
                <children>
                   <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
                      <image>

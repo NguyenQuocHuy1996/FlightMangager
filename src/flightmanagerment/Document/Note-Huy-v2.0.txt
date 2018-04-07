@@ -1,0 +1,99 @@
+﻿Main User
+	- btn Nhan thong bao chuyen bay moi => Done
+
+Cofirm
+	- remove "Ngay ve" => Done
+
+List Flight
+	- New form "Chon ghe" (left: all field, right: ghe)
+
+Detail Flight
+	- Rename -> Main flight => Done
+
+Add new detail flight
+
+Hiện tại:
+	- Login ( User, Staff) -> Done
+	- Register ( User) -> Done
+	- Info ( User)	-> Done
+	- Add new staff account (
+		lname: string
+		fname: string
+		email: string
+		password: string
+
+		cmnd: string
+		so dien thoai: string
+		bang cap: string
+		chuc vu: string
+
+		hinh dai dien: ...
+		birthday: date
+		gioi tinh: bit
+
+
+
+		que quan: string
+		so nha: string
+		duong: string
+		quan/huyen: string
+		thanh pho/tinh thanh: string	
+	)
+	- InfoStaff ( Staff) -> (
+		email: string
+		password: string
+		fname: string
+		lname: string
+		birthday: date
+		cmnd: string
+		bang cap: string
+		chuc vu: string
+		que quan: string
+		gioi tinh: bit
+		so dien thoai: string
+		hinh dai dien: ...
+		so nha: string
+		duong: string
+		quan/huyen: string
+		thanh pho/tinh thanh: string
+	)
+	- Quan ly chuyen bay -> 1 form duy nhat ( grib view + cac fild input + button "add","edit","delete" )
+	Cac field (
+		diem di: string
+		diem den: string
+		ngay di: date
+		gio di: string
+		ngay ve: date
+		gio ve: string
+		tong so ghe: number
+		hang may bay: string
+		so hieu chuyen bay: string
+		
+	)
+	-Customer_History_booking(
+		
+	)
+	-History_booking(
+	)
+
+
+Phuc Note:
+	
+	customer
+		- sex -> boolean
+		- add nhan thong bao : boolean
+	employee
+		- remove field "positon"
+		- sex -> boolean
+	flight
+		- depath (ngay di) -> doi thanh kieu date
+		- remove fild "return" (ngay ve)
+		- them field "gio di" : string
+		- them field "gio den"	: string
+		- time: string
+			vd: 15:30:50
+		- price: double
+	seat
+		-add tên,  tuổi, cmnd.
+	
+	

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package flightmanagerment.Form.Home.Main_Find_Flight;
+package flightmanagerment.Form.Home.InfoStaff;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,7 +20,7 @@ import javafx.scene.control.TextField;
  *
  * @author Quoc Huy
  */
-public class Main_Find_FlightController implements Initializable {
+public class InfoStaffController implements Initializable {
 
 //    @FXML
 //    private TextField txtEmail;
@@ -28,7 +28,7 @@ public class Main_Find_FlightController implements Initializable {
 //    private TextField txtPass;
 //    
 //    @FXML
-//    private void Main_Find_Flight(ActionEvent event) {
+//    private void InfoStaff(ActionEvent event) {
 //        if((txtEmail.getText().equals("admin")) && (txtPass.getText().equals("admin123"))){
 //            Alert alert = new Alert(Alert.AlertType.INFORMATION);
 //            alert.setTitle("Dang nhap thanh cong");
@@ -36,37 +36,17 @@ public class Main_Find_FlightController implements Initializable {
 //        }
 //    }
     @FXML
-    private void btn_flightSearch(ActionEvent event) {
+    private void btn_update(ActionEvent event) {
 
     }
 
     @FXML
-    private void btn_flightManagement(ActionEvent event) {
+    private void btn_reset(ActionEvent event) {
 
     }
 
     @FXML
-    private void btn_historyBooking(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_historyBookingOfEmployee(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_report(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_infomation(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_logout(ActionEvent event) {
+    private void btn_back(ActionEvent event) {
 
     }
 

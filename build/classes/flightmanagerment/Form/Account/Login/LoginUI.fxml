@@ -1,34 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="676.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Account.Login.LoginController">
-   <children>
-      <GridPane alignment="CENTER" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" snapToPixel="false" vgap="5.0">
+<BorderPane prefHeight="676.0" prefWidth="1132.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <Pane prefHeight="0.0" prefWidth="1150.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" styleClass="mainLogin" BorderPane.alignment="CENTER">
          <children>
-            <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" text="Email" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" />
-            <Label text="Mật khẩu" GridPane.rowIndex="2" />
-            <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-            <TextField fx:id="txtPass" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#Login" text="Đăng nhập" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label text="Đăng nhập" textAlignment="CENTER" GridPane.columnSpan="3" />
-            <Button mnemonicParsing="false" text="Đăng ký" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <Label styleClass="textField" text="Email:" />
+                  <PasswordField fx:id="password" promptText="Nhập email" styleClass="inputField" />
+                  <Separator prefWidth="200.0" styleClass="separatorForm" />
+                  <Label styleClass="textField" text="Mật khẩu:" />
+                  <TextField fx:id="email" promptText="Nhập mật khẩu" styleClass="inputField" />
+                  <Separator prefWidth="200.0" styleClass="separatorForm" />
+                  <Pane prefHeight="81.0" prefWidth="400.0">
+                     <children>
+                        <HBox layoutX="1.0" layoutY="77.0" prefHeight="73.0" prefWidth="399.0" spacing="10.0" />
+                        <Button layoutX="14.0" layoutY="18.0" mnemonicParsing="false" text="Đăng nhập">
+                           <styleClass>
+                              <String fx:value="btnSubmit" />
+                              <String fx:value="btnTeal" />
+                           </styleClass>
+                        </Button>
+                        <Button layoutX="216.0" layoutY="18.0" mnemonicParsing="false" onAction="#btn_Register" text="Đăng ký">
+                           <styleClass>
+                              <String fx:value="btnSubmit" />
+                              <String fx:value="btnRed" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
          </children>
          <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="226.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="219.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="219.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
          <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-   </children>
-</StackPane>
+   </center>
+   <top>
+      <Pane prefHeight="89.0" prefWidth="884.0" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>
