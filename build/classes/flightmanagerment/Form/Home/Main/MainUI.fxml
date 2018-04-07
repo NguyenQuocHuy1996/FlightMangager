@@ -29,7 +29,7 @@
                </styleClass></Button>
             <Label alignment="CENTER" contentDisplay="CENTER" text="Xin chào " textAlignment="CENTER">
                <styleClass>
-                  <String fx:value="btnBlue" />
+                  <String fx:value="btnMagenta" />
                   <String fx:value="btnMetro" />
                </styleClass></Label>
             <Button mnemonicParsing="false" text="Đăng nhập" GridPane.columnIndex="2">
