@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="885.0" prefWidth="1242.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="114.0" prefWidth="1242.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="TOP_RIGHT" minWidth="-Infinity" GridPane.columnIndex="1">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label styleClass="userName" text="Xin chào" />
+                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="Quốc Huy" textAlignment="RIGHT" />
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="46.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Asset/img/icon/user.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <GridPane.margin>
+                  <Insets right="25.0" />
+               </GridPane.margin>
+            </HBox>
+            <Separator prefHeight="0.0" prefWidth="1242.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+         </children>
+         <padding>
+            <Insets top="25.0" />
+         </padding>
+      </GridPane>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="582.0" prefWidth="852.0" GridPane.columnIndex="1">
+               <children>
+                  <Label styleClass="textField" text="ĐIỂM ĐI" />
+                  <TextField promptText="Hồ Chí Minh" styleClass="inputField" />
+                  <Separator prefWidth="200.0" styleClass="separatorForm" />
+                  <Label styleClass="textField" text="ĐIỂM ĐẾN" />
+                  <TextField promptText="Hà Nội" styleClass="inputField" />
+                  <Separator prefWidth="200.0" styleClass="separatorForm" />
+                  <Label styleClass="textField" text="NGÀY ĐI" />
+                  <TextField promptText="30/10/2018" styleClass="inputField" />
+                  <Separator prefWidth="200.0" styleClass="separatorForm" />
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="211.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Tìm chuyến bay" textAlignment="CENTER" textFill="#511919">
+                           <styleClass>
+                              <String fx:value="btnSubmit" />
+                              <String fx:value="btnDarkPurple" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

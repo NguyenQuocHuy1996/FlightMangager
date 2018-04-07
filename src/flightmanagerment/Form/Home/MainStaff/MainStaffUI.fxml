@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="730.0" prefWidth="769.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" vgap="15.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" styleClass="btnMagenta" text="17:45 PM" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" text="Đăng xuất" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnHistoryBooking" />
+               </styleClass></Button>
+            <Button mnemonicParsing="false" text="Báo cáo" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <styleClass>
+                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnReport" />
+               </styleClass></Button>
+            <Button mnemonicParsing="false" text="Lịch sử đặt vé của khách hàng" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnCustomerHistoryBooking" />
+               </styleClass></Button>
+            <Button graphicTextGap="1.0" mnemonicParsing="false" text="Quản lý chuyến bay" GridPane.columnIndex="1">
+               <styleClass>
+                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnFlightManager" />
+               </styleClass></Button>
+            <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" text="Tra cứu chuyến bay" textAlignment="CENTER" wrapText="true">
+               <styleClass>
+                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnFindFlight" />
+               </styleClass>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></Button>
+            <Button mnemonicParsing="false" text="Đổi mật khẩu" GridPane.rowIndex="2">
+               <styleClass>
+                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnChangePass" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" text="Thông tin tài khoản" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <styleClass>
+                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnInfo" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" styleClass="btnMagenta" text="Cấp tài khoản nhân viên" GridPane.columnIndex="2" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <padding>
+            <Insets top="15.0" />
+         </padding>
+      </GridPane>
+   </center>
+   <top>
+      <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="114.0" prefWidth="1242.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="TOP_RIGHT" minWidth="-Infinity" GridPane.columnIndex="1">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label styleClass="userName" text="Xin chào" />
+                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="Staff" textAlignment="RIGHT" />
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="46.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Asset/img/icon/user.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <GridPane.margin>
+                  <Insets right="25.0" />
+               </GridPane.margin>
+            </HBox>
+            <Separator prefHeight="0.0" prefWidth="1242.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+         </children>
+         <padding>
+            <Insets top="25.0" />
+         </padding>
+      </GridPane>
+   </top>
+</BorderPane>

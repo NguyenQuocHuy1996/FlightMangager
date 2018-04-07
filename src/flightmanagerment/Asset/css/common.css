@@ -1,44 +1,254 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Feb 11, 2018, 4:20:25 PM
-    Author     : Quoc Huy
-*/
-
+@font-face {
+    font-family: Century;
+    src: url('../font/Century/CenturyGothic.ttf');
+}
+/*Common CSS*/
 .root{
-    -fx-background-image: url(../img/plane.jpg);
+/*    -fx-background-image: url(../img/background.png);*/
+    -fx-background-image: url(../img/background-2.jpg);
     -fx-background-repeat: no-repeat;
-    -fx-background-size: cover;
+    -fx-background-size: cover;    
+/*    -fx-font-size: 16px ;
+    -fx-font-family: 'Segoe UI';*/
 }
-.label,
-.button{
-    -fx-font-size: 14px;
-}
-.text-field {
-    -fx-background-color: #a9a9a9 , white , white;    
-    -fx-pref-width: 225px;
-    -fx-pref-height:50px;
-}
-
-.text-field:focused {
-    -fx-background-color: #a9a9a9 , white , white;
-}
-
-.button {
-    -fx-background-color: transparent;
-    -fx-border-radius: 50px;
-    -fx-border-style: solid;
-    -fx-border-width:1px;
-    -fx-pref-width: 225px;
-    -fx-pref-height:50px;
+.text,.button,.label{
+    -fx-font-style: Plain;
+    -fx-text-fill: white;
+    
+    -fx-font-size: 16px ;
+    -fx-font-family: 'Segoe UI';
 }
 .button:hover{
-    -fx-border-radius: 16px;
-    -fx-border-style: solid;
-    -fx-border-width:1px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+}
+
+/*Button Metro*/
+.btnGreen,
+.btnLightGreen,
+.btnDarkGreen,
+.btnMagenta,
+.btnLightPurple,
+.btnPurple,
+.btnDarkPurple,
+.btnDarken,
+.btnTeal,
+.btnLightBlue,
+.btnBlue,
+.btnDarkBlue,
+.btnYellow,
+.btnOrange,
+.btnDarkOrange,
+.btnRed,
+.btnDarkRed{    
+    -fx-border-style: none;
+    -fx-pref-width:150px;
+    -fx-pref-height:150px;
+    -fx-alignment: TOP_CENTER;    
+    -fx-wrap-text: true;
+    -fx-content-display: top;
+    -fx-text-alignment: center;
+/*    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );*/
+}
+.btnMetro{
+    -fx-alignment: CENTER;
+}
+.btnGreen{
+    -fx-background-color: #00a300;    
+}
+.btnLightGreen{
+    -fx-background-color: #99b433;
+}
+.btnDarkGreen{
+    -fx-background-color: #1e7145;
+}
+.btnMagenta{
+    -fx-background-color: #ff0097;    
+}
+.btnLightPurple{
+    -fx-background-color: #603cba;
+}
+.btnPurple{
+    -fx-background-color: #7e3878;
+}
+.btnDarkPurple{    
+    -fx-background-color: #9f00a7;
+}
+.btnDarken{
+    -fx-background-color: #1d1d1d;
+}
+.btnTeal{
+    -fx-background-color: #00aba9;
+}
+.btnLightBlue{
+    -fx-background-color: #eff4ff;
+}
+.btnBlue{
+    -fx-background-color: #2d89ef;
+}
+.btnDarkBlue{
+    -fx-background-color: #2b5797;
+}
+.btnYellow{
+    -fx-background-color: #ffc40d;
+}
+.btnOrange{
+    -fx-background-color: #e3a21a;
+}
+.btnDarkOrange{
+    -fx-background-color: #da532c;
+}
+.btnRed{
+    -fx-background-color: #ee1111;
+}
+.btnDarkRed{
+    -fx-background-color: #b91d47;
+}
+.btnFindFlight{
+    -fx-graphic: url('../img/icon/search-45x45.png');
+}
+.btnFlightManager{
+    -fx-graphic: url('../img/icon/flight-manager-45x45.png');
+}
+.btnReport{
+    -fx-graphic: url('../img/icon/report-45x45.png');
+}
+.btnHistoryBooking{
+    -fx-graphic: url('../img/icon/history-booking-45x45.png');    
+}
+.btnCustomerHistoryBooking{
+    -fx-graphic: url('../img/icon/history-45x45.png');
+}
+.btnChangePass{
+    -fx-graphic: url('../img/icon/change-pass-45x45.png');
+}
+.btnInfo{
+    -fx-graphic: url('../img/icon/info-45x45.png');
+}
+.btnFix{
+    -fx-graphic: url('../img/icon/icon-fix-25x25.png');
     -fx-background-color: black;
+    -fx-pref-width: 35px;
+    -fx-pref-height: 35px;
+}
+
+/*Top bar*/
+.userName{
+    -fx-alignment: TOP_RIGHT;
+    -fx-font-size: 12px ;
+}
+.formTitle{
+    -fx-font-size: 20px;
+}
+/*Main Size*/
+.mainLogin{
+    -fx-pref-width: 800px;
+    -fx-pref-height: 300px;
+}
+.mainRegister{
+    -fx-pref-width: 800px;
+    -fx-pref-height: 500px;
+}
+.mainInfo{
+    -fx-pref-width: 1200px;
+    -fx-pref-height: 500px;
+}
+.mainInfoStaff{
+    -fx-pref-width: 1200px;
+    -fx-pref-height: 500px;
+}
+.mainRegisterStaff{
+    -fx-pref-width: 800px;
+    -fx-pref-height: 550px;
+}
+.mainRegisterStaffScrollPane{
+    -fx-pref-width: 400px;
+    -fx-pref-height: 550px;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+.mainRegisterStaffVBox{
+    -fx-pref-width: 398px;
+    -fx-alignment: CENTER;
+}
+.main{
+    -fx-pref-width: 450px;
+    -fx-pref-height: 450px;
+}
+.flightWrapper{
+    -fx-padding: 10;
+    -fx-pref-width: 220px;
+    -fx-pref-height: 300px;
+}
+.flightInfoHeight{
+    -fx-pref-height: 30px;
+    -fx-padding: 10 0 0 0;
+}
+.flightInfo{
+/*    -fx-text-fill:black;*/
+/*    -fx-padding: 15 0 15 0;*/
+    -fx-font-size: 14px;
+}
+
+/*Style input form*/
+.textField{
     -fx-text-fill: white;
+    -fx-padding: 30 0 10 0;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: bold;
+    
+/*    -fx-text-fill:  black;*/
+}
+.inputField{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 10 10 10 10;
+    -fx-text-fill: white;
+    -fx-alignment: CENTER_LEFT;
+    
+/*    -fx-text-fill:  black;*/
+}
+.selectBox{
+    //Margin-top: 30px
+    -fx-padding: 30 0 0 0;
+    -fx-border-insets: 30 0 0 0;
+    -fx-background-insets: 30 0 0 0;
+    // End-Margin-top: 30px
+    -fx-text-fill: white;
+    -fx-alignment: CENTER_LEFT;
+}
+.selectBoxRegister{
+    //Margin-top: 30px
+    -fx-padding: 15 0 5 0;
+    -fx-border-insets: 15 0 5 0;
+    -fx-background-insets: 15 0 5 0;
+    -fx-pref-width:300px;
+    // End-Margin-top: 30px
+}
+.textFieldDisTrict{    
+    -fx-min-width: 110px;
+}
+.inputFieldInfo{
+    -fx-padding: 30 10 10 10;
+}
+.btnSubmit{
+    -fx-border-style: none;
+    -fx-alignment: center;    
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-text-fill: black;
+    -fx-pref-width:170px;
+    -fx-pref-height:50px;
+    -fx-background-color: white;
+    -fx-margin: 0 10 0 10;
+}
+.separatorForm *.line{
+    -fx-border-color: white;
+}
+
+/*Login Form*/
+.bgLogin{
+/*    -fx-background-image: url('../img/plane.jpg');
+    -fx-background-size: cover;*/
 }
