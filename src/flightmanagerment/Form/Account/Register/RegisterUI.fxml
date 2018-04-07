@@ -21,27 +21,27 @@
                         <VBox prefHeight="100.0" prefWidth="200.0">
                            <children>
                               <Label styleClass="textField" text="Họ:" />
-                              <TextField fx:id="email" promptText="Nhập họ của bạn" styleClass="inputField" />
+                              <TextField fx:id="firstName" promptText="Nhập họ của bạn" styleClass="inputField" />
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
                            </children>
                         </VBox>
                         <VBox prefHeight="100.0" prefWidth="200.0">
                            <children>
                               <Label styleClass="textField" text="Tên" />
-                              <TextField fx:id="email1" promptText="Nhập tên của bạn" styleClass="inputField" />
+                              <TextField fx:id="lastName" promptText="Nhập tên của bạn" styleClass="inputField" />
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
                            </children>
                         </VBox>
                      </children>
                   </HBox>
                   <Label layoutX="10.0" layoutY="10.0" styleClass="textField" text="Email:" />
-                  <TextField fx:id="email11" layoutX="10.0" layoutY="206.0" promptText="Nhập email" styleClass="inputField" />
+                  <TextField fx:id="email" layoutX="10.0" layoutY="206.0" promptText="Nhập email" styleClass="inputField" />
                   <Separator layoutX="10.0" layoutY="206.0" prefWidth="200.0" styleClass="separatorForm" />
                   <Label layoutX="10.0" layoutY="109.0" styleClass="textField" text="Mật khẩu:" />
-                  <PasswordField fx:id="password1" layoutX="10.0" layoutY="70.0" promptText="Nhập mật khẩu" styleClass="inputField" />
+                  <PasswordField fx:id="password" layoutX="10.0" layoutY="70.0" promptText="Nhập mật khẩu" styleClass="inputField" />
                   <Separator layoutX="10.0" layoutY="107.0" prefWidth="200.0" styleClass="separatorForm" />
                   <Label layoutX="10.0" layoutY="344.0" styleClass="textField" text="Nhập lại mật khẩu" />
-                  <PasswordField fx:id="password" promptText="Xác nhận mật khẩu" styleClass="inputField" />
+                  <PasswordField fx:id="confirm_password" promptText="Xác nhận mật khẩu" styleClass="inputField" />
                   <Separator layoutX="10.0" layoutY="441.0" prefWidth="200.0" styleClass="separatorForm" />
                   <Pane prefHeight="81.0" prefWidth="400.0">
                      <children>

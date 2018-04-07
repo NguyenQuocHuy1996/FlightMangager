@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 /**
@@ -24,6 +25,17 @@ import javafx.scene.control.TextField;
  * @author Quoc Huy
  */
 public class RegisterController implements Initializable {
+
+    @FXML
+    private TextField firstName;
+    @FXML
+    private TextField lastName;
+    @FXML
+    private TextField email;
+    @FXML
+    private PasswordField password;
+    @FXML
+    private PasswordField confirm_password;
 
 //    @FXML
 //    private TextField txtEmail;
@@ -38,16 +50,7 @@ public class RegisterController implements Initializable {
 //            alert.show();
 //        
 //    
-    @FXML
-    private TextField email;
-    @FXML
-    private TextField password;
-    @FXML
-    private TextField firstName;
-    @FXML
-    private TextField lastName;
-    @FXML
-    private TextField confirm_password;
+   
 
     @FXML
     private void btn_Register(ActionEvent event) throws SQLException {

@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="730.0" prefWidth="769.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="730.0" prefWidth="769.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.Main.MainController">
    <center>
       <GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="main" vgap="15.0" BorderPane.alignment="CENTER">
          <children>
@@ -32,7 +32,7 @@
                   <String fx:value="btnMagenta" />
                   <String fx:value="btnMetro" />
                </styleClass></Label>
-            <Button mnemonicParsing="false" text="Đăng nhập" GridPane.columnIndex="2">
+            <Button mnemonicParsing="false" onAction="#btn_login" text="Đăng nhập" GridPane.columnIndex="2">
                <styleClass>
                   <String fx:value="btnMagenta" />
                   <String fx:value="btnChangePass" />
