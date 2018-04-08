@@ -17,12 +17,31 @@ public class Flight {
     private String origin;
     private String destination;
     private Date depart;
-    private Date _return;
+    private Date arrival;
     private int passenger;
     private String brand;
     private String flight_number;
+    private String flight_arrival;
+    private String flight_depart;
+    private Double price;
 
     public Flight() {
+    }
+
+    public Flight(int idFlight, String origin, String destination, Date depart, Date arrival, int passenger,
+            String brand, String flight_number, String flight_arrival, String flight_depart, Double price) {
+        super();
+        this.idFlight = idFlight;
+        this.origin = origin;
+        this.destination = destination;
+        this.depart = depart;
+        this.arrival = arrival;
+        this.passenger = passenger;
+        this.brand = brand;
+        this.flight_number = flight_number;
+        this.flight_arrival = flight_arrival;
+        this.flight_depart = flight_depart;
+        this.price = price;
     }
 
     public int getIdFlight() {
@@ -57,12 +76,12 @@ public class Flight {
         this.depart = depart;
     }
 
-    public Date getReturn() {
-        return _return;
+    public Date getArrival() {
+        return arrival;
     }
 
-    public void setReturn(Date _return) {
-        this._return = _return;
+    public void setArrival(Date arrival) {
+        this.arrival = arrival;
     }
 
     public int getPassenger() {
@@ -89,14 +108,27 @@ public class Flight {
         this.flight_number = flight_number;
     }
 
-    public Flight(int idFlight, String origin, String destination, Date depart, Date _return, int passenger, String brand, String flight_number) {
-        this.idFlight = idFlight;
-        this.origin = origin;
-        this.destination = destination;
-        this.depart = depart;
-        this._return = _return;
-        this.passenger = passenger;
-        this.brand = brand;
-        this.flight_number = flight_number;
+    public String getFlight_arrival() {
+        return flight_arrival;
+    }
+
+    public void setFlight_arrival(String flight_arrival) {
+        this.flight_arrival = flight_arrival;
+    }
+
+    public String getFlight_depart() {
+        return flight_depart;
+    }
+
+    public void setFlight_depart(String flight_depart) {
+        this.flight_depart = flight_depart;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }
