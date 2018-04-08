@@ -89,7 +89,16 @@ public class MainUserController implements Initializable {
     }
 
     @FXML
-    private void btn_historyBooking(ActionEvent event) {
+    private void btn_historyBooking(ActionEvent event) throws IOException {
+          Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/CustomerHistoryBooking/CustomerHistoryBookingUI.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.hide();
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setTitle("History Booking  ");
+        stage.show();
     }
 
     @FXML

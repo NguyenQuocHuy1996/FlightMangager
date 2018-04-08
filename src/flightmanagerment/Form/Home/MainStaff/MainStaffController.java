@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,7 +52,11 @@ public class MainStaffController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         Employee emp = new Employee();
-        emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
+        try {
+            emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
+        } catch (SQLException ex) {
+//            Logger.getLogger(MainStaffController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         lbl_userName.setText(emp.getFirstName());
     }
 
@@ -73,19 +79,28 @@ public class MainStaffController implements Initializable {
     }
 
     @FXML
-    private void btn_historyBooking(ActionEvent event) {
-    }
-
-    @FXML
-    private void btn_flightManagerment(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(""));
+    private void btn_historyBooking(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/HistoryBooking/HistoryBookingUI.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.hide();
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Find Flight ");
+        stage.setTitle("History Booking");
+        stage.show();
+    }
+
+    @FXML
+    private void btn_flightManagerment(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/FlightManager/FlightManagerUI.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.hide();
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setTitle("Flight Managerment");
         stage.show();
     }
 

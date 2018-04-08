@@ -71,4 +71,17 @@ public class MainController implements Initializable {
         stage.show();
     }
 
+    @FXML
+    private void btn_register(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Register/RegisterUI.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.hide();
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setTitle("Register ");
+        stage.show();
+    }
+
 }

@@ -18,6 +18,7 @@
          </children>
       </Pane>
    </top>
+
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="mainInfo" BorderPane.alignment="CENTER">
          <children>
@@ -184,7 +185,6 @@
                            </children>
                         </HBox>
                         <Pane prefHeight="141.0" prefWidth="367.0" />
-
                      </children>
                      <padding>
                         <Insets left="10.0" right="10.0" />
