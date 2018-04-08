@@ -43,6 +43,11 @@
                </GridPane.margin>
             </HBox>
             <Separator prefHeight="0.0" prefWidth="1242.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" styleClass="btnSubmit" text="Quay về">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Button>
          </children>
          <padding>
             <Insets top="25.0" />
@@ -62,17 +67,27 @@
             <VBox prefHeight="582.0" prefWidth="852.0" GridPane.columnIndex="1">
                <children>
                   <Label styleClass="textField" text="ĐIỂM ĐI" />
-                  <TextField fx:id="origin" promptText="Hồ Chí Minh" styleClass="inputField" />
-                  <Separator prefWidth="200.0" styleClass="separatorForm" />
+
+                  <ComboBox maxWidth="-Infinity" prefWidth="300.0" promptText="Chọn điểm đi">
+                     <styleClass>
+                        <String fx:value="inputField" />
+                        <String fx:value="inputFieldisCheckBox" />
+                     </styleClass>
+                  </ComboBox>
                   <Label styleClass="textField" text="ĐIỂM ĐẾN" />
-                  <TextField fx:id="destination" promptText="Hà Nội" styleClass="inputField" />
-                  <Separator prefWidth="200.0" styleClass="separatorForm" />
+                  <ComboBox maxWidth="-Infinity" prefWidth="300.0" promptText="Chọn điểm đến">
+                     <styleClass>
+                        <String fx:value="inputField" />
+                        <String fx:value="inputFieldisCheckBox" />
+                     </styleClass>
+                  </ComboBox>
                   <Label styleClass="textField" text="NGÀY ĐI" />
-                  <TextField fx:id="depart" promptText="30/10/2018" styleClass="inputField" />
-                  <Separator prefWidth="200.0" styleClass="separatorForm" />
+                  <TextField promptText="30/10/2018" styleClass="inputField" />
+                  <Separator maxWidth="-Infinity" prefWidth="300.0" styleClass="separatorForm" />
                   <Pane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="211.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btn_flightSearch" text="Tìm chuyến bay" textAlignment="CENTER" textFill="#511919">
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Tìm chuyến bay" textAlignment="CENTER" textFill="#511919">
+
                            <styleClass>
                               <String fx:value="btnSubmit" />
                               <String fx:value="btnDarkPurple" />

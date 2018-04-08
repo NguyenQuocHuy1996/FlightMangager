@@ -31,6 +31,7 @@ public class ConfirmedFindFlight extends Application {
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setTitle("Tra cứu chuyến bay");
         stage.show();
     }
 

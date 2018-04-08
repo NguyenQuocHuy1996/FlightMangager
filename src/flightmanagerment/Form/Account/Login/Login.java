@@ -27,6 +27,7 @@ public class Login extends Application {
 //        stage.setFullScreen(true);
         stage.setMaximized(true);
         stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setTitle("Đăng nhập");
         stage.show();
     }
 

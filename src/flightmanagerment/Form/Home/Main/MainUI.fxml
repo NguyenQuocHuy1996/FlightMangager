@@ -49,6 +49,13 @@
                   <String fx:value="btnFindFlight" />
                </styleClass>
             </Button>
+            <Button layoutX="320.0" layoutY="25.0" mnemonicParsing="false" text="Đăng ký" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnChangePass" />
+                  <String fx:value="btnMetro" />
+               </styleClass>
+            </Button>
          </children>
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

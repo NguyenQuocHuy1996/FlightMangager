@@ -250,4 +250,11 @@
          </children>
       </StackPane>
    </bottom>
+   <top>
+      <Pane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="80.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" styleClass="btnSubmit" text="Quay về" />
+         </children>
+      </Pane>
+   </top>
 </BorderPane>
