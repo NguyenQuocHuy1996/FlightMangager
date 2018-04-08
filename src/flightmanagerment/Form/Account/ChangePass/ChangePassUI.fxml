@@ -49,6 +49,9 @@
       </GridPane>
    </center>
    <top>
-      <Pane prefHeight="89.0" prefWidth="884.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="89.0" prefWidth="884.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="14.0" layoutY="20.0" mnemonicParsing="false" styleClass="btnSubmit" text="Quay về" />
+         </children></Pane>
    </top>
 </BorderPane>

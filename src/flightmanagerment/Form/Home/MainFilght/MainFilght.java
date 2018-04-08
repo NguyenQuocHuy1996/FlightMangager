@@ -31,6 +31,7 @@ public class MainFilght extends Application {
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setTitle("Thông tin các chuyến bay");
         stage.show();
     }
 

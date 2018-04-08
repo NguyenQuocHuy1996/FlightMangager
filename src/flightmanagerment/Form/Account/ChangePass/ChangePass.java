@@ -31,6 +31,7 @@ public class ChangePass extends Application {
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setTitle("Đổi mật khẩu");
         stage.show();
     }
 
