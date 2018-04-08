@@ -31,6 +31,7 @@ public class DetailFlight extends Application {
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setTitle("Chi tiết chuyến báy");
         stage.show();
     }
 

@@ -32,6 +32,7 @@ public class RegisterStaff extends Application {
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setTitle("Thêm nhân viên");
         stage.show();
     }
 

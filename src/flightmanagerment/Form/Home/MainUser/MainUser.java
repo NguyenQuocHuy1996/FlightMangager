@@ -31,6 +31,7 @@ public class MainUser extends Application {
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setTitle("Trang chủ");
         stage.show();
     }
 

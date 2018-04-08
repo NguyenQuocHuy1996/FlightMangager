@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package flightmanagerment.Form.Account.Register;
+package flightmanagerment.Form.Home.HistoryBooking;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -20,18 +20,18 @@ import javafx.util.Duration;
  *
  * @author Quoc Huy
  */
-public class Register extends Application {
+public class HistoryBooking extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
         
-        Parent root = FXMLLoader.load(getClass().getResource("RegisterUI.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("HistoryBookingUI.fxml"));
         
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Đăng ký");
+        stage.setTitle("Lịch sử đặt vé");
         stage.show();
     }
 
