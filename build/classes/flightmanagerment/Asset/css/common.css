@@ -220,7 +220,8 @@
     -fx-background-insets: 0;
     -fx-padding: 10 10 10 10;
     -fx-text-fill: white;
-    -fx-alignment: CENTER_LEFT;    
+    -fx-alignment: CENTER_LEFT;
+    
 /*    -fx-text-fill:  black;*/
 }
 .selectBox{
@@ -229,17 +230,18 @@
     -fx-border-insets: 30 0 0 0;
     -fx-background-insets: 30 0 0 0;
 /*    End-Margin-top: 30px*/
+
     -fx-text-fill: white;
     -fx-alignment: CENTER_LEFT;
 }
 .selectBoxRegister{
+
 /*    Margin-top: 30px*/
     -fx-padding: 15 0 5 0;
     -fx-border-insets: 15 0 5 0;
     -fx-background-insets: 15 0 5 0;
     /*    End-Margin-top: 30px*/
     -fx-pref-width:300px;
-
 }
 .textFieldDisTrict{    
     -fx-min-width: 110px;

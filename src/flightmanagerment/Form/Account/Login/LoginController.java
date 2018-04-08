@@ -35,25 +35,6 @@ public class LoginController implements Initializable {
     private TextField password;
 
     @FXML
-    private void btn_Login(ActionEvent event) throws IOException {
-        //Load new windown and hide current windown
-
-        //Load new windown
-//        FXMLLoader fxmlLoader = new FXMLLoader();
-//        fxmlLoader.setLocation(getClass().getResource("/flightmanagerment/Form/Home/Main/MainUI.fxml"));
-//        //Set new Scene
-//        Scene scene = new Scene(fxmlLoader.load());
-//        
-//        //Set new Stage
-//        Stage stage = new Stage();        
-//        stage.setTitle("New Window");
-//        stage.setScene(scene);
-//        
-//        //Show new windown
-//        stage.show();
-    }
-
-    @FXML
     private void btn_Register(ActionEvent event) {
         
     }
