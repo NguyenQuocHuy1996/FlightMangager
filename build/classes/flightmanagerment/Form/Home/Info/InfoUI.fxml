@@ -25,11 +25,7 @@
                         <Label styleClass="textField" text="Ảnh đại diện: " />
                         <StackPane prefHeight="150.0" prefWidth="200.0">
                            <children>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: ;" styleClass="userImg">
-                                 <image>
-                                    <Image url="@../../../Asset/img/icon/user.png" />
-                                 </image>
-                              </ImageView>
+                              <ImageView fx:id="_image" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: ;" styleClass="userImg" />
                            </children>
                            <VBox.margin>
                               <Insets />
@@ -152,8 +148,11 @@
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="GroupRadioButton" />
+                           </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="sex_female" disable="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="115.0" styleClass="selectBox" text="Nữ" />
+                        <RadioButton fx:id="sex_female" disable="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="115.0" styleClass="selectBox" text="Nữ" toggleGroup="$GroupRadioButton" />
                      </children>
                   </HBox>
                   <Pane prefHeight="141.0" prefWidth="367.0" />

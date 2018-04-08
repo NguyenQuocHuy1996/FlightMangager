@@ -66,8 +66,7 @@ public class ChangePassController implements Initializable {
                         a.setAlertType(type);
                         a.setTitle("Đổi mật khẩu thành công!");
                         a.setContentText("Bạn đã đổi mật khẩu thành công!");
-                        a.show();
-                        
+                        a.showAndWait();
                         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainUser/MainUserUI.fxml"));
                         Scene scene = new Scene(root);
                         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
