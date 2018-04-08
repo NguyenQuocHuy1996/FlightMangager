@@ -14,13 +14,51 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 
 /**
  *
  * @author Quoc Huy
  */
 public class InfoStaffController implements Initializable {
+
+    @FXML
+    private ImageView image;
+    @FXML
+    private Label email;
+    @FXML
+    private Label password;
+    @FXML
+    private Label firstName;
+    @FXML
+    private HBox lastName;
+    @FXML
+    private Label ic_Card;
+    @FXML
+    private Label phoneNumber;
+    @FXML
+    private Label dateOfBirth;
+    @FXML
+    private RadioButton sex_Male;
+    @FXML
+    private RadioButton sex_Female;
+    @FXML
+    private Label education_Level;
+    @FXML
+    private Label department;
+    @FXML
+    private Label add_Number;
+    @FXML
+    private Label add_Street;
+    @FXML
+    private Label homeTown;
+    @FXML
+    private Label add_City;
+    @FXML
+    private Label add_District;
 
 //    @FXML
 //    private TextField txtEmail;
@@ -35,24 +73,13 @@ public class InfoStaffController implements Initializable {
 //            alert.show();
 //        }
 //    }
-    @FXML
-    private void btn_update(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_reset(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_back(ActionEvent event) {
-
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }
+
+    @FXML
+    private void btn_Back(ActionEvent event) {
     }
 
 }

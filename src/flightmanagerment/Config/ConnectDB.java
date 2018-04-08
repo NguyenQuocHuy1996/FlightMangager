@@ -15,21 +15,20 @@ import java.sql.DriverManager;
 public class ConnectDB {
 
     public Connection getConnect() {
-//        Connection con = null;
-////		String hostName = "localhost";
-////		String dbName = "qlcb";
-////		String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName + &jdbcCompliantTruncation=false ;
-//        String connectionURL = "jdbc:mysql://localhost:3306/qlcb?jdbcCompliantTruncation=false&zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8";
-//        String user = "root";
-//        String password = "1234";
-//        try {
-//            Class.forName("com.mysql.jdbc.Driver");
-//            con = DriverManager.getConnection(connectionURL, user, password);
-//        } catch (Exception er) {
-//            // TODO: handle exception
-//            er.printStackTrace();
-//        }
-//        return con;
-        return null;
-    }        
+        Connection con = null;
+//		String hostName = "localhost";
+//		String dbName = "qlcb";
+//		String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName + &jdbcCompliantTruncation=false ;
+        String connectionURL = "jdbc:mysql://localhost:3306/qlcb?jdbcCompliantTruncation=false&zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8";
+        String user = "root";
+        String password = "1234";
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(connectionURL, user, password);
+        } catch (Exception er) {
+            // TODO: handle exception
+            er.printStackTrace();
+        }
+        return con;
+    }
 }

@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="885.0" prefWidth="1242.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="885.0" prefWidth="1242.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.Confirmed_Find_Flight.ConfirmedFindFlightController">
    <top>
       <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="114.0" prefWidth="1242.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -67,6 +67,7 @@
             <VBox prefHeight="582.0" prefWidth="852.0" GridPane.columnIndex="1">
                <children>
                   <Label styleClass="textField" text="ĐIỂM ĐI" />
+
                   <ComboBox maxWidth="-Infinity" prefWidth="300.0" promptText="Chọn điểm đi">
                      <styleClass>
                         <String fx:value="inputField" />
@@ -86,6 +87,7 @@
                   <Pane prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Button alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Tìm chuyến bay" textAlignment="CENTER" textFill="#511919">
+
                            <styleClass>
                               <String fx:value="btnSubmit" />
                               <String fx:value="btnDarkPurple" />

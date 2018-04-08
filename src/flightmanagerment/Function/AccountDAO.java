@@ -31,11 +31,14 @@ public class AccountDAO {
             if (getUserCus(userName) == 1) {
                 System.out.println("1");
                 return 1;
-            } else {
+            } else if (getUserCus(userName) == 2) {
                 System.out.println("2");
                 return 2;
             }
-        } catch (Exception e) {
+            else {
+                return 0;
+            }
+        } catch (SQLException e) {
             System.out.println(e);
             // TODO: handle exception
         }
@@ -46,15 +49,19 @@ public class AccountDAO {
     public static int getUserCus(String userName) throws SQLException {
         connectDB = new ConnectDB();
         conn = connectDB.getConnect();
-        String sql = "select email from customer where email = ?";
-        prest = conn.prepareStatement(sql);
-        prest.setString(1, userName);
-        rs = prest.executeQuery();
-        while (rs.next()) {
-            String email = rs.getString("email");
-            if (userName.equals(email)) {
-                return 1;
+        try {
+            String sql = "select email from customer where email = ?";
+            prest = conn.prepareStatement(sql);
+            prest.setString(1, userName);
+            rs = prest.executeQuery();
+            while (rs.next()) {
+                String email = rs.getString("email");
+                if (userName.equals(email)) {
+                    return 1;
+                }
             }
+        } catch (SQLException e) {
+            System.out.println(e);
         }
         return 0;
     }
@@ -126,7 +133,7 @@ public class AccountDAO {
             } else {
                 System.out.println("Đăng nhập thất bại!");
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             // TODO: handle exception
         } finally {
@@ -163,7 +170,7 @@ public class AccountDAO {
                 }
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             // TODO: handle exception
         } finally {
