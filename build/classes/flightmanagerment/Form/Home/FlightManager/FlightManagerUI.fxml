@@ -72,21 +72,21 @@
                            <children>
                               <TextField fx:id="txt_brand" promptText="Nhập hãng máy bay" styleClass="inputField" />
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Tìm kiếm" />
+                              <Button mnemonicParsing="false" onAction="#btn_findFlightBrand" styleClass="btnSubmit" text="Tìm kiếm" />
                            </children>
                         </VBox>
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
                            <children>
                               <TextField fx:id="txt_flightNumber" promptText="Nhập số hiệu" styleClass="inputField" />
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Tìm kiếm" />
+                              <Button mnemonicParsing="false" onAction="#btn_findFLightNumber" styleClass="btnSubmit" text="Tìm kiếm" />
                            </children>
                         </VBox>
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
                            <children>
                               <TextField fx:id="txt_origin" promptText="Nhập điểm đi" styleClass="inputField" />
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Tìm kiếm" />
+                              <Button mnemonicParsing="false" onAction="#btn_findFlightOrigin" styleClass="btnSubmit" text="Tìm kiếm" />
                            </children>
                         </VBox>
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">

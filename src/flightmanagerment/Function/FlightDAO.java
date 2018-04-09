@@ -250,6 +250,99 @@ public class FlightDAO {
         }
     }
 
+    public static ObservableList<Flight> getInfoOrigin(String origin) {
+        try {
+            connectDB = new ConnectDB();
+            conn = connectDB.getConnect();
+            String sql = "select *from flight where origin =?";
+            prest = conn.prepareStatement(sql);
+            prest.setString(1, origin);
+            rs = prest.executeQuery();
+            ObservableList<Flight> data = FXCollections.observableArrayList();
+            while (rs.next()) {
+                int idFlight = rs.getInt("idFlight");
+                String destination = rs.getString("destination");
+                Date depart = rs.getDate("depart");
+                Date arrival = rs.getDate("arrival");
+                int passenger = rs.getInt("passenger");
+                String brand = rs.getString("brand");
+                String flight_number = rs.getString("flight_number");
+                String flight_depart = rs.getString("flight_depart");
+                String flight_arrival = rs.getString("flight_arrival");
+                double price = rs.getDouble("price");
+
+                Flight f = new Flight(idFlight, origin, destination, depart, arrival, passenger, brand, flight_number, flight_arrival, flight_depart, price);
+                data.add(f);
+            }
+            return data;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+    }
+
+    public static ObservableList<Flight> getInfoFlightNumber(String flight_number) {
+        try {
+            connectDB = new ConnectDB();
+            conn = connectDB.getConnect();
+            String sql = "select *from flight where flight_number =?";
+            prest = conn.prepareStatement(sql);
+            prest.setString(1, flight_number);
+            rs = prest.executeQuery();
+            ObservableList<Flight> data = FXCollections.observableArrayList();
+            while (rs.next()) {
+                int idFlight = rs.getInt("idFlight");
+                String origin = rs.getString("origin");
+                String destination = rs.getString("destination");
+                Date depart = rs.getDate("depart");
+                Date arrival = rs.getDate("arrival");
+                int passenger = rs.getInt("passenger");
+                String brand = rs.getString("brand");
+                String flight_depart = rs.getString("flight_depart");
+                String flight_arrival = rs.getString("flight_arrival");
+                double price = rs.getDouble("price");
+
+                Flight f = new Flight(idFlight, origin, destination, depart, arrival, passenger, brand, flight_number, flight_arrival, flight_depart, price);
+                data.add(f);
+            }
+            return data;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+    }
+
+    public static ObservableList<Flight> getInfoBrand(String brand) {
+        try {
+            connectDB = new ConnectDB();
+            conn = connectDB.getConnect();
+            String sql = "select *from flight where brand =?";
+            prest = conn.prepareStatement(sql);
+            prest.setString(1, brand);
+            rs = prest.executeQuery();
+            ObservableList<Flight> data = FXCollections.observableArrayList();
+            while (rs.next()) {
+                int idFlight = rs.getInt("idFlight");
+                String origin = rs.getString("origin");
+                String destination = rs.getString("destination");
+                Date depart = rs.getDate("depart");
+                Date arrival = rs.getDate("arrival");
+                int passenger = rs.getInt("passenger");
+                String flight_number = rs.getString("flight_number");
+                String flight_depart = rs.getString("flight_depart");
+                String flight_arrival = rs.getString("flight_arrival");
+                double price = rs.getDouble("price");
+
+                Flight f = new Flight(idFlight, origin, destination, depart, arrival, passenger, brand, flight_number, flight_arrival, flight_depart, price);
+                data.add(f);
+            }
+            return data;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+    }
+
     public static int delete(int idFlight) throws SQLException {
         try {
             connectDB = new ConnectDB();
