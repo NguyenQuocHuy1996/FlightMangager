@@ -15,6 +15,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -116,12 +118,13 @@ public class FlightDAO {
     }
 
     ///return 1: get thành công
-    public static int getAllFlight() throws SQLException {
+    public static ObservableList<Flight> getAllFlight() throws SQLException {
         connectDB = new ConnectDB();
         conn = connectDB.getConnect();
         String sql = "select * from flight";
         st = conn.createStatement();
         rs = st.executeQuery(sql);
+        ObservableList<Flight> data = FXCollections.observableArrayList();
         while (rs.next()) {
             int idFlight = rs.getInt("idFlight");
             String origin = rs.getString("origin");
@@ -135,21 +138,24 @@ public class FlightDAO {
             String flight_arrival = rs.getString("flight_arrival");
             double price = rs.getDouble("price");
 
-            System.out.println("--------------------");
-            System.out.println("idFlight: " + idFlight);
-            System.out.println("origin: " + origin);
-            System.out.println("destination: " + destination);
-            System.out.println("depart: " + depart);
-            System.out.println("arrival: " + arrival);
-            System.out.println("passenger: " + passenger);
-            System.out.println("brand: " + brand);
-            System.out.println("flight_number: " + flight_number);
-            System.out.println("flight_depart: " + flight_depart);
-            System.out.println("flight_arrival: " + flight_arrival);
-            System.out.println("price: " + price);
+            Flight f = new Flight(idFlight, origin, destination, depart, arrival, passenger, brand, flight_number, flight_arrival, flight_depart, price);
 
+            data.add(f);
+
+//            System.out.println("--------------------");
+//            System.out.println("idFlight: " + idFlight);
+//            System.out.println("origin: " + origin);
+//            System.out.println("destination: " + destination);
+//            System.out.println("depart: " + depart);
+//            System.out.println("arrival: " + arrival);
+//            System.out.println("passenger: " + passenger);
+//            System.out.println("brand: " + brand);
+//            System.out.println("flight_number: " + flight_number);
+//            System.out.println("flight_depart: " + flight_depart);
+//            System.out.println("flight_arrival: " + flight_arrival);
+//            System.out.println("price: " + price);
         }
-        return 1;
+        return data;
     }
 
     public static int Edit() throws SQLException {
