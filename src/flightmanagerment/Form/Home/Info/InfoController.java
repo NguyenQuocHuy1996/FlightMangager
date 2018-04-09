@@ -91,17 +91,7 @@ public class InfoController implements Initializable {
 //            alert.show();
 //        }
 //    }
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        ObservableList<String> list = CityDAO.getAllCity();
-        cbb_homeTown.setItems(list);
-        cbb_homeTown.getSelectionModel().select(1);
-        cbb_homeTown.setPromptText(cbb_homeTown.getConverter().toString(cbb_homeTown.getValue()));
-
-        cbb_City.setItems(list);
-        cbb_City.getSelectionModel().select(1);
-        cbb_City.setPromptText(cbb_City.getConverter().toString(cbb_City.getValue()));
-
+    private void getInfo() {
         Customer cus = new Customer();
         try {
             cus = CustomerDAO.getCus(Variable_Static.USERNAME);
@@ -121,6 +111,9 @@ public class InfoController implements Initializable {
                 Male.setSelected(false);
                 Female.setSelected(true);
             }
+            phoneNumber.setText(cus.getPhoneNumber());
+            add_Number.setText(cus.getAddress_number());
+            add_Street.setText(cus.getAddress_street());
             cbb_homeTown.setValue(cus.getHomeTown());
             cbb_City.setValue(cus.getAddress_city());
             cbb_District.setValue(cus.getAddress_district());
@@ -128,12 +121,25 @@ public class InfoController implements Initializable {
         } catch (SQLException ex) {
 //            Logger.getLogger(InfoController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
 
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        ObservableList<String> list = CityDAO.getAllCity();
+        cbb_homeTown.setItems(list);
+        cbb_homeTown.getSelectionModel().select(1);
+        cbb_homeTown.setPromptText(cbb_homeTown.getConverter().toString(cbb_homeTown.getValue()));
+
+        cbb_City.setItems(list);
+        cbb_City.getSelectionModel().select(1);
+        cbb_City.setPromptText(cbb_City.getConverter().toString(cbb_City.getValue()));
+
+        getInfo();
     }
 
     @FXML
     private void btn_Reset(ActionEvent event) {
-
+        getInfo();
     }
 
     private void btn_Update1(ActionEvent event) {
@@ -188,6 +194,7 @@ public class InfoController implements Initializable {
         cbb_District.setPromptText(cbb_District.getConverter().toString(cbb_District.getValue()));
 
     }
+
     @FXML
     private void btn_update(ActionEvent event) {
         System.out.println("adb");
