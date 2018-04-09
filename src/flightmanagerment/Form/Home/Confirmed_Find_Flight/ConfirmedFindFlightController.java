@@ -8,13 +8,18 @@ package flightmanagerment.Form.Home.Confirmed_Find_Flight;
 import flightmanagerment.Function.CityDAO;
 import flightmanagerment.Function.CustomerDAO;
 import flightmanagerment.Function.EmployeeDAO;
+import flightmanagerment.Function.FlightDAO;
 import flightmanagerment.Model.City;
 import flightmanagerment.Model.Customer;
 import flightmanagerment.Model.Employee;
+import flightmanagerment.Model.Flight;
 import flightmanagerment.Model.Variable_Static;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
@@ -117,13 +122,22 @@ public class ConfirmedFindFlightController implements Initializable {
     }
 
     @FXML
-    private void btn_findFlight(ActionEvent event) {
+    private void btn_findFlight(ActionEvent event) throws IOException {
+//        List<Flight> list = FlightDAO.searchFlight(cbb_origin.getValue(), cbb_destination.getValue(), depart);
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainFilght/MainFilghtUI.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.hide();
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setTitle("Main Flight ");
+        stage.show();
+
     }
 
     @FXML
     private void btn_choosefrom(ActionEvent event) {
-        System.out.println(cbb_origin.getValue());
-
     }
 
 }
