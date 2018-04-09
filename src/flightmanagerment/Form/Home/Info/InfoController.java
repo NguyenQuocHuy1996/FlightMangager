@@ -14,12 +14,18 @@ import flightmanagerment.Model.Variable_Static;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -37,6 +43,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -77,6 +84,8 @@ public class InfoController implements Initializable {
     private TextField email;
     @FXML
     private PasswordField password;
+    @FXML
+    private ToggleGroup GroupSex;
 
 //    @FXML
 //    private TextField txtEmail;
@@ -100,8 +109,14 @@ public class InfoController implements Initializable {
             firstName.setText(cus.getFirstName());
             lastName.setText(cus.getLastName());
             ic_Card.setText(cus.getIc_Card());
+
             if (cus.getDateOfBirth() != null) {
-                dateOfBirth.setValue(cus.getDateOfBirth().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+//                dateOfBirth.setValue(cus.getDateOfBirth().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy");
+                DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+                String date = df.format(cus.getDateOfBirth());
+                dateOfBirth.setValue(LocalDate.parse(date,formatter));
+                System.out.println("asd");
             }
 
             if (cus.getSex()) {
@@ -196,10 +211,18 @@ public class InfoController implements Initializable {
     }
 
     @FXML
-    private void btn_update(ActionEvent event) {
-        System.out.println("adb");
-        System.out.println("abc");
-        System.out.println("abcd");
+    private void btn_update(ActionEvent event) throws SQLException {
+//        Boolean sex;
+//        if (Male.isSelected()) {
+//            sex = true;
+//        } else {
+//            sex = false;
+//        }
+//
+//        Customer cus = new Customer(firstName.getText(), lastName.getText(), dateOfBirth.get, ic_Card.getText(), cbb_homeTown.getValue(), sex, phoneNumber.getText(), add_Number.getText(), add_Street.getText(), cbb_District.getValue(), cbb_City.getValue());
+//        cus = CustomerDAO.getCus(Variable_Static.USERNAME);
+//        int function = CustomerDAO.update(cus);
+
     }
 
 }

@@ -166,7 +166,7 @@ public class EmployeeDAO {
             rs = prest.executeQuery();
             while (rs.next()) {
                 int idAccount = rs.getInt("idAccount");
-
+                //email
                 String password = rs.getString("password");
                 String firstName = rs.getString("firstName");
                 String lastName = rs.getString("lastName");
@@ -180,8 +180,9 @@ public class EmployeeDAO {
                 String address_street = rs.getString("address_street");
                 String address_district = rs.getString("address_district");
                 String address_city = rs.getString("address_city");
-
-                Employee emp = new Employee(idAccount, email, password, firstName, lastName, dateOfBirth, ic_Card, email, homeTown, homeTown, sex, phoneNumber, image, address_number, address_street, address_district, address_city);
+                String department = rs.getString("department");
+                String education_level = rs.getString("education_level");
+                Employee emp = new Employee(idAccount, email, password, firstName, lastName, dateOfBirth, ic_Card, education_level, department, homeTown, sex, phoneNumber, image, address_number, address_street, address_district, address_city);
                 return emp;
             }
         } catch (Exception ex) {

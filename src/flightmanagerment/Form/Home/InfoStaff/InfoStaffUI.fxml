@@ -75,14 +75,14 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox fx:id="lastName" layoutX="20.0" layoutY="104.0" prefHeight="45.0" prefWidth="200.0" spacing="10.0">
+                  <HBox layoutX="20.0" layoutY="104.0" prefHeight="45.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label styleClass="textField" text="Tên:">
                            <font>
                               <Font name="Segoe UI Emoji" size="12.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" styleClass="textField" text="Quốc Huy">
+                        <Label fx:id="lastName" layoutX="10.0" layoutY="10.0" styleClass="textField" text="Quốc Huy">
                            <font>
                               <Font name="Segoe UI Emoji" size="12.0" />
                            </font>
@@ -163,7 +163,7 @@
                   <HBox prefHeight="45.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label styleClass="textField" text="Bằng cấp:" />
-                        <Label fx:id="education_Level" layoutX="10.0" layoutY="10.0" styleClass="textField" text="Cử Nhân" />
+                        <Label fx:id="education_level" layoutX="10.0" layoutY="10.0" styleClass="textField" text="Cử Nhân" />
                      </children>
                   </HBox>
                   <HBox prefHeight="45.0" prefWidth="200.0" spacing="10.0">
@@ -184,7 +184,7 @@
                   <HBox prefHeight="45.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label styleClass="textField" text="Số nhà:" />
-                        <Label fx:id="add_Number" layoutX="10.0" layoutY="10.0" styleClass="textField" text="371" />
+                        <Label fx:id="add_Num" layoutX="10.0" layoutY="10.0" styleClass="textField" text="371" />
                      </children>
                   </HBox>
                   <HBox prefHeight="45.0" prefWidth="200.0" spacing="10.0">
@@ -246,14 +246,14 @@
    <bottom>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#btn_Back" styleClass="btnSubmit" text="Quay lại" />
+            <Button mnemonicParsing="false" styleClass="btnSubmit" text="Quay lại" />
          </children>
       </StackPane>
    </bottom>
    <top>
       <Pane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="80.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" styleClass="btnSubmit" text="Quay về" />
+            <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#btn_Back" styleClass="btnSubmit" text="Quay về" />
          </children>
       </Pane>
    </top>
