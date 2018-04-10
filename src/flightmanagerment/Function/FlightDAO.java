@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.DatePicker;
 
 /**
  *
@@ -248,6 +249,37 @@ public class FlightDAO {
             }
             return null;
         }
+    }
+
+    public static ObservableList<Flight> getInfoDepart(Date depart) {
+        try {
+            connectDB = new ConnectDB();
+            conn = connectDB.getConnect();
+            String sql = "select *from flight where depart =?";
+            prest = conn.prepareStatement(sql);
+            prest.setDate(1, depart);
+            rs = prest.executeQuery();
+            ObservableList<Flight> data = FXCollections.observableArrayList();
+            while (rs.next()) {
+                int idFlight = rs.getInt("idFlight");
+                String destination = rs.getString("destination");
+                Date arrival = rs.getDate("arrival");
+                String origin = rs.getString("origin");
+                int passenger = rs.getInt("passenger");
+                String brand = rs.getString("brand");
+                String flight_number = rs.getString("flight_number");
+                String flight_depart = rs.getString("flight_depart");
+                String flight_arrival = rs.getString("flight_arrival");
+                double price = rs.getDouble("price");
+
+                Flight f = new Flight(idFlight, origin, destination, depart, arrival, passenger, brand, flight_number, flight_arrival, flight_depart, price);
+                data.add(f);
+            }
+            return data;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
     }
 
     public static ObservableList<Flight> getInfoOrigin(String origin) {

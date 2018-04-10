@@ -92,7 +92,7 @@
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
                            <children>
                               <DatePicker fx:id="date_depart" promptText="Chọn ngày đi" styleClass="inputField" />
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Lọc" />
+                              <Button mnemonicParsing="false" onAction="#btn_findFlightDepart" styleClass="btnSubmit" text="Lọc" />
                            </children>
                         </VBox>
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">

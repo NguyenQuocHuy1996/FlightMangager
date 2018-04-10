@@ -181,10 +181,18 @@ public class FlightManagerController implements Initializable {
 
     @FXML
     private void btn_findFlightOrigin(ActionEvent event) {
-         list = FXCollections.observableArrayList();
+        list = FXCollections.observableArrayList();
         setCellTable();
         list = FlightDAO.getInfoOrigin(txt_origin.getText());
         table.setItems(list);
+    }
+
+    @FXML
+    private void btn_findFlightDepart(ActionEvent event) {
+//        list = FXCollections.observableArrayList();
+//        setCellTable();
+//        list = FlightDAO.getInfoDepart(date_depart.getValue());
+//        table.setItems(list);
     }
 
 }
