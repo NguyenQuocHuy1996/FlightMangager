@@ -6,6 +6,7 @@
 package flightmanagerment.Form.Home.Main;
 
 import flightmanagerment.Form.Account.Login.LoginController;
+import flightmanagerment.Model.Variable_Static;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -43,14 +44,7 @@ public class MainController implements Initializable {
     @FXML
     private void btn_login(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Login/LoginUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Login ");
-        stage.show();
+        Variable_Static.LinkUI(event, root, "Login");
     }
 
     @Override
@@ -61,14 +55,13 @@ public class MainController implements Initializable {
     @FXML
     private void btn_flightSearch(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Confirmed_Find_Flight/ConfirmedFindFlightUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Find Flight ");
-        stage.show();
+        Variable_Static.LinkUI(event, root, "FInd Flight");
+    }
+
+    @FXML
+    private void btn_register(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Register/RegisterUI.fxml"));
+        Variable_Static.LinkUI(event, root, "Register");
     }
 
 }

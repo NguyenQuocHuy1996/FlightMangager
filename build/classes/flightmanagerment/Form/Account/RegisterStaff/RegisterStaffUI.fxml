@@ -152,13 +152,11 @@
          </children>
       </GridPane>
    </center>
-
    <top>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="14.0" layoutY="31.0" mnemonicParsing="false" styleClass="btnSubmit" text="Quay về" />
+            <Button layoutX="14.0" layoutY="31.0" mnemonicParsing="false" onAction="#btn_back" styleClass="btnSubmit" text="Quay về" />
          </children>
       </Pane>
    </top>
-
 </BorderPane>

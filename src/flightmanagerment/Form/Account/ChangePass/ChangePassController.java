@@ -60,46 +60,27 @@ public class ChangePassController implements Initializable {
         } else {
             if (new_password.getText().equals(confirmed_password.getText())) {
                 int function = AccountDAO.checkRole(Variable_Static.USERNAME);
-                if (function == 1) {
-                    if (AccountDAO.changePasswordCus(old_password.getText(), new_password.getText(), Variable_Static.USERNAME) == 1) {
-                        Alert.AlertType type = Alert.AlertType.INFORMATION;
-                        a.setAlertType(type);
-                        a.setTitle("Đổi mật khẩu thành công!");
-                        a.setContentText("Bạn đã đổi mật khẩu thành công!");
-                        a.showAndWait();
-                        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainUser/MainUserUI.fxml"));
-                        Scene scene = new Scene(root);
-                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                        stage.hide();
-                        stage.setScene(scene);
-                        stage.setMaximized(true);
-                        stage.resizableProperty().setValue(Boolean.FALSE);
-                        stage.setTitle("Main Customer ");
-                        stage.show();
-                    } else {
-                    }
+                if (AccountDAO.changePasswordEmp(old_password.getText(), new_password.getText(), Variable_Static.USERNAME) == 1) {
+                    Alert.AlertType type = Alert.AlertType.INFORMATION;
+                    a.setAlertType(type);
+                    a.setTitle("Đổi mật khẩu thành công!");
+                    a.setContentText("Bạn đã đổi mật khẩu thành công!");
+                    a.showAndWait();
 
-                } else {
-                    if (AccountDAO.changePasswordEmp(old_password.getText(), new_password.getText(), Variable_Static.USERNAME) == 1) {
-                        Alert.AlertType type = Alert.AlertType.INFORMATION;
-                        a.setAlertType(type);
-                        a.setTitle("Đổi mật khẩu thành công!");
-                        a.setContentText("Bạn đã đổi mật khẩu thành công!");
-                        a.show();
-                        
-                        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
-                        Scene scene = new Scene(root);
-                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                        stage.hide();
-                        stage.setScene(scene);
-                        stage.setMaximized(true);
-                        stage.resizableProperty().setValue(Boolean.FALSE);
-                        stage.setTitle("Main Staff ");
-                        stage.show();
-                    } else {
-                    }
+                    Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
+                    Variable_Static.LinkUI(event, root, "Main Staff");
+                } else if (AccountDAO.changePasswordCus(old_password.getText(), new_password.getText(), Variable_Static.USERNAME) == 1) {
+                    Alert.AlertType type = Alert.AlertType.INFORMATION;
+                    a.setAlertType(type);
+                    a.setTitle("Đổi mật khẩu thành công!");
+                    a.setContentText("Bạn đã đổi mật khẩu thành công!");
+                    a.showAndWait();
+
+                    Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainUser/MainUserUI.fxml"));
+                    Variable_Static.LinkUI(event, root, "Main Customer");
 
                 }
+
             } else {
                 Alert.AlertType type = Alert.AlertType.ERROR;
                 a.setAlertType(type);
@@ -107,13 +88,24 @@ public class ChangePassController implements Initializable {
                 a.setContentText("Vui lòng xác nhận lại mật khẩu!");
                 a.show();
             }
-
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }
+
+    @FXML
+    private void btn_back(ActionEvent event) throws IOException {
+        int function = AccountDAO.checkRole(Variable_Static.USERNAME);
+        if (function == 1) {
+            Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainUser/MainUserUI.fxml"));
+            Variable_Static.LinkUI(event, root, "Main Customer");
+        } else {
+            Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
+            Variable_Static.LinkUI(event, root, "Main Staff");
+        }
     }
 
 }

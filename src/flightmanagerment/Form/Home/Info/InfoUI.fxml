@@ -9,12 +9,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="848.0" prefWidth="1300.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="848.0" prefWidth="1300.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.Info.InfoController">
    <top>
       <Pane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" styleClass="btnSubmit" text="Quay về" />
+            <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#btn_Back" styleClass="btnSubmit" text="Quay về" />
          </children>
       </Pane>
    </top>
@@ -56,7 +55,7 @@
                         <HBox prefHeight="45.0" prefWidth="387.0">
                            <children>
                               <Label styleClass="textField" text="Email:" />
-                              <TextField alignment="CENTER" editable="false" promptText="Nhập vào Email" text="nguyenquochuy1996.ou@gmail.com">
+                              <TextField fx:id="email" alignment="CENTER" editable="false" promptText="Nhập vào Email" text="nguyenquochuy1996.ou@gmail.com">
                                  <styleClass>
                                     <String fx:value="inputField" />
                                     <String fx:value="inputFieldInfo" />
@@ -67,7 +66,7 @@
                         <HBox prefHeight="45.0" prefWidth="200.0">
                            <children>
                               <Label styleClass="textField" text="Mật khẩu:" />
-                              <PasswordField editable="false" promptText="Nhập vào mật khẩu" text="123456">
+                              <PasswordField fx:id="password" editable="false" promptText="Nhập vào mật khẩu" text="123456">
                                  <styleClass>
                                     <String fx:value="inputField" />
                                     <String fx:value="inputFieldInfo" />
@@ -90,7 +89,7 @@
                            </font>
                         </Label>
 
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" styleClass="btnFix" />
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btn_Update2" styleClass="btnFix" />
                         <HBox prefHeight="45.0" prefWidth="200.0">
                            <children>
                               <Label styleClass="textField" text="Họ:">
@@ -98,7 +97,7 @@
                                     <Font name="Segoe UI" size="12.0" />
                                  </font>
                               </Label>
-                              <TextField editable="false" prefHeight="60.0" prefWidth="150.0" promptText="Nhập vào họ của bạn" text="Nguyễn">
+                              <TextField fx:id="firstName" editable="false" prefHeight="60.0" prefWidth="150.0" promptText="Nhập vào họ của bạn" text="Nguyễn">
                                  <styleClass>
                                     <String fx:value="inputField" />
                                     <String fx:value="inputFieldInfo" />
@@ -109,7 +108,7 @@
                                     <Font name="Segoe UI Emoji" size="12.0" />
                                  </font>
                               </Label>
-                              <TextField editable="false" prefHeight="60.0" prefWidth="150.0" promptText="Nhập vào tên của bạn" text="Quốc Huy">
+                              <TextField fx:id="lastName" editable="false" prefHeight="60.0" prefWidth="150.0" promptText="Nhập vào tên của bạn" text="Quốc Huy">
                                  <styleClass>
                                     <String fx:value="inputField" />
                                     <String fx:value="inputFieldInfo" />
@@ -124,7 +123,7 @@
                                     <Font name="Segoe UI" size="12.0" />
                                  </font>
                               </Label>
-                              <TextField editable="false" prefHeight="60.0" prefWidth="150.0" promptText="Nhập vào số điện thoại" text="01265655532">
+                              <TextField fx:id="phoneNumber" editable="false" prefHeight="60.0" prefWidth="150.0" promptText="Nhập vào số điện thoại" text="01265655532">
                                  <styleClass>
                                     <String fx:value="inputField" />
                                     <String fx:value="inputFieldInfo" />
@@ -139,7 +138,7 @@
                                     <Font name="Segoe UI" size="12.0" />
                                  </font>
                               </Label>
-                              <TextField editable="false" prefHeight="60.0" prefWidth="150.0" promptText="Nhập vào chứng minh nhân dân" text="0256185925">
+                              <TextField fx:id="ic_Card" editable="false" prefHeight="60.0" prefWidth="150.0" promptText="Nhập vào chứng minh nhân dân" text="0256185925">
                                  <styleClass>
                                     <String fx:value="inputField" />
                                     <String fx:value="inputFieldInfo" />
@@ -158,7 +157,7 @@
                                     <Font name="Segoe UI" size="12.0" />
                                  </font>
                               </Label>
-                              <DatePicker disable="true" editable="false" promptText="Chọn ngày sinh">
+                              <DatePicker fx:id="dateOfBirth" disable="true" editable="false" promptText="Chọn ngày sinh">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
@@ -176,15 +175,22 @@
                                     <Font name="Segoe UI" size="12.0" />
                                  </font>
                               </Label>
-                              <RadioButton disable="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="126.0" styleClass="selectBox" text="Nam">
+                              <RadioButton fx:id="Male" disable="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="126.0" styleClass="selectBox" text="Nam">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="GroupSex" />
+                                 </toggleGroup>
                               </RadioButton>
-                              <RadioButton disable="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="115.0" styleClass="selectBox" text="Nữ" />
+                              <RadioButton fx:id="Female" disable="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="115.0" styleClass="selectBox" text="Nữ" toggleGroup="$GroupSex" />
                            </children>
                         </HBox>
-                        <Pane prefHeight="141.0" prefWidth="367.0" />
+                        <Pane prefHeight="141.0" prefWidth="367.0">
+                           <children>
+                              <Button layoutX="-3.0" layoutY="18.0" mnemonicParsing="false" onAction="#btn_update" styleClass="btnSubmit" text="Cập nhật" />
+                              <Button layoutX="197.0" layoutY="18.0" mnemonicParsing="false" onAction="#btn_Reset" styleClass="btnSubmit" text="Hủy bỏ" />
+                           </children></Pane>
                      </children>
                      <padding>
                         <Insets left="10.0" right="10.0" />
@@ -194,11 +200,11 @@
                      <children>
 
                         <Label styleClass="textField" text="THÔNG TIN KHÁC" />
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" styleClass="btnFix" />
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btn_Update3" styleClass="btnFix" />
                         <HBox prefHeight="45.0" prefWidth="200.0">
                            <children>
                               <Label styleClass="textField" text="Số nhà:" />
-                              <TextField editable="false" promptText="Nhập vào số nhà" text="371">
+                              <TextField fx:id="add_Number" editable="false" promptText="Nhập vào số nhà" text="371">
                                  <styleClass>
                                     <String fx:value="inputField" />
                                     <String fx:value="inputFieldInfo" />
@@ -209,7 +215,7 @@
                         <HBox prefHeight="45.0" prefWidth="200.0">
                            <children>
                               <Label styleClass="textField" text="Tên đường:" />
-                              <TextField editable="false" promptText="Nhập vào tên đường" text="Nguyễn Kiệm">
+                              <TextField fx:id="add_Street" editable="false" promptText="Nhập vào tên đường" text="Nguyễn Kiệm">
                                  <styleClass>
                                     <String fx:value="inputField" />
                                     <String fx:value="inputFieldInfo" />
@@ -225,7 +231,7 @@
                                     <String fx:value="textFieldDisTrict" />
                                  </styleClass>
                               </Label>
-                              <ComboBox disable="true" prefHeight="62.0" prefWidth="260.0" promptText="Chọn quê quán">
+                              <ComboBox fx:id="cbb_homeTown" disable="true" prefHeight="62.0" prefWidth="260.0" promptText="Chọn quê quán">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
@@ -244,7 +250,7 @@
                                     <String fx:value="textFieldDisTrict" />
                                  </styleClass>
                               </Label>
-                              <ComboBox disable="true" prefHeight="62.0" prefWidth="260.0" promptText="Chọn tỉnh hoặc thành phố">
+                              <ComboBox fx:id="cbb_City" disable="true" onAction="#btn_ChooseCity" prefHeight="62.0" prefWidth="260.0" promptText="Chọn tỉnh hoặc thành phố">
                                  <styleClass>
                                     <String fx:value="inputField" />
                                     <String fx:value="inputFieldisCheckBox" />
@@ -259,7 +265,7 @@
                                     <String fx:value="textFieldDisTrict" />
                                  </styleClass>
                               </Label>
-                              <ComboBox disable="true" prefHeight="62.0" prefWidth="260.0" promptText="Chọn quận hoặc huyện">
+                              <ComboBox fx:id="cbb_District" disable="true" prefHeight="62.0" prefWidth="260.0" promptText="Chọn quận hoặc huyện">
                                  <styleClass>
                                     <String fx:value="inputField" />
                                     <String fx:value="inputFieldisCheckBox" />
@@ -285,13 +291,7 @@
             <StackPane prefHeight="150.0" prefWidth="200.0">
                <children>
 
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
-                     <children>
-                        <Button mnemonicParsing="false" styleClass="btnSubmit" text="Cập nhật" />
-                        <Button mnemonicParsing="false" styleClass="btnSubmit" text="Hủy bỏ" />
-
-                     </children>
-                  </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0" />
                </children>
             </StackPane>
          </children>

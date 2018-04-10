@@ -190,9 +190,8 @@ public class CustomerDAO {
 
     }
 
-    public static int update(/* Customer cus */) throws SQLException {
+    public static int update(Customer cus ) throws SQLException {
         try {
-            Customer cus = new Customer();
 
             connectDB = new ConnectDB();
             conn = connectDB.getConnect();

@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="885.0" prefWidth="1242.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.MainFilght.MainFilghtUIController">
+<BorderPane prefHeight="885.0" prefWidth="1242.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.MainFilght.MainFilghtController">
    <top>
       <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="114.0" prefWidth="1242.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -27,7 +27,7 @@
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <Label styleClass="userName" text="Xin chào" />
-                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="Quốc Huy" textAlignment="RIGHT" />
+                        <Label fx:id="lbl_userName" alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="Quốc Huy" textAlignment="RIGHT" />
                      </children>
                   </VBox>
                   <ImageView fitHeight="46.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
@@ -44,12 +44,11 @@
                </GridPane.margin>
             </HBox>
             <Separator prefHeight="0.0" prefWidth="1242.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" styleClass="btnSubmit" text="Quay về">
+            <Button mnemonicParsing="false" onAction="#btn_back" styleClass="btnSubmit" text="Quay về">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
             </Button>
-
          </children>
          <padding>
             <Insets top="25.0" />
@@ -110,9 +109,7 @@
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
-
                   <String fx:value="btnWhite" />
-
                </styleClass>
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="1">
@@ -155,9 +152,7 @@
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
-
                   <String fx:value="btnWhite" />
-
                </styleClass>
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="2">
@@ -200,9 +195,7 @@
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
-
                   <String fx:value="btnWhite" />
-
                </styleClass>
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="3">
@@ -245,9 +238,7 @@
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
-
                   <String fx:value="btnWhite" />
-
                </styleClass>
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="4">
@@ -290,9 +281,7 @@
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
-
                   <String fx:value="btnWhite" />
-
                </styleClass>
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.rowIndex="1">
@@ -335,9 +324,7 @@
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
-
                   <String fx:value="btnWhite" />
-
                </styleClass>
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -380,9 +367,7 @@
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
-
                   <String fx:value="btnWhite" />
-
                </styleClass>
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -426,7 +411,6 @@
                <styleClass>
                   <String fx:value="flightWrapper" />
                   <String fx:value="btnWhite" />
-
                </styleClass>
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
@@ -469,9 +453,7 @@
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
-
                   <String fx:value="btnWhite" />
-
                </styleClass>
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
@@ -514,9 +496,7 @@
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
-
                   <String fx:value="btnWhite" />
-
                </styleClass>
             </VBox>
          </children>

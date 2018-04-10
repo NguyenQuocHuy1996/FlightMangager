@@ -31,7 +31,7 @@ public class AccountDAO {
             if (getUserCus(userName) == 1) {
                 System.out.println("1");
                 return 1;
-            } else if (getUserCus(userName) == 2) {
+            } else if (getUserCus(userName) == 0) {
                 System.out.println("2");
                 return 2;
             }

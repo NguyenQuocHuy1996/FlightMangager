@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,7 +52,11 @@ public class MainStaffController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         Employee emp = new Employee();
-        emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
+        try {
+            emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
+        } catch (SQLException ex) {
+//            Logger.getLogger(MainStaffController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         lbl_userName.setText(emp.getFirstName());
     }
 
@@ -58,14 +64,7 @@ public class MainStaffController implements Initializable {
     private void btn_Logout(ActionEvent event) throws IOException {
         Variable_Static.USERNAME = "";
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Login/LoginUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Login ");
-        stage.show();
+        Variable_Static.LinkUI(event, root, "Login");
     }
 
     @FXML
@@ -73,72 +72,39 @@ public class MainStaffController implements Initializable {
     }
 
     @FXML
-    private void btn_historyBooking(ActionEvent event) {
+    private void btn_historyBooking(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/HistoryBooking/HistoryBookingUI.fxml"));
+        Variable_Static.LinkUI(event, root, "History Booking");
     }
 
     @FXML
     private void btn_flightManagerment(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(""));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Find Flight ");
-        stage.show();
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/FlightManager/FlightManagerUI.fxml"));
+        Variable_Static.LinkUI(event, root, "Flight Manager");
     }
 
     @FXML
     private void btn_flightSearch(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Confirmed_Find_Flight/ConfirmedFindFlightUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Find Flight ");
-        stage.show();
+        Variable_Static.LinkUI(event, root, "Find Flight");
     }
 
     @FXML
     private void btn_changePassword(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/ChangePass/ChangePassUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Change Password");
-        stage.show();
+        Variable_Static.LinkUI(event, root, "Change Password");
     }
 
     @FXML
     private void btn_infoAccount(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/InfoStaff/InfoStaffUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Info Staff ");
-        stage.show();
+        Variable_Static.LinkUI(event, root, "Info Staff");
     }
 
     @FXML
     private void btn_registerStaff(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/RegisterStaff/RegisterStaffUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Register Staff ");
-        stage.show();
+        Variable_Static.LinkUI(event, root, "Register Staff");
     }
 
 }
