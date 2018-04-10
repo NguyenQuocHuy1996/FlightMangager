@@ -82,7 +82,16 @@
                      </styleClass>
                   </ComboBox>
                   <Label styleClass="textField" text="NGÀY ĐI" />
+<<<<<<< HEAD
+                  <DatePicker maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0">
+                     <styleClass>
+                        <String fx:value="inputField" />
+                        <String fx:value="inputFieldisCheckBox" />
+                     </styleClass>
+                  </DatePicker>
+=======
                   <TextField fx:id="depart" promptText="30/10/2018" styleClass="inputField" />
+>>>>>>> master
                   <Separator maxWidth="-Infinity" prefWidth="300.0" styleClass="separatorForm" />
                   <Pane prefHeight="200.0" prefWidth="200.0">
                      <children>
