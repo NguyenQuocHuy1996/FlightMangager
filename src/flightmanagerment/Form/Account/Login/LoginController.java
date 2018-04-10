@@ -41,11 +41,12 @@ public class LoginController implements Initializable {
     @FXML
     private void btn_Register(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Register/RegisterUI.fxml"));
-      Variable_Static.LinkUI(event, root, "Register");
+        Variable_Static.LinkUI(event, root, "Register");
     }
 
     @FXML
     private void btn_Login(ActionEvent event) throws IOException, SQLException {
+
         Alert a = new Alert(Alert.AlertType.ERROR);
         if (email.getText().equals("") || (password.getText().equals(""))) {
             a.setTitle("ERROR");
