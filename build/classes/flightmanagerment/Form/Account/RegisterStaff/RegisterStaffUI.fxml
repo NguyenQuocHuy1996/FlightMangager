@@ -79,13 +79,12 @@
                         <TextField fx:id="email1113" promptText="Nhập số điện thoại" styleClass="inputField" />
                         <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Ngày sinh:" />
-                        <DatePicker promptText="Chọn ngày sinh">
+                        <DatePicker editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="300.0" promptText="Chọn ngày sinh">
                            <styleClass>
-                              <String fx:value="selectBox" />
-                              <String fx:value="selectBoxRegister" />
+                              <String fx:value="inputField" />
+                              <String fx:value="inputFieldisCheckBox" />
                            </styleClass>
                         </DatePicker>
-                        <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Giới tính:" />
                         <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
                            <children>
@@ -108,21 +107,19 @@
                         <TextField fx:id="email1112" promptText="Nhập bằng cấp nhân viên" styleClass="inputField" />
                         <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Chức vụ:" />
-                        <ComboBox prefWidth="150.0" promptText="Chọn chức vụ">
+                        <ComboBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" promptText="Chọn chức vụ">
                            <styleClass>
-                              <String fx:value="selectBox" />
-                              <String fx:value="selectBoxRegister" />
+                              <String fx:value="inputField" />
+                              <String fx:value="inputFieldisCheckBox" />
                            </styleClass>
                         </ComboBox>
-                        <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Quê quán:" />
-                        <ComboBox prefWidth="150.0" promptText="Chọn quê quán">
+                        <ComboBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" promptText="Chọn quê quán">
                            <styleClass>
-                              <String fx:value="selectBox" />
-                              <String fx:value="selectBoxRegister" />
+                              <String fx:value="inputField" />
+                              <String fx:value="inputFieldisCheckBox" />
                            </styleClass>
                         </ComboBox>
-                        <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Số nhà: " />
                         <TextField fx:id="email1111" promptText="Nhập số nhà" styleClass="inputField" />
                         <Separator prefWidth="200.0" styleClass="separatorForm" />
@@ -130,21 +127,19 @@
                         <TextField fx:id="email11111" promptText="Nhập tên đường" styleClass="inputField" />
                         <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Tỉnh/Thành:" />
-                        <ComboBox prefWidth="150.0" promptText="Chọn Tỉnh/Thành phố">
+                        <ComboBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" promptText="Chọn Tỉnh/Thành phố">
                            <styleClass>
-                              <String fx:value="selectBox" />
-                              <String fx:value="selectBoxRegister" />
+                              <String fx:value="inputField" />
+                              <String fx:value="inputFieldisCheckBox" />
                            </styleClass>
                         </ComboBox>
-                        <Separator prefWidth="200.0" styleClass="separatorForm" />
                         <Label styleClass="textField" text="Quận/Huyện:" />
-                        <ComboBox prefWidth="150.0" promptText="Chọn Quận/Huyện">
+                        <ComboBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" promptText="Chọn Quận/Huyện">
                            <styleClass>
-                              <String fx:value="selectBox" />
-                              <String fx:value="selectBoxRegister" />
+                              <String fx:value="inputField" />
+                              <String fx:value="inputFieldisCheckBox" />
                            </styleClass>
                         </ComboBox>
-                        <Separator prefWidth="200.0" styleClass="separatorForm" />
                      </children>
                   </VBox>
                </content>
@@ -153,9 +148,9 @@
       </GridPane>
    </center>
    <top>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <Pane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="14.0" layoutY="31.0" mnemonicParsing="false" styleClass="btnSubmit" text="Quay về" />
+            <Button layoutX="14.0" layoutY="10.0" mnemonicParsing="false" styleClass="btnSubmit" text="Quay về" />
          </children>
       </Pane>
    </top>

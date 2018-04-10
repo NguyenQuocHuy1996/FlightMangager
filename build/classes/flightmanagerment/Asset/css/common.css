@@ -220,7 +220,8 @@
     -fx-background-insets: 0;
     -fx-padding: 10 10 10 10;
     -fx-text-fill: white;
-    -fx-alignment: CENTER_LEFT;    
+    -fx-alignment: CENTER_LEFT;
+    
 /*    -fx-text-fill:  black;*/
 }
 .selectBox{

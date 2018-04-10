@@ -65,45 +65,43 @@
                            <children>
                               <TextField promptText="Nhập mã chuyến bay" styleClass="inputField" />
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Tìm kiếm" />
                            </children>
                         </VBox>
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
                            <children>
                               <TextField promptText="Nhập hãng máy bay" styleClass="inputField" />
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Tìm kiếm" />
                            </children>
                         </VBox>
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
                            <children>
                               <TextField promptText="Nhập số hiệu" styleClass="inputField" />
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Tìm kiếm" />
                            </children>
                         </VBox>
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
                            <children>
-                              <TextField promptText="Nhập điểm đi" styleClass="inputField" />
-                              <Separator prefWidth="200.0" styleClass="separatorForm" />
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Tìm kiếm" />
-                           </children>
-                        </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
-                           <children>
-                              <DatePicker promptText="Chọn ngày đi" styleClass="inputField" />
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Lọc" />
-                           </children>
-                        </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
-                           <children>
-                              <ComboBox maxHeight="-Infinity" minHeight="-Infinity" promptText="Chọn giờ đi">
+                              <ComboBox prefWidth="150.0" promptText="Chọn điểm đi">
                                  <styleClass>
                                     <String fx:value="inputField" />
                                     <String fx:value="inputFieldisCheckBox" />
                                  </styleClass>
                               </ComboBox>
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Lọc" />
+                           </children>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
+                           <children>
+                              <ComboBox prefWidth="150.0" promptText="Chọn điểm đến">
+                                 <styleClass>
+                                    <String fx:value="inputField" />
+                                    <String fx:value="inputFieldisCheckBox" />
+                                 </styleClass>
+                              </ComboBox>
+                           </children>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
+                           <children>
+                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Tìm kiếm" />
                            </children>
                         </VBox>
                      </children>
