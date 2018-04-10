@@ -7,6 +7,8 @@ package flightmanagerment.Form.Account.Register;
 
 import flightmanagerment.Function.CustomerDAO;
 import flightmanagerment.Model.Customer;
+import flightmanagerment.Model.Variable_Static;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -14,16 +16,31 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  *
  * @author Quoc Huy
  */
 public class RegisterController implements Initializable {
+
+    @FXML
+    private TextField firstName;
+    @FXML
+    private TextField lastName;
+    @FXML
+    private TextField email;
+    @FXML
+    private PasswordField password;
+    @FXML
+    private PasswordField confirm_password;
 
 //    @FXML
 //    private TextField txtEmail;
@@ -39,15 +56,10 @@ public class RegisterController implements Initializable {
 //        
 //    
     @FXML
-    private TextField email;
-    @FXML
-    private TextField password;
-    @FXML
-    private TextField firstName;
-    @FXML
-    private TextField lastName;
-    @FXML
-    private TextField confirm_password;
+    private void btn_Login(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Login/LoginUI.fxml"));
+        Variable_Static.LinkUI(event, root, "Login");
+    }
 
     @FXML
     private void btn_Register(ActionEvent event) throws SQLException {
@@ -76,6 +88,12 @@ public class RegisterController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }
+
+    @FXML
+    private void btn_back(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Main/MainUI.fxml"));
+        Variable_Static.LinkUI(event, root, "Main");
     }
 
 }

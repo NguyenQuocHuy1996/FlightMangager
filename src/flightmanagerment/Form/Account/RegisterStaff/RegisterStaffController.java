@@ -7,6 +7,8 @@ package flightmanagerment.Form.Account.RegisterStaff;
 
 import flightmanagerment.Function.CustomerDAO;
 import flightmanagerment.Model.Customer;
+import flightmanagerment.Model.Variable_Static;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -14,16 +16,58 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  *
  * @author Quoc Huy
  */
 public class RegisterStaffController implements Initializable {
+
+    @FXML
+    private TextField email;
+    @FXML
+    private PasswordField password;
+    @FXML
+    private PasswordField confirm_password;
+    @FXML
+    private TextField firstName;
+    @FXML
+    private TextField lastName;
+    @FXML
+    private TextField ic_card;
+    @FXML
+    private TextField phoneNumber;
+    @FXML
+    private DatePicker dateOfBirth;
+    @FXML
+    private RadioButton sex_male;
+    @FXML
+    private RadioButton sex_female;
+    @FXML
+    private TextField education_level;
+    @FXML
+    private ComboBox<?> department;
+    @FXML
+    private ComboBox<?> homeTown;
+    @FXML
+    private TextField add_number;
+    @FXML
+    private TextField add_Street;
+    @FXML
+    private ComboBox<?> add_city;
+    @FXML
+    private ComboBox<?> add_district;
 
 //    @FXML
 //    private TextField txtEmail;
@@ -38,17 +82,6 @@ public class RegisterStaffController implements Initializable {
 //            alert.show();
 //        
 //    
-    @FXML
-    private TextField email;
-    @FXML
-    private TextField password;
-    @FXML
-    private TextField firstName;
-    @FXML
-    private TextField lastName;
-    @FXML
-    private TextField confirm_password;
-
     @FXML
     private void btn_RegisterStaff(ActionEvent event) throws SQLException {
         Alert a = new Alert(Alert.AlertType.ERROR);
@@ -76,6 +109,12 @@ public class RegisterStaffController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }
+
+    @FXML
+    private void btn_back(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
+        Variable_Static.LinkUI(event, root, "Main Staff");
     }
 
 }

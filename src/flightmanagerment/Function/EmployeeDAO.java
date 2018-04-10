@@ -155,4 +155,48 @@ public class EmployeeDAO {
         return null;
 
     }
+
+    public static Employee getEmp(String email) throws SQLException {
+        try {
+            connectDB = new ConnectDB();
+            conn = connectDB.getConnect();
+            String sql = "select * from employee where email = ?";
+            prest = conn.prepareStatement(sql);
+            prest.setString(1, email);
+            rs = prest.executeQuery();
+            while (rs.next()) {
+                int idAccount = rs.getInt("idAccount");
+                //email
+                String password = rs.getString("password");
+                String firstName = rs.getString("firstName");
+                String lastName = rs.getString("lastName");
+                Date dateOfBirth = rs.getDate("dateOfBirth");
+                String ic_Card = rs.getString("ic_Card");
+                String homeTown = rs.getString("homeTown");
+                Boolean sex = rs.getBoolean("sex");
+                String phoneNumber = rs.getString("phoneNumber");
+                Blob image = rs.getBlob("image");
+                String address_number = rs.getString("address_number");
+                String address_street = rs.getString("address_street");
+                String address_district = rs.getString("address_district");
+                String address_city = rs.getString("address_city");
+                String department = rs.getString("department");
+                String education_level = rs.getString("education_level");
+                Employee emp = new Employee(idAccount, email, password, firstName, lastName, dateOfBirth, ic_Card, education_level, department, homeTown, sex, phoneNumber, image, address_number, address_street, address_district, address_city);
+                return emp;
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+            // TODO: handle exception
+        } finally {
+            if (null != prest) {
+                prest.close();
+            }
+            if (null != conn) {
+                conn.close();
+            }
+        }
+        return null;
+
+    }
 }

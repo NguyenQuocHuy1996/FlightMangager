@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="676.0" prefWidth="1132.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Account.Register.RegisterController">
+<BorderPane prefHeight="676.0" prefWidth="1132.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Account.ChangePass.ChangePassController">
    <bottom>
       <Pane prefHeight="0.0" prefWidth="1150.0" BorderPane.alignment="CENTER" />
    </bottom>
@@ -17,18 +17,18 @@
             <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                <children>
                   <Label layoutX="10.0" layoutY="10.0" styleClass="textField" text="Mật khẩu cũ" />
-                  <PasswordField fx:id="password11" layoutX="10.0" layoutY="169.0" promptText="Nhập mật khẩu cũ" styleClass="inputField" />
+                  <PasswordField fx:id="old_password" layoutX="10.0" layoutY="169.0" promptText="Nhập mật khẩu cũ" styleClass="inputField" />
                   <Separator layoutX="10.0" layoutY="206.0" prefWidth="200.0" styleClass="separatorForm" />
                   <Label layoutX="10.0" layoutY="109.0" styleClass="textField" text="Mật khẩu mới" />
-                  <PasswordField fx:id="password1" layoutX="10.0" layoutY="70.0" promptText="Nhập mật khẩu mới" styleClass="inputField" />
+                  <PasswordField fx:id="new_password" layoutX="10.0" layoutY="70.0" promptText="Nhập mật khẩu mới" styleClass="inputField" />
                   <Separator layoutX="10.0" layoutY="107.0" prefWidth="200.0" styleClass="separatorForm" />
                   <Label layoutX="10.0" layoutY="344.0" styleClass="textField" text="Nhập lại mật khẩu" />
-                  <PasswordField fx:id="password" promptText="Xác nhận mật khẩu" styleClass="inputField" />
+                  <PasswordField fx:id="confirmed_password" promptText="Xác nhận mật khẩu" styleClass="inputField" />
                   <Separator layoutX="10.0" layoutY="441.0" prefWidth="200.0" styleClass="separatorForm" />
                   <Pane prefHeight="81.0" prefWidth="400.0">
                      <children>
                         <HBox layoutX="1.0" layoutY="77.0" prefHeight="73.0" prefWidth="399.0" spacing="10.0" />
-                        <Button layoutX="115.0" layoutY="16.0" mnemonicParsing="false" text="Đổi mật khẩu">
+                        <Button layoutX="115.0" layoutY="16.0" mnemonicParsing="false" onAction="#btn_changedPassword" text="Đổi mật khẩu">
                            <styleClass>
                               <String fx:value="btnSubmit" />
                               <String fx:value="btnTeal" />
@@ -51,7 +51,7 @@
    <top>
       <Pane prefHeight="89.0" prefWidth="884.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="14.0" layoutY="20.0" mnemonicParsing="false" styleClass="btnSubmit" text="Quay về" />
+            <Button layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#btn_back" styleClass="btnSubmit" text="Quay về" />
          </children></Pane>
    </top>
 </BorderPane>

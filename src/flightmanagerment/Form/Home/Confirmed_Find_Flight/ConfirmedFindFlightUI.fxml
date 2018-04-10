@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="885.0" prefWidth="1242.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="885.0" prefWidth="1242.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.Confirmed_Find_Flight.ConfirmedFindFlightController">
    <top>
       <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="114.0" prefWidth="1242.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -26,7 +26,7 @@
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <Label styleClass="userName" text="Xin chào" />
-                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="Quốc Huy" textAlignment="RIGHT" />
+                        <Label fx:id="lbl_userName" alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="Quốc Huy" textAlignment="RIGHT" />
                      </children>
                   </VBox>
                   <ImageView fitHeight="46.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
@@ -43,7 +43,7 @@
                </GridPane.margin>
             </HBox>
             <Separator prefHeight="0.0" prefWidth="1242.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" styleClass="btnSubmit" text="Quay về">
+            <Button mnemonicParsing="false" onAction="#btn_back" styleClass="btnSubmit" text="Quay về">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
@@ -67,30 +67,36 @@
             <VBox prefHeight="582.0" prefWidth="852.0" GridPane.columnIndex="1">
                <children>
                   <Label styleClass="textField" text="ĐIỂM ĐI" />
-                  <ComboBox maxWidth="-Infinity" prefWidth="300.0" promptText="Chọn điểm đi">
+
+                  <ComboBox fx:id="cbb_origin" maxWidth="-Infinity" onAction="#btn_choosefrom" prefWidth="300.0" promptText="Chọn điểm đi">
                      <styleClass>
                         <String fx:value="inputField" />
                         <String fx:value="inputFieldisCheckBox" />
                      </styleClass>
                   </ComboBox>
                   <Label styleClass="textField" text="ĐIỂM ĐẾN" />
-                  <ComboBox maxWidth="-Infinity" prefWidth="300.0" promptText="Chọn điểm đến">
+                  <ComboBox fx:id="cbb_destination" maxWidth="-Infinity" prefWidth="300.0" promptText="Chọn điểm đến">
                      <styleClass>
                         <String fx:value="inputField" />
                         <String fx:value="inputFieldisCheckBox" />
                      </styleClass>
                   </ComboBox>
                   <Label styleClass="textField" text="NGÀY ĐI" />
+<<<<<<< HEAD
                   <DatePicker maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0">
                      <styleClass>
                         <String fx:value="inputField" />
                         <String fx:value="inputFieldisCheckBox" />
                      </styleClass>
                   </DatePicker>
+=======
+                  <TextField fx:id="depart" promptText="30/10/2018" styleClass="inputField" />
+>>>>>>> master
                   <Separator maxWidth="-Infinity" prefWidth="300.0" styleClass="separatorForm" />
                   <Pane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Tìm chuyến bay" textAlignment="CENTER" textFill="#511919">
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btn_findFlight" text="Tìm chuyến bay" textAlignment="CENTER" textFill="#511919">
+
                            <styleClass>
                               <String fx:value="btnSubmit" />
                               <String fx:value="btnDarkPurple" />

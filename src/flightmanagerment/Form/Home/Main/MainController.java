@@ -5,6 +5,8 @@
  */
 package flightmanagerment.Form.Home.Main;
 
+import flightmanagerment.Form.Account.Login.LoginController;
+import flightmanagerment.Model.Variable_Static;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -38,57 +40,28 @@ public class MainController implements Initializable {
 //            alert.setTitle("Dang nhap thanh cong");
 //            alert.show();
 //        }
-//    }
+//    } 
     @FXML
     private void btn_login(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Login/LoginUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setTitle("Login ");
-        stage.show();
-
-    }
-
-    @FXML
-    private void btn_flightSearch(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_flightManagement(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_historyBooking(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_historyBookingOfEmployee(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_report(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_infomation(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_logout(ActionEvent event) {
-
+        Variable_Static.LinkUI(event, root, "Login");
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }
+
+    @FXML
+    private void btn_flightSearch(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Confirmed_Find_Flight/ConfirmedFindFlightUI.fxml"));
+        Variable_Static.LinkUI(event, root, "FInd Flight");
+    }
+
+    @FXML
+    private void btn_register(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Register/RegisterUI.fxml"));
+        Variable_Static.LinkUI(event, root, "Register");
     }
 
 }

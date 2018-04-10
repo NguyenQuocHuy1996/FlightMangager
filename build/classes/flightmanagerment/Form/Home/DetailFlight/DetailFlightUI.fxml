@@ -70,7 +70,7 @@
                   </ImageView>
                   <VBox prefHeight="175.0" prefWidth="713.0">
                      <children>
-                        <TextField prefHeight="12.0" prefWidth="773.0" promptText="Nhập thông tin tìm kiếm">
+                        <TextField fx:id="flightDetail" prefHeight="12.0" prefWidth="773.0" promptText="Nhập thông tin tìm kiếm">
                            <styleClass>
                               <String fx:value="textField" />
                               <String fx:value="btnGreen" />

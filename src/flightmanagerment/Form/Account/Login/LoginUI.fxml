@@ -17,15 +17,15 @@
             <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                <children>
                   <Label styleClass="textField" text="Email:" />
-                  <PasswordField fx:id="password" promptText="Nhập email" styleClass="inputField" />
+                  <TextField fx:id="email" promptText="Nhập mật khẩu" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
                   <Label styleClass="textField" text="Mật khẩu:" />
-                  <TextField fx:id="email" promptText="Nhập mật khẩu" styleClass="inputField" />
+                  <PasswordField fx:id="password" promptText="Nhập email" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
                   <Pane prefHeight="81.0" prefWidth="400.0">
                      <children>
                         <HBox layoutX="1.0" layoutY="77.0" prefHeight="73.0" prefWidth="399.0" spacing="10.0" />
-                        <Button layoutX="14.0" layoutY="18.0" mnemonicParsing="false" text="Đăng nhập">
+                        <Button layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#btn_Login" text="Đăng nhập">
                            <styleClass>
                               <String fx:value="btnSubmit" />
                               <String fx:value="btnTeal" />
@@ -54,7 +54,7 @@
    <top>
       <Pane prefHeight="89.0" prefWidth="884.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="14.0" layoutY="20.0" mnemonicParsing="false" styleClass="btnSubmit" text="Quay về" />
+            <Button layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#btn_back" styleClass="btnSubmit" text="Quay về" />
          </children></Pane>
    </top>
 </BorderPane>
