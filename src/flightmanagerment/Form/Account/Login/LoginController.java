@@ -41,14 +41,7 @@ public class LoginController implements Initializable {
     @FXML
     private void btn_Register(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Register/RegisterUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Register ");
-        stage.show();
+      Variable_Static.LinkUI(event, root, "Register");
     }
 
     @FXML
@@ -64,14 +57,8 @@ public class LoginController implements Initializable {
                 Variable_Static.USERNAME = email.getText();
                 if (AccountDAO.loginCus(email.getText(), password.getText()) == 1) {
                     Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainUser/MainUserUI.fxml"));
-                    Scene scene = new Scene(root);
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    stage.hide();
-                    stage.setScene(scene);
-                    stage.setMaximized(true);
-                    stage.resizableProperty().setValue(Boolean.FALSE);
-                    stage.setTitle("Main Customer ");
-                    stage.show();
+                    Variable_Static.LinkUI(event, root, "Main Customer");
+
                 } else {
                     a.setContentText("Mật khẩu không chính xác");
                     a.show();
@@ -81,14 +68,7 @@ public class LoginController implements Initializable {
                 Variable_Static.USERNAME = email.getText();
                 if (AccountDAO.loginEmp(email.getText(), password.getText()) == 1) {
                     Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
-                    Scene scene = new Scene(root);
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    stage.hide();
-                    stage.setScene(scene);
-                    stage.setMaximized(true);
-                    stage.resizableProperty().setValue(Boolean.FALSE);
-                    stage.setTitle("Main Staff ");
-                    stage.show();
+                    Variable_Static.LinkUI(event, root, "Main Staff");
                 } else {
                     a.setContentText("Mật khẩu không chính xác");
                     a.show();
@@ -110,14 +90,7 @@ public class LoginController implements Initializable {
     @FXML
     private void btn_back(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Main/MainUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Main");
-        stage.show();
+        Variable_Static.LinkUI(event, root, "Main");
     }
 
 }

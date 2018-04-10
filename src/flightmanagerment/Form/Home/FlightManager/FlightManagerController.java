@@ -153,38 +153,40 @@ public class FlightManagerController implements Initializable {
     @FXML
     private void btn_back(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Main Staff ");
-        stage.show();
+        Variable_Static.LinkUI(event, root, "Main Staff");
+//        Scene scene = new Scene(root);
+//        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//        stage.hide();
+//        stage.setScene(scene);
+//        stage.setMaximized(true);
+//        stage.resizableProperty().setValue(Boolean.FALSE);
+//        stage.setTitle("Main Staff ");
+//        stage.show();
     }
 
     @FXML
     private void btn_findFlightBrand(ActionEvent event) {
-        list = FXCollections.observableArrayList();
-        setCellTable();
-        list = FlightDAO.getInfoBrand(txt_brand.getText());
-        table.setItems(list);
+//        list = FXCollections.observableArrayList();
+//        setCellTable();
+//        list = FlightDAO.getInfoBrand(txt_brand.getText());
+//        table.setItems(list);
+
     }
 
     @FXML
     private void btn_findFLightNumber(ActionEvent event) {
-        list = FXCollections.observableArrayList();
-        setCellTable();
-        list = FlightDAO.getInfoFlightNumber(txt_flightNumber.getText());
-        table.setItems(list);
+//        list = FXCollections.observableArrayList();
+//        setCellTable();
+//        list = FlightDAO.getInfoFlightNumber(txt_flightNumber.getText());
+//        table.setItems(list);
     }
 
     @FXML
     private void btn_findFlightOrigin(ActionEvent event) {
-        list = FXCollections.observableArrayList();
-        setCellTable();
-        list = FlightDAO.getInfoOrigin(txt_origin.getText());
-        table.setItems(list);
+//        list = FXCollections.observableArrayList();
+//        setCellTable();
+//        list = FlightDAO.getInfoOrigin(txt_origin.getText());
+//        table.setItems(list);
     }
 
     @FXML

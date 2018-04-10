@@ -68,14 +68,7 @@ public class ChangePassController implements Initializable {
                     a.showAndWait();
 
                     Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
-                    Scene scene = new Scene(root);
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    stage.hide();
-                    stage.setScene(scene);
-                    stage.setMaximized(true);
-                    stage.resizableProperty().setValue(Boolean.FALSE);
-                    stage.setTitle("Main Staff ");
-                    stage.show();
+                    Variable_Static.LinkUI(event, root, "Main Staff");
                 } else if (AccountDAO.changePasswordCus(old_password.getText(), new_password.getText(), Variable_Static.USERNAME) == 1) {
                     Alert.AlertType type = Alert.AlertType.INFORMATION;
                     a.setAlertType(type);
@@ -84,14 +77,8 @@ public class ChangePassController implements Initializable {
                     a.showAndWait();
 
                     Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainUser/MainUserUI.fxml"));
-                    Scene scene = new Scene(root);
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    stage.hide();
-                    stage.setScene(scene);
-                    stage.setMaximized(true);
-                    stage.resizableProperty().setValue(Boolean.FALSE);
-                    stage.setTitle("Main Customer ");
-                    stage.show();
+                    Variable_Static.LinkUI(event, root, "Main Customer");
+
                 }
 
             } else {
@@ -114,24 +101,10 @@ public class ChangePassController implements Initializable {
         int function = AccountDAO.checkRole(Variable_Static.USERNAME);
         if (function == 1) {
             Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainUser/MainUserUI.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.hide();
-            stage.setScene(scene);
-            stage.setMaximized(true);
-            stage.resizableProperty().setValue(Boolean.FALSE);
-            stage.setTitle("Main Customer ");
-            stage.show();
+            Variable_Static.LinkUI(event, root, "Main Customer");
         } else {
             Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.hide();
-            stage.setScene(scene);
-            stage.setMaximized(true);
-            stage.resizableProperty().setValue(Boolean.FALSE);
-            stage.setTitle("Main Staff ");
-            stage.show();
+            Variable_Static.LinkUI(event, root, "Main Staff");
         }
     }
 

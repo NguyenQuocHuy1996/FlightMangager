@@ -52,28 +52,14 @@ public class MainUserController implements Initializable {
     @FXML
     private void btn_flightSearch(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Confirmed_Find_Flight/ConfirmedFindFlightUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Find Flight ");
-        stage.show();
+        Variable_Static.LinkUI(event, root, "Main");
     }
 
     @FXML
     private void btn_logout(ActionEvent event) throws IOException {
         Variable_Static.USERNAME = "";
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Login/LoginUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Login ");
-        stage.show();
+       Variable_Static.LinkUI(event, root, "Login");
     }
 
     @Override
@@ -90,41 +76,20 @@ public class MainUserController implements Initializable {
 
     @FXML
     private void btn_historyBooking(ActionEvent event) throws IOException {
-          Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/CustomerHistoryBooking/CustomerHistoryBookingUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("History Booking  ");
-        stage.show();
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/CustomerHistoryBooking/CustomerHistoryBookingUI.fxml"));
+        Variable_Static.LinkUI(event, root, "History Booking");
     }
 
     @FXML
     private void btn_changePassword(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/ChangePass/ChangePassUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Change Password");
-        stage.show();
+     Variable_Static.LinkUI(event, root, "Change Password");
     }
 
     @FXML
     private void btn_infoAccount(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Info/InfoUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Info Customer ");
-        stage.show();
+     Variable_Static.LinkUI(event, root, "Info Customer");
     }
 
     @FXML

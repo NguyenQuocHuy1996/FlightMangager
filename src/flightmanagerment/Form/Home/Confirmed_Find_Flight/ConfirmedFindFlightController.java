@@ -87,36 +87,14 @@ public class ConfirmedFindFlightController implements Initializable {
         Employee emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
         if (cus != null) {
             Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainUser/MainUserUI.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.hide();
-            stage.setScene(scene);
-            stage.setMaximized(true);
-            stage.resizableProperty().setValue(Boolean.FALSE);
-            stage.setTitle("Main Customer ");
-            stage.show();
+            Variable_Static.LinkUI(event, root, "Main Customer");
+
         } else if (emp != null) {
             Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.hide();
-            stage.setScene(scene);
-            stage.setMaximized(true);
-            stage.resizableProperty().setValue(Boolean.FALSE);
-            stage.setTitle("Main Employee ");
-            stage.show();
+            Variable_Static.LinkUI(event, root, "Main Staff");
         } else {
             Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Main/MainUI.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.hide();
-            stage.setScene(scene);
-            stage.setMaximized(true);
-            stage.resizableProperty().setValue(Boolean.FALSE);
-            stage.setTitle("Main ");
-            stage.show();
-        }
-        {
+            Variable_Static.LinkUI(event, root, "Main");
         }
 
     }
@@ -125,14 +103,7 @@ public class ConfirmedFindFlightController implements Initializable {
     private void btn_findFlight(ActionEvent event) throws IOException {
 //        List<Flight> list = FlightDAO.searchFlight(cbb_origin.getValue(), cbb_destination.getValue(), depart);
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainFilght/MainFilghtUI.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.hide();
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setTitle("Main Flight ");
-        stage.show();
+      Variable_Static.LinkUI(event, root, "Main Flight");
 
     }
 
