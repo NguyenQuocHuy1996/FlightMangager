@@ -250,6 +250,7 @@
          </children>
       </StackPane>
    </bottom>
+
    <top>
       <Pane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="80.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -257,4 +258,5 @@
          </children>
       </Pane>
    </top>
+
 </BorderPane>
