@@ -54,8 +54,30 @@ public class Seat_TicketDAO {
         return 1;
     }
 
+//    public static int getHistoryBooking(int idFlight) {
+//        try {
+//            connectDB = new ConnectDB();
+//            conn = connectDB.getConnect();
+//            String sql = "SELECT F.*,COUNT(*) AS GHEDUOCMUA\n"
+//                    + "FROM seat_ticket S JOIN flight F ON S.idFlight = F.idFlight\n"
+//                    + "WHERE S.status = TRUE\n"
+//                    + "GROUP BY S.idFlight ";
+//            prest = conn.prepareStatement(sql);
+//            prest.setInt(1, idFlight);
+//            rs = prest.executeQuery();
+//            while (rs.next()) {                
+//                String origin = rs.getString("origin");
+//                String destination = rs.getString("destination");
+//                int passenger = rs.getInt("passenger");
+//                
+//            }
+//        } catch (Exception e) {
+//        }
+//        return 0;
+//    }
+
     ///return s: trả về info của ghế theo id
-    public Seat_Ticket getSeat(int idSeat) throws SQLException {
+    public static Seat_Ticket getSeat(int idSeat) throws SQLException {
         try {
             connectDB = new ConnectDB();
             conn = connectDB.getConnect();

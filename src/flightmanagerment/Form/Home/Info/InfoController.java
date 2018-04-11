@@ -21,6 +21,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import static java.time.temporal.TemporalQueries.localDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -111,12 +112,18 @@ public class InfoController implements Initializable {
             ic_Card.setText(cus.getIc_Card());
 
             if (cus.getDateOfBirth() != null) {
-//                dateOfBirth.setValue(cus.getDateOfBirth().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy");
-                DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
-                String date = df.format(cus.getDateOfBirth());
-                dateOfBirth.setValue(LocalDate.parse(date,formatter));
-                System.out.println("asd");
+//              dateOfBirth.setValue(cus.getDateOfBirth().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+                //Date date = Date.from(dateOfBirth.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
+
+//                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy");
+//                DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+//                String date = df.format(cus.getDateOfBirth());
+//                dateOfBirth.setValue(LocalDate.parse(date, formatter));
+//                System.out.println("asd");
+//                 Date date = Date.valueOf(dateOfBirth.getValue()); // convert từ local date ( datePicker ) wa date sql
+                LocalDate localD = cus.getDateOfBirth().toLocalDate(); // convert từ date sql wa local date (datePicker)
+                dateOfBirth.setValue(localD);
+
             }
 
             if (cus.getSex()) {
@@ -189,7 +196,7 @@ public class InfoController implements Initializable {
     @FXML
     private void btn_Back(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainUser/MainUserUI.fxml"));
-       Variable_Static.LinkUI(event, root, "Main Customer");
+        Variable_Static.LinkUI(event, root, "Main Customer");
     }
 
     @FXML
@@ -204,17 +211,24 @@ public class InfoController implements Initializable {
     }
 
     @FXML
-    private void btn_update(ActionEvent event) throws SQLException {
-//        Boolean sex;
-//        if (Male.isSelected()) {
-//            sex = true;
-//        } else {
-//            sex = false;
-//        }
-//
-//        Customer cus = new Customer(firstName.getText(), lastName.getText(), dateOfBirth.get, ic_Card.getText(), cbb_homeTown.getValue(), sex, phoneNumber.getText(), add_Number.getText(), add_Street.getText(), cbb_District.getValue(), cbb_City.getValue());
-//        cus = CustomerDAO.getCus(Variable_Static.USERNAME);
-//        int function = CustomerDAO.update(cus);
+    private void btn_update(ActionEvent event) throws SQLException, IOException {
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        Boolean sex;
+        if (Male.isSelected()) {
+            sex = true;
+        } else {
+            sex = false;
+        }
+        Date date = Date.valueOf(dateOfBirth.getValue()); // convert từ local date ( datePicker ) wa date sql
+
+        Customer cus = new Customer(email.getText(), firstName.getText(), lastName.getText(), date, ic_Card.getText(), cbb_homeTown.getValue(), sex, phoneNumber.getText(), add_Number.getText(), add_Street.getText(), cbb_District.getValue(), cbb_City.getValue());
+
+        CustomerDAO.update(cus);
+        a.setTitle("Cập nhật thành công!");
+        a.setContentText("Bạn đã cập nhật thông tin thành công");
+        a.showAndWait();
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Info/InfoUI.fxml"));
+        Variable_Static.LinkUI(event, root, "Info Customer");
 
     }
 

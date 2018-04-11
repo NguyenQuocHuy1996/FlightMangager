@@ -192,25 +192,23 @@ public class CustomerDAO {
 
     public static int update(Customer cus ) throws SQLException {
         try {
-
             connectDB = new ConnectDB();
             conn = connectDB.getConnect();
-            String sql = "update customer set password = ?, firstName = ?, lastName = ?, dateOfBirth =?, ic_Card = ?, homeTown = ?, sex =?, phoneNumber = ?, image = ?, address_number = ?, address_street = ?, address_district = ?, address_city = ? where idAccount = ?";
+            String sql = "update customer set firstName = ?, lastName = ?, dateOfBirth =?, ic_Card = ?, homeTown = ?, sex =?, phoneNumber = ?, image = ?, address_number = ?, address_street = ?, address_district = ?, address_city = ? where email = ?";
             prest = conn.prepareStatement(sql);
-            prest.setString(1, cus.getPassword());
-            prest.setString(2, cus.getFirstName());
-            prest.setString(3, cus.getLastName());
-            prest.setDate(4, cus.getDateOfBirth());
-            prest.setString(5, cus.getIc_Card());
-            prest.setString(6, cus.getHomeTown());
-            prest.setBoolean(7, cus.getSex());
-            prest.setString(8, cus.getPhoneNumber());
-            prest.setBlob(9, cus.getImage());
-            prest.setString(10, cus.getAddress_number());
-            prest.setString(11, cus.getAddress_street());
-            prest.setString(12, cus.getAddress_district());
-            prest.setString(13, cus.getAddress_city());
-            prest.setInt(14, cus.getIdAccount());
+            prest.setString(1, cus.getFirstName());
+            prest.setString(2, cus.getLastName());
+            prest.setDate(3, cus.getDateOfBirth());
+            prest.setString(4, cus.getIc_Card());
+            prest.setString(5, cus.getHomeTown());
+            prest.setBoolean(6, cus.getSex());
+            prest.setString(7, cus.getPhoneNumber());
+            prest.setBlob(8, cus.getImage());
+            prest.setString(9, cus.getAddress_number());
+            prest.setString(10, cus.getAddress_street());
+            prest.setString(11, cus.getAddress_district());
+            prest.setString(12, cus.getAddress_city());
+            prest.setString(13, cus.getEmail());
             prest.execute();
             System.out.println("Update thành công!");
             return 1;

@@ -59,7 +59,7 @@ public class MainUserController implements Initializable {
     private void btn_logout(ActionEvent event) throws IOException {
         Variable_Static.USERNAME = "";
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Login/LoginUI.fxml"));
-       Variable_Static.LinkUI(event, root, "Login");
+        Variable_Static.LinkUI(event, root, "Login");
     }
 
     @Override
@@ -83,13 +83,13 @@ public class MainUserController implements Initializable {
     @FXML
     private void btn_changePassword(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/ChangePass/ChangePassUI.fxml"));
-     Variable_Static.LinkUI(event, root, "Change Password");
+        Variable_Static.LinkUI(event, root, "Change Password");
     }
 
     @FXML
     private void btn_infoAccount(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Info/InfoUI.fxml"));
-     Variable_Static.LinkUI(event, root, "Info Customer");
+        Variable_Static.LinkUI(event, root, "Info Customer");
     }
 
     @FXML
