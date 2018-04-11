@@ -89,7 +89,7 @@
                         <Label styleClass="textField" text="Giới tính:" />
                         <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
                            <children>
-                              <RadioButton fx:id="sex_male" mnemonicParsing="false" text="Nam">
+                              <RadioButton fx:id="sex_male" mnemonicParsing="false" selected="true" text="Nam">
                                  <styleClass>
                                     <String fx:value="selectBox" />
                                     <String fx:value="selectBoxRegister" />

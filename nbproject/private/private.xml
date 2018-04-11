@@ -5,7 +5,9 @@
         <group>
             <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Form/Account/RegisterStaff/RegisterStaffController.java</file>
             <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Form/Home/Info/InfoController.java</file>
-            <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Model/Variable_Static.java</file>
+            <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Model/Employee.java</file>
+            <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Function/EmployeeDAO.java</file>
+            <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Form/Home/MainUser/MainUserController.java</file>
         </group>
     </open-files>
 </project-private>

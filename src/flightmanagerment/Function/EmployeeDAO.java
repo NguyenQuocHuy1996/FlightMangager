@@ -14,6 +14,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -27,6 +30,17 @@ public class EmployeeDAO {
     private static String confirm_password = null;
     private static ResultSet rs;
     private static Statement st;
+
+    public static ObservableList<String> getDepartment() {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Trưởng phòng");
+        list.add("Nhân viên giám sát");
+        list.add("Nhân viên quản lý");
+        list.add("Nhân viên soát vé");
+        list.add("Nhân viên chăm sóc khách hàng");
+        ObservableList<String> listt = FXCollections.observableArrayList(list);
+        return listt;
+    }
 
     public static int insert(Employee emp) throws SQLException {
         if ((emp.getEmail().equals("")) || (emp.getEmail() == null)) {
@@ -51,8 +65,8 @@ public class EmployeeDAO {
             return -10;
         } else if (emp.getPhoneNumber().equals("") || emp.getPhoneNumber() == null) {
             return -11;
-        } else if (emp.getSex().equals("") || emp.getSex() == null) {
-            return -12;
+//        } else if (emp.getSex().equals("") || emp.getSex() == null) {
+//            return -12;
         } else if (emp.getAddress_number().equals("") || emp.getAddress_number() == null) {
             return -13;
         } else if (emp.getAddress_street().equals("") || emp.getAddress_street() == null) {
@@ -65,8 +79,8 @@ public class EmployeeDAO {
             try {
                 connectDB = new ConnectDB();
                 conn = connectDB.getConnect();
-                String sql = " insert into employee (email, password, firstName, lastName, dateOfBirth, ic_Card, education_level, department, homeTown, sex, phoneNumber, image, address_number, address_street, address_district, address_city)"
-                        + " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                String sql = " insert into employee (email, password, firstName, lastName, dateOfBirth, ic_Card, education_level, department, homeTown, sex, phoneNumber, address_number, address_street, address_district, address_city)"
+                        + " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 // st = connection.createStatement();
 
                 prest = conn.prepareStatement(sql);
@@ -81,11 +95,11 @@ public class EmployeeDAO {
                 prest.setString(9, emp.getHomeTown());
                 prest.setBoolean(10, emp.getSex());
                 prest.setString(11, emp.getPhoneNumber());
-                prest.setBlob(12, emp.getImage());
-                prest.setString(13, emp.getAddress_number());
-                prest.setString(14, emp.getAddress_street());
-                prest.setString(15, emp.getAddress_district());
-                prest.setString(16, emp.getAddress_city());
+//                prest.setBlob(12, emp.getImage());
+                prest.setString(12, emp.getAddress_number());
+                prest.setString(13, emp.getAddress_street());
+                prest.setString(14, emp.getAddress_district());
+                prest.setString(15, emp.getAddress_city());
                 prest.execute();
                 if (null != prest) {
                     prest.close();

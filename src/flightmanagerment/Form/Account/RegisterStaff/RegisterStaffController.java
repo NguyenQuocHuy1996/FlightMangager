@@ -8,11 +8,14 @@ package flightmanagerment.Form.Account.RegisterStaff;
 import flightmanagerment.Function.CityDAO;
 import flightmanagerment.Function.CustomerDAO;
 import flightmanagerment.Function.DistrictDAO;
+import flightmanagerment.Function.EmployeeDAO;
 import flightmanagerment.Model.Customer;
 import flightmanagerment.Model.Employee;
 import flightmanagerment.Model.Variable_Static;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Blob;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
@@ -89,35 +92,38 @@ public class RegisterStaffController implements Initializable {
 //            alert.show();
 //        
 //    
-//    @FXML
-//    private void btn_RegisterStaff(ActionEvent event) throws SQLException {
-//        Alert a = new Alert(Alert.AlertType.ERROR);
-//        Boolean sex;
-//        if (sex_male.isSelected()) {
-//            sex = true;
-//        } else {
-//            sex = false;
-//        }
-////        Employee emp = new Employee(email.getText(), password.getText(), firstName.getText(), lastName.getText(), dateOfBirth.getValue(), ic_card.getText(), education_level.getText(), department.getValue(), homeTown.getValue(), sex, phoneNumber.getText(), image.getImage(), address_number, address_street, address_district, address_city);
-//        if (confirm_password.getText().equals(password.getText())) {
-//            int function = CustomerDAO.insert(cus);
-//            if ((function == -1) || (function == -2) || (function == -3) || (function == -4)) {
-//                a.setTitle("ERROR");
-//                a.setContentText("Vui lòng nhập đầy đủ thông tin!");
-//                a.show();
-//            } else {
-//                Alert.AlertType type = Alert.AlertType.INFORMATION;
-//                a.setAlertType(type);
-//                a.setTitle("Đăng ký thành công!");
-//                a.setContentText("Chức mừng bạn đã đăng ký thành công ! - với email : " + cus.getEmail());
-//                a.show();
-//            }
-//        } else {
-//            a.setTitle("ERROR");
-//            a.setContentText("Xác nhận mật khẩu không trùng khớp!");
-//            a.show();
-//        }
-//    }
+    @FXML
+    private void btn_RegisterStaff(ActionEvent event) throws SQLException, IOException {
+        Alert a = new Alert(Alert.AlertType.ERROR);
+        Boolean sex;
+        if (sex_male.isSelected()) {
+            sex = true;
+        } else {
+            sex = false;
+        }
+        Date date = Date.valueOf(dateOfBirth.getValue()); // convert từ local date ( datePicker ) wa date sql
+        Employee emp = new Employee(email.getText(), password.getText(), firstName.getText(), lastName.getText(), date, ic_card.getText(), education_level.getText(), department.getValue(), homeTown.getValue(), sex, phoneNumber.getText(), add_number.getText(), add_Street.getText(), add_district.getValue(), add_city.getValue());
+        if (confirm_password.getText().equals(password.getText())) {
+            int function = EmployeeDAO.insert(emp);
+            if ((function == -1) || (function == -2) || (function == -3) || (function == -4) || (function == -5) || (function == -6) || (function == -7) || (function == -8) || (function == -9) || (function == -10) || (function == -11) || (function == -12) || (function == -13) || (function == -14) || (function == -15) || (function == -16)) {
+                a.setTitle("ERROR");
+                a.setContentText("Vui lòng nhập đầy đủ thông tin!");
+                a.show();
+            } else {
+                Alert.AlertType type = Alert.AlertType.INFORMATION;
+                a.setAlertType(type);
+                a.setTitle("Đăng ký thành công!");
+                a.setContentText("Chức mừng bạn đã đăng ký thành công ! - với email : " + emp.getEmail());
+                a.showAndWait();
+                Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
+                Variable_Static.LinkUI(event, root, "Main Staff");
+            }
+        } else {
+            a.setTitle("ERROR");
+            a.setContentText("Xác nhận mật khẩu không trùng khớp!");
+            a.show();
+        }
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -130,6 +136,18 @@ public class RegisterStaffController implements Initializable {
         add_city.setItems(list);
         add_city.getSelectionModel().select(1);
         add_city.setPromptText(add_city.getConverter().toString(add_city.getValue()));
+
+        department.setItems(EmployeeDAO.getDepartment());
+        department.getSelectionModel().select(1);
+        department.setPromptText(department.getConverter().toString(department.getValue()));
+
+        if (sex_male.isSelected()) {
+            sex_male.setSelected(true);
+            sex_female.setSelected(false);
+        } else {
+            sex_male.setSelected(false);
+            sex_female.setSelected(true);
+        }
     }
 
     @FXML

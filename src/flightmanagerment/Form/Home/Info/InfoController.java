@@ -5,6 +5,7 @@
  */
 package flightmanagerment.Form.Home.Info;
 
+import flightmanagerment.Form.Home.Main.Main;
 import flightmanagerment.Function.CityDAO;
 import flightmanagerment.Function.CustomerDAO;
 import flightmanagerment.Function.DistrictDAO;
@@ -48,6 +49,7 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -87,6 +89,8 @@ public class InfoController implements Initializable {
     private PasswordField password;
     @FXML
     private ToggleGroup GroupSex;
+    @FXML
+    private ImageView Image;
 
 //    @FXML
 //    private TextField txtEmail;
@@ -164,15 +168,6 @@ public class InfoController implements Initializable {
         getInfo();
     }
 
-    private void btn_Update1(ActionEvent event) {
-//        phoneNumber.setEditable(true);
-//        lastName.setEditable(false);
-//        firstName.setEditable(true);
-//        sex_male.setDisable(false);
-//        sex_female.setDisable(false);
-//        _image.setImage(new Image(""));
-    }
-
     @FXML
     private void btn_Update2(ActionEvent event) {
         firstName.setEditable(true);
@@ -230,6 +225,22 @@ public class InfoController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Info/InfoUI.fxml"));
         Variable_Static.LinkUI(event, root, "Info Customer");
 
+    }
+
+    @FXML
+    private void btn_clickMouse(MouseEvent event) {
+        String Url = "/flightmanagerment/Asset/img/background-2.jpg";
+        if (!Url.isEmpty()) {
+            Image img = new Image(Main.class.getResource(Url).toString());
+            Image.setImage(img);
+            Image.setFitHeight(300);
+            Image.setFitWidth(300);
+        }
+    }
+
+    @FXML
+    private void btn_Update1(ActionEvent event) {
+        Image.setDisable(false);
     }
 
 }
