@@ -84,7 +84,7 @@
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
                            <children>
 
-                              <ComboBox prefWidth="150.0" promptText="Chọn điểm đi">
+                              <ComboBox fx:id="cbb_origin" prefWidth="150.0" promptText="Chọn điểm đi">
                                  <styleClass>
                                     <String fx:value="inputField" />
                                     <String fx:value="inputFieldisCheckBox" />
@@ -95,7 +95,7 @@
                         </VBox>
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
                            <children>
-                              <ComboBox prefWidth="150.0" promptText="Chọn điểm đến">
+                              <ComboBox fx:id="cbb_destination" prefWidth="150.0" promptText="Chọn điểm đến">
                                  <styleClass>
                                     <String fx:value="inputField" />
                                     <String fx:value="inputFieldisCheckBox" />
@@ -105,7 +105,7 @@
                         </VBox>
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
                            <children>
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Tìm kiếm" />
+                              <Button mnemonicParsing="false" onAction="#btn_search" styleClass="btnSubmit" text="Tìm kiếm" />
                            </children>
                         </VBox>
                      </children>

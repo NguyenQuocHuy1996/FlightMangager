@@ -73,8 +73,9 @@ public class MainStaffController implements Initializable {
 
     @FXML
     private void btn_historyBooking(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/HistoryBooking/HistoryBookingUI.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/CustomerHistoryBooking/CustomerHistoryBookingUI.fxml"));
         Variable_Static.LinkUI(event, root, "History Booking");
+
     }
 
     @FXML

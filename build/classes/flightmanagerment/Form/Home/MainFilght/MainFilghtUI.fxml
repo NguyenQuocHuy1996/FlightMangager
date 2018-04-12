@@ -334,10 +334,10 @@
                         <Image url="@../../../Asset/img/plane.jpg" />
                      </image>
                   </ImageView>
-                  <HBox fx:id="origin7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin7" styleClass="flightInfo" text="Hồ Chí Minh" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">

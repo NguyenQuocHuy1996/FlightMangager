@@ -5,6 +5,8 @@
  */
 package flightmanagerment.Form.Home.CustomerHistoryBooking;
 
+import flightmanagerment.Model.Variable_Static;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -22,6 +24,13 @@ import javafx.scene.control.TextField;
  */
 public class CustomerHistoryBookingController implements Initializable {
 
+    @FXML
+    private Label lbl_userName;
+    @FXML
+    private TextField ic_Card;
+    @FXML
+    private TextField cusName;
+
 //    @FXML
 //    private TextField txtEmail;
 //    @FXML
@@ -38,6 +47,12 @@ public class CustomerHistoryBookingController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }
+
+    @FXML
+    private void btn_back(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
+        Variable_Static.LinkUI(event, root, "Main Staff");
     }
 
 }

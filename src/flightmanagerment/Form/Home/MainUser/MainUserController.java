@@ -68,7 +68,7 @@ public class MainUserController implements Initializable {
         Customer cus = new Customer();
         try {
             cus = CustomerDAO.getCus(Variable_Static.USERNAME);
-            lbl_userName.setText(cus.getFirstName());
+            lbl_userName.setText(cus.getLastName()  );
         } catch (SQLException ex) {
 //            Logger.getLogger(MainUserController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -76,7 +76,7 @@ public class MainUserController implements Initializable {
 
     @FXML
     private void btn_historyBooking(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/CustomerHistoryBooking/CustomerHistoryBookingUI.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/HistoryBooking/HistoryBookingUI.fxml"));
         Variable_Static.LinkUI(event, root, "History Booking");
     }
 
