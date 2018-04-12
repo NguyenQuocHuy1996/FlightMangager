@@ -82,7 +82,7 @@
                      </styleClass>
                   </ComboBox>
                   <Label styleClass="textField" text="NGÀY ĐI" />
-                  <DatePicker maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0">
+                  <DatePicker fx:id="depart" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0">
                      <styleClass>
                         <String fx:value="inputField" />
                         <String fx:value="inputFieldisCheckBox" />

@@ -31,6 +31,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -51,10 +52,6 @@ public class FlightManagerController implements Initializable {
     private TextField txt_brand;
     @FXML
     private TextField txt_flightNumber;
-    @FXML
-    private TextField txt_origin;
-    @FXML
-    private DatePicker date_depart;
     @FXML
     private TableColumn<?, ?> sttCol;
     @FXML
@@ -84,6 +81,10 @@ public class FlightManagerController implements Initializable {
 
     @FXML
     private Label lbl_userName;
+    @FXML
+    private ComboBox<String> cbb_origin;
+    @FXML
+    private ComboBox<String> cbb_destination;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -165,36 +166,13 @@ public class FlightManagerController implements Initializable {
     }
 
     @FXML
-    private void btn_findFlightBrand(ActionEvent event) {
-//        list = FXCollections.observableArrayList();
-//        setCellTable();
-//        list = FlightDAO.getInfoBrand(txt_brand.getText());
-//        table.setItems(list);
+    private void btn_search(ActionEvent event) {
+        int id = Integer.parseInt(txt_idFlight.getText());
+        list = FXCollections.observableArrayList();
+        setCellTable();
+        list = FlightDAO.getInfo(id, txt_brand.getText(), txt_flightNumber.getText(), cbb_origin.getValue(), cbb_destination.getValue());
+        table.setItems(list);
 
-    }
-
-    @FXML
-    private void btn_findFLightNumber(ActionEvent event) {
-//        list = FXCollections.observableArrayList();
-//        setCellTable();
-//        list = FlightDAO.getInfoFlightNumber(txt_flightNumber.getText());
-//        table.setItems(list);
-    }
-
-    @FXML
-    private void btn_findFlightOrigin(ActionEvent event) {
-//        list = FXCollections.observableArrayList();
-//        setCellTable();
-//        list = FlightDAO.getInfoOrigin(txt_origin.getText());
-//        table.setItems(list);
-    }
-
-    @FXML
-    private void btn_findFlightDepart(ActionEvent event) {
-//        list = FXCollections.observableArrayList();
-//        setCellTable();
-//        list = FlightDAO.getInfoDepart(date_depart.getValue());
-//        table.setItems(list);
     }
 
 }

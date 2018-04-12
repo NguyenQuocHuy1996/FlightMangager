@@ -79,31 +79,31 @@
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin1" styleClass="flightInfo" text="Hồ Chí Minh" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination1" styleClass="flightInfo" text="Hà Nội" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart1" styleClass="flightInfo" text="30/10/2018" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label styleClass="flightInfo" text="30/10/2019" />
+                        <Label fx:id="flight_depart1" styleClass="flightInfo" text="30/10/2019" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number1" styleClass="flightInfo" text="MH370" />
                      </children>
                   </HBox>
                </children>
@@ -122,31 +122,31 @@
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin2" styleClass="flightInfo" text="Hồ Chí Minh" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination2" styleClass="flightInfo" text="Hà Nội" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart2" styleClass="flightInfo" text="30/10/2018" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label styleClass="flightInfo" text="30/10/2019" />
+                        <Label fx:id="flight_depart2" styleClass="flightInfo" text="30/10/2019" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number2" styleClass="flightInfo" text="MH370" />
                      </children>
                   </HBox>
                </children>
@@ -165,31 +165,31 @@
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin3" styleClass="flightInfo" text="Hồ Chí Minh" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination3" styleClass="flightInfo" text="Hà Nội" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart3" styleClass="flightInfo" text="30/10/2018" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label styleClass="flightInfo" text="30/10/2019" />
+                        <Label fx:id="flight_depart3" styleClass="flightInfo" text="30/10/2019" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number3" styleClass="flightInfo" text="MH370" />
                      </children>
                   </HBox>
                </children>
@@ -208,31 +208,31 @@
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin4" styleClass="flightInfo" text="Hồ Chí Minh" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination4" styleClass="flightInfo" text="Hà Nội" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart4" styleClass="flightInfo" text="30/10/2018" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label styleClass="flightInfo" text="30/10/2019" />
+                        <Label fx:id="flight_depart4" styleClass="flightInfo" text="30/10/2019" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number4" styleClass="flightInfo" text="MH370" />
                      </children>
                   </HBox>
                </children>
@@ -251,31 +251,31 @@
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin5" styleClass="flightInfo" text="Hồ Chí Minh" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination5" styleClass="flightInfo" text="Hà Nội" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart5" styleClass="flightInfo" text="30/10/2018" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label styleClass="flightInfo" text="30/10/2019" />
+                        <Label fx:id="flight_depart5" styleClass="flightInfo" text="30/10/2019" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number5" styleClass="flightInfo" text="MH370" />
                      </children>
                   </HBox>
                </children>
@@ -294,31 +294,31 @@
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin6" styleClass="flightInfo" text="Hồ Chí Minh" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination6" styleClass="flightInfo" text="Hà Nội" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart6" styleClass="flightInfo" text="30/10/2018" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label styleClass="flightInfo" text="30/10/2019" />
+                        <Label fx:id="flight_depart6" styleClass="flightInfo" text="30/10/2019" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number6" styleClass="flightInfo" text="MH370" />
                      </children>
                   </HBox>
                </children>
@@ -334,7 +334,7 @@
                         <Image url="@../../../Asset/img/plane.jpg" />
                      </image>
                   </ImageView>
-                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
+                  <HBox fx:id="origin7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
                         <Label styleClass="flightInfo" text="Hồ Chí Minh" />
@@ -343,25 +343,25 @@
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination7" styleClass="flightInfo" text="Hà Nội" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart7" styleClass="flightInfo" text="30/10/2018" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label styleClass="flightInfo" text="30/10/2019" />
+                        <Label fx:id="flight_depart7" styleClass="flightInfo" text="30/10/2019" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number7" styleClass="flightInfo" text="MH370" />
                      </children>
                   </HBox>
                </children>
@@ -380,31 +380,31 @@
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin8" styleClass="flightInfo" text="Hồ Chí Minh" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination8" styleClass="flightInfo" text="Hà Nội" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart8" styleClass="flightInfo" text="30/10/2018" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label styleClass="flightInfo" text="30/10/2019" />
+                        <Label fx:id="flight_depart8" styleClass="flightInfo" text="30/10/2019" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number8" styleClass="flightInfo" text="MH370" />
                      </children>
                   </HBox>
                </children>
@@ -423,31 +423,31 @@
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin9" styleClass="flightInfo" text="Hồ Chí Minh" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination9" styleClass="flightInfo" text="Hà Nội" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart9" styleClass="flightInfo" text="30/10/2018" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label styleClass="flightInfo" text="30/10/2019" />
+                        <Label fx:id="flight_depart9" styleClass="flightInfo" text="30/10/2019" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number9" styleClass="flightInfo" text="MH370" />
                      </children>
                   </HBox>
                </children>
@@ -466,31 +466,31 @@
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin10" styleClass="flightInfo" text="Hồ Chí Minh" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination10" styleClass="flightInfo" text="Hà Nội" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart10" styleClass="flightInfo" text="30/10/2018" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label styleClass="flightInfo" text="30/10/2019" />
+                        <Label fx:id="flight_depart10" styleClass="flightInfo" text="30/10/2019" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number10" styleClass="flightInfo" text="MH370" />
                      </children>
                   </HBox>
                </children>

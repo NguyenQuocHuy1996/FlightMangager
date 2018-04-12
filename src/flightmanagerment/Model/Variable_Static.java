@@ -31,7 +31,7 @@ public final class Variable_Static {
     public static int IDFLIGHT = 0;
     public static String ORIGIN = "";
     public static String DESTINATION = "";
-
+    public static Date DEPART = null;
     private static Connection conn = null;
     private static ConnectDB connectDB;
     private static PreparedStatement prest = null;
@@ -50,7 +50,7 @@ public final class Variable_Static {
 
     }
 
-    public static List<Flight> searchFlight(String origin, String destination, Date depart) throws SQLException {
+    public static ArrayList<Flight> searchFlight(String origin, String destination, Date depart) throws SQLException {
         try {
             ArrayList<Flight> list = new ArrayList<>();
             connectDB = new ConnectDB();

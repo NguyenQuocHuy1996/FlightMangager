@@ -20,6 +20,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
@@ -33,6 +34,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -50,7 +52,7 @@ public class ConfirmedFindFlightController implements Initializable {
     @FXML
     private ComboBox<String> cbb_destination;
     @FXML
-    private TextField depart;
+    private DatePicker depart;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -100,10 +102,25 @@ public class ConfirmedFindFlightController implements Initializable {
     }
 
     @FXML
-    private void btn_findFlight(ActionEvent event) throws IOException {
-//        List<Flight> list = FlightDAO.searchFlight(cbb_origin.getValue(), cbb_destination.getValue(), depart);
-        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainFilght/MainFilghtUI.fxml"));
-      Variable_Static.LinkUI(event, root, "Main Flight");
+    private void btn_findFlight(ActionEvent event) throws IOException, SQLException {
+
+        Alert a = new Alert(Alert.AlertType.ERROR);
+        if (depart.getValue() == null) {
+            a.setTitle("ERROR");
+            a.setContentText("Vui lòng nhập đủ thông tin");
+            a.show();
+        } else {
+            Date date = Date.valueOf(depart.getValue()); // convert từ local date ( datePicker ) wa date sql
+            List<Flight> list = Variable_Static.searchFlight(cbb_origin.getValue(), cbb_destination.getValue(), date);
+            if (list == null) {
+                a.setTitle("Không có chuyến bay phù hợp");
+                a.setContentText("Hiện tại không có chuyến bay phù hợp với yêu cầu!");
+                a.show();
+            } else {
+                Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainFilght/MainFilghtUI.fxml"));
+                Variable_Static.LinkUI(event, root, "Main Flight");
+            }
+        }
 
     }
 

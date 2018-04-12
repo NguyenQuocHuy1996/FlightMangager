@@ -194,64 +194,72 @@ public class FlightDAO {
         return 0;
     }
 
-    public static List<Flight> searchFlight(String origin, String destination, Date depart) throws SQLException {
-        try {
-            ArrayList<Flight> list = new ArrayList<>();
-            connectDB = new ConnectDB();
-            conn = connectDB.getConnect();
-            String sql = "select  * from flight where origin = ? and destination = ? and depart = ? limit 10";
-            prest = conn.prepareStatement(sql);
-            prest.setString(1, origin);
-            prest.setString(2, destination);
-            prest.setDate(3, depart);
-            rs = prest.executeQuery();
-            while (rs.next()) {
-                int id = rs.getInt("idFlight");
-                Date _arrival = rs.getDate("arrival");
-                int _passenger = rs.getInt("passenger");
-                String _brand = rs.getString("brand");
-                String _flight_number = rs.getString("flight_number");
-                String _flight_arrival = rs.getString("flight_arrival");
-                String _flight_depart = rs.getString("flight_depart");
-                Double _price = rs.getDouble("price");
+//    public static List<Flight> searchFlight(String origin, String destination, Date depart) throws SQLException {
+////        if (origin.equals("")) {
+////            return null;
+////        } else if (destination.equals("")) {
+////            return null;
+////        } else if (depart == null) {
+////            return null;
+////        } else {
+//        try {
+//            ArrayList<Flight> list = new ArrayList<>();
+//            connectDB = new ConnectDB();
+//            conn = connectDB.getConnect();
+//            String sql = "select  * from flight where origin = ? and destination = ? and depart = ? limit 10";
+//            prest = conn.prepareStatement(sql);
+//            prest.setString(1, origin);
+//            prest.setString(2, destination);
+//            prest.setDate(3, depart);
+//            rs = prest.executeQuery();
+//            while (rs.next()) {
+//                int id = rs.getInt("idFlight");
+//                Date _arrival = rs.getDate("arrival");
+//                int _passenger = rs.getInt("passenger");
+//                String _brand = rs.getString("brand");
+//                String _flight_number = rs.getString("flight_number");
+//                String _flight_arrival = rs.getString("flight_arrival");
+//                String _flight_depart = rs.getString("flight_depart");
+//                Double _price = rs.getDouble("price");
+//
+//                System.out.println("id: " + id);
+//                System.out.println("origin: " + origin);
+//                System.out.println("destination: " + destination);
+//                System.out.println("depart: " + depart);
+//                System.out.println("arrival: " + _arrival);
+//                System.out.println("passenger: " + _passenger);
+//                System.out.println("brand: " + _brand);
+//                System.out.println("flight_number: " + _flight_number);
+//                System.out.println("flight_arrival: " + _flight_arrival);
+//                System.out.println("flight_depart: " + _flight_depart);
+//                System.out.println("price: " + _price);
+//                Flight f = new Flight(id, origin, destination, depart, _arrival, _passenger,
+//                        _brand, _flight_number, _flight_arrival, _flight_depart, _price);
+//                list.add(f);
+//            }
+//
+//            if (null != prest) {
+//                prest.close();
+//            }
+//            if (null != conn) {
+//                conn.close();
+//            }
+//            return list;
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        } finally {
+//            if (null != prest) {
+//                prest.close();
+//            }
+//            if (null != conn) {
+//                conn.close();
+//            }
+//            return null;
+//        }
+////        }
+//    }
 
-                System.out.println("id: " + id);
-                System.out.println("origin: " + origin);
-                System.out.println("destination: " + destination);
-                System.out.println("depart: " + depart);
-                System.out.println("arrival: " + _arrival);
-                System.out.println("passenger: " + _passenger);
-                System.out.println("brand: " + _brand);
-                System.out.println("flight_number: " + _flight_number);
-                System.out.println("flight_arrival: " + _flight_arrival);
-                System.out.println("flight_depart: " + _flight_depart);
-                System.out.println("price: " + _price);
-                Flight f = new Flight(id, origin, destination, depart, _arrival, _passenger,
-                        _brand, _flight_number, _flight_arrival, _flight_depart, _price);
-                list.add(f);
-            }
-
-            if (null != prest) {
-                prest.close();
-            }
-            if (null != conn) {
-                conn.close();
-            }
-            return list;
-        } catch (Exception e) {
-            System.out.println(e);
-        } finally {
-            if (null != prest) {
-                prest.close();
-            }
-            if (null != conn) {
-                conn.close();
-            }
-            return null;
-        }
-    }
-
-    public static ObservableList<Flight> getInfoBrand(int idFlight, String brand, String flight_number, String origin, String destination) {
+    public static ObservableList<Flight> getInfo(int idFlight, String brand, String flight_number, String origin, String destination) {
         try {
             connectDB = new ConnectDB();
             conn = connectDB.getConnect();

@@ -116,14 +116,6 @@ public class InfoController implements Initializable {
             ic_Card.setText(cus.getIc_Card());
 
             if (cus.getDateOfBirth() != null) {
-//              dateOfBirth.setValue(cus.getDateOfBirth().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-                //Date date = Date.from(dateOfBirth.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
-
-//                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy");
-//                DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
-//                String date = df.format(cus.getDateOfBirth());
-//                dateOfBirth.setValue(LocalDate.parse(date, formatter));
-//                System.out.println("asd");
 //                 Date date = Date.valueOf(dateOfBirth.getValue()); // convert từ local date ( datePicker ) wa date sql
                 LocalDate localD = cus.getDateOfBirth().toLocalDate(); // convert từ date sql wa local date (datePicker)
                 dateOfBirth.setValue(localD);
