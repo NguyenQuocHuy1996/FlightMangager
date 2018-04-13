@@ -19,12 +19,21 @@ public class Seat_Ticket {
     private String ic_Card;
     private int old;
     private int idFlight;
+    private int idAccount;
+
+    public int getIdAccount() {
+        return idAccount;
+    }
+
+    public void setIdAccount(int idAccount) {
+        this.idAccount = idAccount;
+    }
 
     public Seat_Ticket() {
     }
 
     public Seat_Ticket(int idSeat, String code, Boolean status, String firstName, String lastName, String ic_Card, int old,
-            int idFlight) {
+            int idFlight, int idAccount) {
         super();
         this.idSeat = idSeat;
         this.code = code;
@@ -34,6 +43,7 @@ public class Seat_Ticket {
         this.ic_Card = ic_Card;
         this.old = old;
         this.idFlight = idFlight;
+        this.idAccount = idAccount;
     }
 
     public int getIdSeat() {
