@@ -125,8 +125,9 @@ public class Seat_TicketDAO {
 
     }
 
-    public ObservableList<Seat_Ticket> historyBookingofEmp(int idFlight, Boolean status) throws SQLException {
-        ObservableList<Seat_Ticket> data = FXCollections.observableArrayList();
+    public static int historyBookingofEmp(int idFlight, Boolean status) throws SQLException {
+//        ObservableList<Seat_Ticket> data = FXCollections.observableArrayList();
+        int count = 0;
         connectDB = new ConnectDB();
         conn = connectDB.getConnect();
         String sql = "select * from seat_ticket where idFlight = ? and status = ?";
@@ -150,15 +151,15 @@ public class Seat_TicketDAO {
             String firstName = rs.getString("firstName");
             String lastName = rs.getString("lastName");
             int idAccount = rs.getInt("idAccount");
-
-            Seat_Ticket seat = new Seat_Ticket(idSeat, code, status, firstName, lastName, ic_Card, old, idFlight, idAccount);
-            data.add(seat);
+            count++;
+//            Seat_Ticket seat = new Seat_Ticket(idSeat, code, status, firstName, lastName, ic_Card, old, idFlight, idAccount);
+//            data.add(seat);
 
         }
-        return data;
+        return count;
     }
 
-    public ObservableList<Seat_Ticket> historyBookingofCus(int idAccount) throws SQLException {
+    public static ObservableList<Seat_Ticket> historyBookingofCus(int idAccount) throws SQLException {
         ObservableList<Seat_Ticket> data = FXCollections.observableArrayList();
         connectDB = new ConnectDB();
         conn = connectDB.getConnect();

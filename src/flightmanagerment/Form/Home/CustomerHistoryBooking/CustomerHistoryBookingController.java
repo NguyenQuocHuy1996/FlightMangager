@@ -5,9 +5,12 @@
  */
 package flightmanagerment.Form.Home.CustomerHistoryBooking;
 
+import flightmanagerment.Function.Seat_TicketDAO;
+import flightmanagerment.Model.Seat_Ticket;
 import flightmanagerment.Model.Variable_Static;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +19,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 /**
  *
@@ -30,6 +35,8 @@ public class CustomerHistoryBookingController implements Initializable {
     private TextField ic_Card;
     @FXML
     private TextField cusName;
+    @FXML
+    private TableView<Seat_Ticket> table;
 
 //    @FXML
 //    private TextField txtEmail;
@@ -53,6 +60,17 @@ public class CustomerHistoryBookingController implements Initializable {
     private void btn_back(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
         Variable_Static.LinkUI(event, root, "Main Staff");
+    }
+
+    @FXML
+    private void getID(MouseEvent event) throws SQLException {
+        if (event.getClickCount() == 2) {
+//            table.getSelectionModel().getSelectedItem().getIdFlight();
+            int count = Seat_TicketDAO.historyBookingofEmp(table.getSelectionModel().getSelectedItem().getIdFlight(), Boolean.TRUE);
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setTitle("Title");
+            a.setContentText("Có tất cả " + count + "chuyến đã được đặt");
+        }
     }
 
 }

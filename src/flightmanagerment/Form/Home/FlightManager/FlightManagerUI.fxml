@@ -110,7 +110,7 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <TableView fx:id="table" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" styleClass="mainFlightManager">
+                  <TableView fx:id="table" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" onMouseClicked="#getID" prefHeight="0.0" prefWidth="0.0" styleClass="mainFlightManager">
                     <columns>
                         <TableColumn fx:id="sttCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="STT" />
                         <TableColumn fx:id="idFlightCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Mã chuyến bay" />
