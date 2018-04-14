@@ -2,10 +2,20 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
+<<<<<<< HEAD
             <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Form/Home/FlightManager/FlightManagerController.java</file>
             <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Model/Seat_Ticket.java</file>
             <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Function/Seat_TicketDAO.java</file>
+=======
+            <file>file:/E:/Study/Lap%20trinh%20Java/Bai%20Tap%20Lon/QuanLyChuyenBay/FlightMangager/src/flightmanagerment/Form/Home/EditFlightManager/EditFlightManager.java</file>
+            <file>file:/E:/Study/Lap%20trinh%20Java/Bai%20Tap%20Lon/QuanLyChuyenBay/FlightMangager/src/flightmanagerment/Form/Home/EditFlightManager/EditFlightManagerController.java</file>
+            <file>file:/E:/Study/Lap%20trinh%20Java/Bai%20Tap%20Lon/QuanLyChuyenBay/FlightMangager/src/flightmanagerment/Asset/css/common.css</file>
+>>>>>>> Quoc_Huy_v2.0
         </group>
+=======
+        <group/>
+>>>>>>> Quoc_Huy_v2.0
     </open-files>
 </project-private>

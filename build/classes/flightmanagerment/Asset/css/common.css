@@ -24,23 +24,8 @@
 }
 
 /*Button Metro*/
-.btnGreen,
-.btnLightGreen,
-.btnDarkGreen,
-.btnMagenta,
-.btnLightPurple,
-.btnPurple,
-.btnDarkPurple,
-.btnDarken,
-.btnTeal,
-.btnLightBlue,
-.btnBlue,
-.btnDarkBlue,
-.btnYellow,
-.btnOrange,
-.btnDarkOrange,
-.btnRed,
-.btnDarkRed{    
+.btnMain,
+.btnMagenta{
     -fx-border-style: none;
     -fx-pref-width:150px;
     -fx-pref-height:150px;
@@ -53,6 +38,7 @@
 .btnMetro{
     -fx-alignment: CENTER;
 }
+
 .btnGreen{
     -fx-background-color: #00a300;    
 }
@@ -191,6 +177,25 @@
     -fx-pref-width: 450px;
     -fx-pref-height: 450px;
 }
+.mainFlightDetail{
+    -fx-pref-width: 635px;
+    -fx-pref-height: 435px;
+}
+.btnSeat{
+    -fx-pref-width: 35px;
+    -fx-pref-height: 35px;
+    -fx-font-size:10px;
+    -fx-text-fill: black;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-border-style: none;
+    -fx-wrap-text: true;
+    -fx-background-color: white;
+    -fx-margin: 0 10 0 10;
+}
+.btnThemeColor{
+    -fx-background-color: #00a300;
+}
 .flightWrapper{
     -fx-padding: 10;
     -fx-pref-width: 220px;
@@ -275,6 +280,9 @@
     -fx-alignment: center;
     -fx-text-alignment: center;
 }
+.mainFlightManager .setWidthVBoxFilterHasComboBox{
+    -fx-pref-width:300px;
+}
 
 .mainCustomerHistoryBooking .setWidthVBoxFilter .btnSubmit,
 .mainFlightManager .setWidthVBoxFilter .btnSubmit{
@@ -286,6 +294,19 @@
 }
 .mainCustomerHistoryBooking .setWidthColumn{
     -fx-pref-width:150px;
+}
+.mainInfoHistoryCustomer{
+    -fx-pref-width:960px;
+}
+.mainInfoHistoryCustomer .setWidthColumn{
+    -fx-pref-width:120px;
+}
+.mainInfoFlight{
+    -fx-background-color: #1d212973;
+}
+.mainInfoFlight .textField{
+    -fx-pref-height:25px;
+    -fx-padding: 0 0 0 0;
 }
 
 .inputFieldisCheckBox{    
