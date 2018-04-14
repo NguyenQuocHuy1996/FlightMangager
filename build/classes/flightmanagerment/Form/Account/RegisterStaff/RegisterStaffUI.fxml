@@ -147,7 +147,6 @@
          </children>
       </GridPane>
    </center>
-
    <top>
       <Pane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -155,5 +154,4 @@
          </children>
       </Pane>
    </top>
-
 </BorderPane>

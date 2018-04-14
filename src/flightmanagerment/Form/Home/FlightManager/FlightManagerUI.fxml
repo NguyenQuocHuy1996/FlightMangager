@@ -61,47 +61,68 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <ComboBox prefWidth="280.0" promptText="Chọn điểm đi">
+                                       <styleClass>
+                                          <String fx:value="inputField" />
+                                          <String fx:value="inputFieldisCheckBox" />
+                                       </styleClass>
+                                    </ComboBox>
+                                 </children>
+                              </Pane>
+                           </children>
+                           <styleClass>
+                              <String fx:value="setWidthVBoxFilter" />
+                              <String fx:value="setWidthVBoxFilterHasComboBox" />
+                           </styleClass>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <ComboBox prefWidth="280.0" promptText="Chọn điểm đến">
+                                       <styleClass>
+                                          <String fx:value="inputField" />
+                                          <String fx:value="inputFieldisCheckBox" />
+                                       </styleClass>
+                                    </ComboBox>
+                                 </children>
+                              </Pane>
+                           </children>
+                           <styleClass>
+                              <String fx:value="setWidthVBoxFilter" />
+                              <String fx:value="setWidthVBoxFilterHasComboBox" />
+                           </styleClass>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" spacing="10.0" styleClass="setWidthVBoxFilter">
                            <children>
                               <TextField promptText="Nhập mã chuyến bay" styleClass="inputField" />
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
-                           </children>
-                        </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
-                           <children>
                               <TextField promptText="Nhập hãng máy bay" styleClass="inputField" />
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
                            </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
                         </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" spacing="10.0" styleClass="setWidthVBoxFilter">
                            <children>
                               <TextField promptText="Nhập số hiệu" styleClass="inputField" />
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
-                           </children>
-                        </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
-                           <children>
-                              <ComboBox prefWidth="150.0" promptText="Chọn điểm đi">
-                                 <styleClass>
-                                    <String fx:value="inputField" />
-                                    <String fx:value="inputFieldisCheckBox" />
-                                 </styleClass>
-                              </ComboBox>
-                           </children>
-                        </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
-                           <children>
-                              <ComboBox prefWidth="150.0" promptText="Chọn điểm đến">
-                                 <styleClass>
-                                    <String fx:value="inputField" />
-                                    <String fx:value="inputFieldisCheckBox" />
-                                 </styleClass>
-                              </ComboBox>
-                           </children>
-                        </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
-                           <children>
                               <Button mnemonicParsing="false" styleClass="btnSubmit" text="Tìm kiếm" />
+                           </children>
+                           <HBox.margin>
+                              <Insets right="45.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
+                           <children>
+                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Thêm" />
+                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Cập nhật" />
+                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Xóa" />
                            </children>
                         </VBox>
                      </children>
@@ -114,10 +135,10 @@
                         <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Số hiệu" />
                       <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Điểm đi" />
                       <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Điểm đến" />
-                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Ngay đi" />
+                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Ngày đi" />
                         <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Giờ đi" />
-                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Ngày về" />
-                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Giờ về" />
+                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Ngày đến" />
+                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Giờ đến" />
                         <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Tổng số ghế" />
                     </columns>
                      <VBox.margin>
