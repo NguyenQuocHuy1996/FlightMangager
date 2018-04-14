@@ -171,6 +171,24 @@ public class Employee {
         this.image = image;
     }
 
+    public Employee(String email, String password, String firstName, String lastName, Date dateOfBirth, String ic_Card, String education_level, String department, String homeTown, Boolean sex, String phoneNumber , String address_number, String address_street, String address_district, String address_city) {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.ic_Card = ic_Card;
+        this.education_level = education_level;
+        this.department = department;
+        this.homeTown = homeTown;
+        this.sex = sex;
+        this.phoneNumber = phoneNumber;
+        this.address_number = address_number;
+        this.address_street = address_street;
+        this.address_district = address_district;
+        this.address_city = address_city;
+    }
+
     public Employee(int idAccount, String email, String password, String firstName, String lastName, Date dateOfBirth, String ic_Card, String education_level, String department, String homeTown, Boolean sex, String phoneNumber, Blob image, String address_number, String address_street, String address_district, String address_city) {
         this.idAccount = idAccount;
         this.email = email;

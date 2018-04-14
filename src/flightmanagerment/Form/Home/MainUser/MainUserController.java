@@ -59,7 +59,7 @@ public class MainUserController implements Initializable {
     private void btn_logout(ActionEvent event) throws IOException {
         Variable_Static.USERNAME = "";
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Login/LoginUI.fxml"));
-       Variable_Static.LinkUI(event, root, "Login");
+        Variable_Static.LinkUI(event, root, "Login");
     }
 
     @Override
@@ -68,7 +68,7 @@ public class MainUserController implements Initializable {
         Customer cus = new Customer();
         try {
             cus = CustomerDAO.getCus(Variable_Static.USERNAME);
-            lbl_userName.setText(cus.getFirstName());
+            lbl_userName.setText(cus.getLastName()  );
         } catch (SQLException ex) {
 //            Logger.getLogger(MainUserController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -76,20 +76,20 @@ public class MainUserController implements Initializable {
 
     @FXML
     private void btn_historyBooking(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/CustomerHistoryBooking/CustomerHistoryBookingUI.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/HistoryBooking/HistoryBookingUI.fxml"));
         Variable_Static.LinkUI(event, root, "History Booking");
     }
 
     @FXML
     private void btn_changePassword(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/ChangePass/ChangePassUI.fxml"));
-     Variable_Static.LinkUI(event, root, "Change Password");
+        Variable_Static.LinkUI(event, root, "Change Password");
     }
 
     @FXML
     private void btn_infoAccount(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Info/InfoUI.fxml"));
-     Variable_Static.LinkUI(event, root, "Info Customer");
+        Variable_Static.LinkUI(event, root, "Info Customer");
     }
 
     @FXML

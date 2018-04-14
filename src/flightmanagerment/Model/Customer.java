@@ -33,7 +33,8 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String firstName, String lastName, Date dateOfBirth, String ic_Card, String homeTown, Boolean sex, String phoneNumber, String address_number, String address_street, String address_district, String address_city) {
+    public Customer(String email, String firstName, String lastName, Date dateOfBirth, String ic_Card, String homeTown, Boolean sex, String phoneNumber, String address_number, String address_street, String address_district, String address_city) {
+        this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;

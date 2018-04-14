@@ -2,20 +2,10 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
-<<<<<<< HEAD
-            <file>file:/E:/Study/Lap%20trinh%20Java/Bai%20Tap%20Lon/QuanLyChuyenBay/FlightMangager/nbproject/jfx-impl.xml</file>
-            <file>file:/E:/Study/Lap%20trinh%20Java/Bai%20Tap%20Lon/QuanLyChuyenBay/FlightMangager/src/flightmanagerment/Form/Account/RegisterStaff/RegisterStaff.java</file>
-=======
-            <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Form/Home/Main/MainController.java</file>
-            <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Form/Account/Login/LoginController.java</file>
-            <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Form/Account/Register/RegisterController.java</file>
-            <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Function/AccountDAO.java</file>
->>>>>>> 7705bce9c8783f74836e4e022fb637fb31d8d8f7
+            <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Form/Home/FlightManager/FlightManagerController.java</file>
+            <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Model/Seat_Ticket.java</file>
+            <file>file:/D:/git_desktop/FlightMangager/src/flightmanagerment/Function/Seat_TicketDAO.java</file>
         </group>
-=======
-        <group/>
->>>>>>> master
     </open-files>
 </project-private>
