@@ -35,11 +35,8 @@
                   <String fx:value="btnThemeColor" />
                   <String fx:value="btnMetro" />
                </styleClass></Label>
-<<<<<<< HEAD
-            <Button mnemonicParsing="false" onAction="#btn_login" text="Đăng nhập" GridPane.columnIndex="2">
-=======
-            <Button mnemonicParsing="false" text="Đăng nhập" GridPane.rowIndex="2">
->>>>>>> Quoc_Huy_v2.0
+
+            <Button mnemonicParsing="false" onAction="#btn_login" text="Đăng nhập" GridPane.rowIndex="2">
                <styleClass>
                   <String fx:value="btnMain" />
                   <String fx:value="btnThemeColor" />
@@ -58,11 +55,8 @@
                   <String fx:value="btnFindFlight" />
                </styleClass>
             </Button>
-<<<<<<< HEAD
-            <Button layoutX="320.0" layoutY="25.0" mnemonicParsing="false" onAction="#btn_register" text="Đăng ký" GridPane.columnIndex="2" GridPane.rowIndex="1">
-=======
-            <Button layoutX="320.0" layoutY="25.0" mnemonicParsing="false" text="Đăng ký" GridPane.columnIndex="1" GridPane.rowIndex="2">
->>>>>>> Quoc_Huy_v2.0
+
+            <Button layoutX="320.0" layoutY="25.0" mnemonicParsing="false" onAction="#btn_register" text="Đăng ký" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <styleClass>
                   <String fx:value="btnMain" />
                   <String fx:value="btnThemeColor" />

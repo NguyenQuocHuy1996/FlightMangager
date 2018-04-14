@@ -6,6 +6,7 @@
 package flightmanagerment.Form.Home.FlightManager;
 
 import flightmanagerment.Config.ConnectDB;
+import flightmanagerment.Function.CityDAO;
 import flightmanagerment.Function.EmployeeDAO;
 import flightmanagerment.Function.FlightDAO;
 import flightmanagerment.Model.Employee;
@@ -53,8 +54,6 @@ public class FlightManagerController implements Initializable {
     private TextField txt_brand;
     @FXML
     private TextField txt_flightNumber;
-    @FXML
-    private TableColumn<?, ?> sttCol;
     @FXML
     private TableColumn<Flight, Integer> idFlightCol;
     @FXML
@@ -104,7 +103,14 @@ public class FlightManagerController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(FlightManagerController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        ObservableList<String> list = CityDAO.getAllCity();
+        cbb_origin.setItems(list);
+        cbb_origin.getSelectionModel().select(1);
+        cbb_origin.setPromptText(cbb_origin.getConverter().toString(cbb_origin.getValue()));
 
+        cbb_destination.setItems(list);
+        cbb_destination.getSelectionModel().select(1);
+        cbb_destination.setPromptText(cbb_destination.getConverter().toString(cbb_destination.getValue()));
     }
 
     private void loadDB() throws SQLException {
@@ -167,18 +173,45 @@ public class FlightManagerController implements Initializable {
     }
 
     @FXML
-    private void btn_search(ActionEvent event) {
-        int id = Integer.parseInt(txt_idFlight.getText());
-        list = FXCollections.observableArrayList();
-        setCellTable();
-        list = FlightDAO.getInfo(id, txt_brand.getText(), txt_flightNumber.getText(), cbb_origin.getValue(), cbb_destination.getValue());
-        table.setItems(list);
+    private void btn_search(ActionEvent event) throws SQLException {
+        if (txt_idFlight.getText().equals("")) {
+            list = FXCollections.observableArrayList();
+            setCellTable();
+            list = FlightDAO.getInfo(0, txt_brand.getText(), txt_flightNumber.getText(), cbb_origin.getValue(), cbb_destination.getValue());
+            table.setItems(list);
+        } else {
+            try {
+                int id = Integer.parseInt(txt_idFlight.getText());
+                list = FXCollections.observableArrayList();
+                setCellTable();
+                list = FlightDAO.getInfo(id, txt_brand.getText(), txt_flightNumber.getText(), cbb_origin.getValue(), cbb_destination.getValue());
+                table.setItems(list);
+            } catch (Exception e) {
+                Alert a = new Alert(Alert.AlertType.ERROR);
+                a.setTitle("ERROR");
+                a.setContentText("Vui lòng nhập đúng định dạng!");
+                a.show();
+            }
+        }
 
     }
 
     @FXML
     private void getID(MouseEvent event) {
         table.getSelectionModel().getSelectedItem().getIdFlight();
+    }
+
+    @FXML
+    private void btn_insert(ActionEvent event) {
+        
+    }
+
+    @FXML
+    private void btn_update(ActionEvent event) {
+    }
+
+    @FXML
+    private void btn_delete(ActionEvent event) {
     }
 
 }

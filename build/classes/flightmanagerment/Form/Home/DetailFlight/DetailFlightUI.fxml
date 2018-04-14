@@ -59,24 +59,7 @@
          <children>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="510.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
                <children>
-<<<<<<< HEAD
-                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/img/icon/search-45x45.png" />
-                     </image>
-                  </ImageView>
-                  <VBox prefHeight="175.0" prefWidth="713.0">
-                     <children>
-                        <TextField fx:id="flightDetail" prefHeight="12.0" prefWidth="773.0" promptText="Nhập thông tin tìm kiếm">
-                           <styleClass>
-                              <String fx:value="textField" />
-                              <String fx:value="btnGreen" />
-                           </styleClass>
-                        </TextField>
-                        <Separator prefWidth="200.0" />
-                     </children>
-                  </VBox>
-=======
+
                   <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Mã chuyến bay:" />
                   <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
                </children>
@@ -91,7 +74,6 @@
                <children>
                   <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Giá vé:" />
                   <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
->>>>>>> Quoc_Huy_v2.0
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="200.0" spacing="5.0">

@@ -59,64 +59,9 @@
          <children>
             <VBox maxHeight="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0">
                <children>
-<<<<<<< HEAD
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
-                           <children>
-                              <TextField fx:id="ic_Card" promptText="Nhập CMND khách hàng" styleClass="inputField" />
-                              <Separator prefWidth="200.0" styleClass="separatorForm" />
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Tìm kiếm" />
-                           </children>
-                        </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
-                           <children>
-                              <TextField fx:id="cusName" promptText="Nhập tên khách hàng" styleClass="inputField" />
-                              <Separator prefWidth="200.0" styleClass="separatorForm" />
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Tìm kiếm" />
-                           </children>
-                        </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
-                           <children>
-                              <TextField promptText="Nhập CMND khách hàng" styleClass="inputField" />
-                              <Separator prefWidth="200.0" styleClass="separatorForm" />
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Tìm kiếm" />
-                           </children>
-                        </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
-                           <children>
-                              <TextField promptText="Nhập tên khách hàng" styleClass="inputField" />
-                              <Separator prefWidth="200.0" styleClass="separatorForm" />
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Tìm kiếm" />
-                           </children>
-                        </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
-                           <children>
-                              <DatePicker maxWidth="-Infinity" prefWidth="200.0" promptText="Chọn ngày đi">
-                                 <styleClass>
-                                    <String fx:value="inputField" />
-                                    <String fx:value="inputFieldisCheckBox" />
-                                 </styleClass></DatePicker>
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Lọc" />
-                           </children>
-                        </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
-                           <children>
-                              <ComboBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefWidth="200.0" promptText="Chọn giờ đi">
-                                 <styleClass>
-                                    <String fx:value="inputField" />
-                                    <String fx:value="inputFieldisCheckBox" />
-                                 </styleClass>
-                              </ComboBox>
-                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Lọc" />
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <TableView fx:id="table" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" onMouseClicked="#getID" prefHeight="0.0" prefWidth="0.0" styleClass="mainCustomerHistoryBooking">
-=======
+
                   <TableView maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" styleClass="mainCustomerHistoryBooking">
->>>>>>> Quoc_Huy_v2.0
+
                     <columns>
                         <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Mã chuyến bay" />
                         <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Hãng máy bay" />

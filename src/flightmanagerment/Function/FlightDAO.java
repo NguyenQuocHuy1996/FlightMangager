@@ -258,49 +258,97 @@ public class FlightDAO {
 //        }
 ////        }
 //    }
-
-    public static ObservableList<Flight> getInfo(int idFlight, String brand, String flight_number, String origin, String destination) {
+    public static ObservableList<Flight> getInfo(int idFlight, String brand, String flight_number, String origin, String destination) throws SQLException {
         try {
+//            System.out.println(idFlight);
+//            System.out.println(brand);
+//            System.out.println(flight_number);
+//            System.out.println(origin);
+//            System.out.println(destination);
+//            System.out.println(idFlight == 0 && brand.equals("") && flight_number.equals("") && origin.equals(destination));
+            ObservableList<Flight> data = FXCollections.observableArrayList();
             connectDB = new ConnectDB();
             conn = connectDB.getConnect();
-            int i = 1;
             String sql = "select *from flight";
-            if (idFlight != 0) {
-                sql += "where idFlight = ?";
-            }
-            if (!brand.equals("")) {
-                sql += "where brand = ?";
-            }
-            if (!flight_number.equals("")) {
-                sql += "where flight_number = ?";
-            }
-            if (!origin.equals("")) {
-                sql += "where origin = ?";
-            }
-            if (!destination.equals("")) {
-                sql += "where destination = ?";
-            }
-            ObservableList<Flight> data = FXCollections.observableArrayList();
-            while (rs.next()) {
-                int _idFlight = rs.getInt("idFlight");
-                String _origin = rs.getString("origin");
-                String _destination = rs.getString("destination");
-                Date depart = rs.getDate("depart");
-                Date arrival = rs.getDate("arrival");
-                int passenger = rs.getInt("passenger");
-                String _brand = rs.getString("brand");
-                String _flight_number = rs.getString("flight_number");
-                String flight_depart = rs.getString("flight_depart");
-                String flight_arrival = rs.getString("flight_arrival");
-                double price = rs.getDouble("price");
+            String query = "select * from flight where idFlight is not null";
+            int i = 1;
+            if (idFlight == 0 && brand.equals("") && flight_number.equals("") && origin.equals(destination)) {
 
-                Flight f = new Flight(_idFlight, _origin, _destination, depart, arrival, passenger, _brand, _flight_number, flight_arrival, flight_depart, price);
-                data.add(f);
+                prest = conn.prepareStatement(sql);
+                rs = prest.executeQuery();
+                while (rs.next()) {
+                    int _idFlight = rs.getInt("idFlight");
+                    String _origin = rs.getString("origin");
+                    String _destination = rs.getString("destination");
+                    Date depart = rs.getDate("depart");
+                    Date arrival = rs.getDate("arrival");
+                    int passenger = rs.getInt("passenger");
+                    String _brand = rs.getString("brand");
+                    String _flight_number = rs.getString("flight_number");
+                    String flight_depart = rs.getString("flight_depart");
+                    String flight_arrival = rs.getString("flight_arrival");
+                    double price = rs.getDouble("price");
+
+                    Flight f = new Flight(_idFlight, _origin, _destination, depart, arrival, passenger, _brand, _flight_number, flight_arrival, flight_depart, price);
+                    data.add(f);
+                }
+            } else {
+                if (idFlight != 0) {
+                    query += " and idFlight = ?";
+                }
+                if (!brand.equals("")) {
+                    query += " and brand = ?";
+                }
+                if (!flight_number.equals("")) {
+                    query += " and flight_number = ?";
+                }
+                if (!origin.equals(destination)) {
+                    query += " and origin = ? and destination = ?";
+                }
+                prest = conn.prepareStatement(query);
+
+                if (idFlight != 0) {
+                    prest.setInt(i, idFlight);
+                    i++;
+                }
+                if (!brand.equals("")) {
+                    prest.setString(i, brand);
+                    i++;
+                }
+                if (!flight_number.equals("")) {
+                    prest.setString(i, flight_number);
+                    i++;
+                }
+                if (!origin.equals(destination)) {
+                    prest.setString(i, origin);
+                    i++;
+                    prest.setString(i, destination);
+                }
+
+                rs = prest.executeQuery();
+                while (rs.next()) {
+                    int _idFlight = rs.getInt("idFlight");
+                    String _origin = rs.getString("origin");
+                    String _destination = rs.getString("destination");
+                    String _brand = rs.getString("brand");
+                    String _flight_number = rs.getString("flight_number");
+                    Date depart = rs.getDate("depart");
+                    Date arrival = rs.getDate("arrival");
+                    int passenger = rs.getInt("passenger");
+                    String flight_depart = rs.getString("flight_depart");
+                    String flight_arrival = rs.getString("flight_arrival");
+                    double price = rs.getDouble("price");
+
+                    Flight f = new Flight(_idFlight, _origin, _destination, depart, arrival, passenger, _brand, _flight_number, flight_arrival, flight_depart, price);
+                    data.add(f);
+                }
             }
+
             return data;
         } catch (Exception e) {
             System.out.println(e);
         }
+
         return null;
     }
 
