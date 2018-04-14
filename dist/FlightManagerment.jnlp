@@ -9,19 +9,27 @@
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <jar href="FlightManagerment.jar" size="1218012" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.45-bin.jar" size="999810" download="eager" />
 =======
     <jar href="FlightManagerment.jar" size="1196888" download="eager" />
+>>>>>>> Quoc_Huy_v2.0
+=======
+    <jar href="FlightManagerment.jar" size="1203811" download="eager" />
 >>>>>>> Quoc_Huy_v2.0
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="FlightManagerment" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <jfx:javafx-desc  width="800" height="600" main-class="flightmanagerment.Form.Home.Main.Main"  name="FlightManagerment" />
 =======
   <jfx:javafx-desc  width="800" height="600" main-class="flightmanagerment.Form.Home.EditFlightManager.EditFlightManager"  name="FlightManagerment" />
+>>>>>>> Quoc_Huy_v2.0
+=======
+  <jfx:javafx-desc  width="800" height="600" main-class="flightmanagerment.Form.Home.Ticket.Ticket"  name="FlightManagerment" />
 >>>>>>> Quoc_Huy_v2.0
   <update check="always"/>
 </jnlp>
