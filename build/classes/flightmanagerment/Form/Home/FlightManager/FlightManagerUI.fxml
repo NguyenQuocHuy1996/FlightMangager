@@ -61,26 +61,70 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0">
                            <children>
+<<<<<<< HEAD
                               <TextField fx:id="txt_idFlight" promptText="Nhập mã chuyến bay" styleClass="inputField" />
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
+=======
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <ComboBox prefWidth="280.0" promptText="Chọn điểm đi">
+                                       <styleClass>
+                                          <String fx:value="inputField" />
+                                          <String fx:value="inputFieldisCheckBox" />
+                                       </styleClass>
+                                    </ComboBox>
+                                 </children>
+                              </Pane>
+>>>>>>> Quoc_Huy_v2.0
                            </children>
+                           <styleClass>
+                              <String fx:value="setWidthVBoxFilter" />
+                              <String fx:value="setWidthVBoxFilterHasComboBox" />
+                           </styleClass>
                         </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0">
                            <children>
+<<<<<<< HEAD
                               <TextField fx:id="txt_brand" promptText="Nhập hãng máy bay" styleClass="inputField" />
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
 
+=======
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <ComboBox prefWidth="280.0" promptText="Chọn điểm đến">
+                                       <styleClass>
+                                          <String fx:value="inputField" />
+                                          <String fx:value="inputFieldisCheckBox" />
+                                       </styleClass>
+                                    </ComboBox>
+                                 </children>
+                              </Pane>
+>>>>>>> Quoc_Huy_v2.0
                            </children>
+                           <styleClass>
+                              <String fx:value="setWidthVBoxFilter" />
+                              <String fx:value="setWidthVBoxFilterHasComboBox" />
+                           </styleClass>
                         </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" spacing="10.0" styleClass="setWidthVBoxFilter">
                            <children>
+<<<<<<< HEAD
                               <TextField fx:id="txt_flightNumber" promptText="Nhập số hiệu" styleClass="inputField" />
+=======
+                              <TextField promptText="Nhập mã chuyến bay" styleClass="inputField" />
+                              <Separator prefWidth="200.0" styleClass="separatorForm" />
+                              <TextField promptText="Nhập hãng máy bay" styleClass="inputField" />
+>>>>>>> Quoc_Huy_v2.0
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
 
                            </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
                         </VBox>
+<<<<<<< HEAD
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
                            <children>
 
@@ -101,17 +145,34 @@
                                     <String fx:value="inputFieldisCheckBox" />
                                  </styleClass>
                               </ComboBox>
+=======
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" spacing="10.0" styleClass="setWidthVBoxFilter">
+                           <children>
+                              <TextField promptText="Nhập số hiệu" styleClass="inputField" />
+                              <Separator prefWidth="200.0" styleClass="separatorForm" />
+                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Tìm kiếm" />
+>>>>>>> Quoc_Huy_v2.0
                            </children>
+                           <HBox.margin>
+                              <Insets right="45.0" />
+                           </HBox.margin>
                         </VBox>
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" styleClass="setWidthVBoxFilter">
                            <children>
+<<<<<<< HEAD
                               <Button mnemonicParsing="false" onAction="#btn_search" styleClass="btnSubmit" text="Tìm kiếm" />
+=======
+                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Thêm" />
+                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Cập nhật" />
+                              <Button mnemonicParsing="false" styleClass="btnSubmit" text="Xóa" />
+>>>>>>> Quoc_Huy_v2.0
                            </children>
                         </VBox>
                      </children>
                   </HBox>
                   <TableView fx:id="table" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" onMouseClicked="#getID" prefHeight="0.0" prefWidth="0.0" styleClass="mainFlightManager">
                     <columns>
+<<<<<<< HEAD
                         <TableColumn fx:id="sttCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="STT" />
                         <TableColumn fx:id="idFlightCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Mã chuyến bay" />
                         <TableColumn fx:id="brandCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Hãng máy bay" />
@@ -123,6 +184,19 @@
                         <TableColumn fx:id="arrivalCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Ngày đến" />
                         <TableColumn fx:id="flight_arrivalCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Giờ đến" />
                         <TableColumn fx:id="passengerCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Tổng số ghế" />
+=======
+                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="STT" />
+                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Mã chuyến bay" />
+                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Hãng máy bay" />
+                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Số hiệu" />
+                      <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Điểm đi" />
+                      <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Điểm đến" />
+                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Ngày đi" />
+                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Giờ đi" />
+                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Ngày đến" />
+                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Giờ đến" />
+                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Tổng số ghế" />
+>>>>>>> Quoc_Huy_v2.0
                     </columns>
                      <VBox.margin>
                         <Insets top="25.0" />

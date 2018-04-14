@@ -11,7 +11,7 @@
 
 <BorderPane prefHeight="730.0" prefWidth="769.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.MainUser.MainUserController">
    <center>
-      <GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="mainWrapper" vgap="15.0" BorderPane.alignment="CENTER">
+      <GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="main" vgap="15.0" BorderPane.alignment="CENTER">
          <children>
             <Label alignment="CENTER" styleClass="btnMagenta" text="17:45 PM" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" onAction="#btn_historyBooking" text="Lịch sử đặt vé" GridPane.rowIndex="1">

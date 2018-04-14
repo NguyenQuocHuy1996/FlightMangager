@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
@@ -10,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="885.0" prefWidth="1242.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.Main_Find_Flight.Main_Find_FlightController">
+<BorderPane prefHeight="843.0" prefWidth="1034.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="114.0" prefWidth="1242.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -27,7 +26,7 @@
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <Label styleClass="userName" text="Xin chào" />
-                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="Quốc Huy" textAlignment="RIGHT" />
+                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="User" textAlignment="RIGHT" />
                      </children>
                   </VBox>
                   <ImageView fitHeight="46.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
@@ -44,25 +43,23 @@
                </GridPane.margin>
             </HBox>
             <Separator prefHeight="0.0" prefWidth="1242.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" styleClass="btnSubmit" text="Quay về">
+               <GridPane.margin>
+                  <Insets left="25.0" />
+               </GridPane.margin>
+            </Button>
          </children>
          <padding>
             <Insets top="25.0" />
          </padding>
       </GridPane>
    </top>
-   <bottom>
-      <TableView prefHeight="559.0" prefWidth="1242.0" BorderPane.alignment="CENTER">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
-   </bottom>
-   <center>
-      <Pane prefHeight="427.0" prefWidth="1338.0" styleClass="btnGreen" BorderPane.alignment="CENTER">
+   <left>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="250.0" styleClass="mainInfoFlight" BorderPane.alignment="TOP_LEFT">
          <children>
-            <HBox layoutX="292.0" layoutY="24.0" prefHeight="16.0" prefWidth="850.0">
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="510.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
                <children>
+<<<<<<< HEAD
                   <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../Asset/img/icon/search-45x45.png" />
@@ -79,14 +76,299 @@
                         <Separator prefWidth="200.0" />
                      </children>
                   </VBox>
+=======
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Mã chuyến bay:" />
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
                </children>
             </HBox>
-            <Label layoutX="14.0" layoutY="14.0" styleClass="formTitle" text="Tra cứu chuyến bay">
-               <font>
-                  <Font name="Ebrima" size="36.0" />
-               </font>
-            </Label>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="410.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Hãng máy bay:" />
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="549.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Giá vé:" />
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+>>>>>>> Quoc_Huy_v2.0
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Điểm đi:" />
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Điểm đến:" />
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="538.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Ngày đi:" />
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="110.0" prefHeight="25.0" prefWidth="250.0" spacing="5.0">
+               <children>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="50.0" styleClass="textField" text="Giờ đi:" />
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="557.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Ngày đến:" />
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="210.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Giờ đến:" />
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="210.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Tổng số ghế:" />
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+               </children>
+            </HBox>
+            <HBox prefHeight="56.0" prefWidth="220.0" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" styleClass="btnSubmit" text="Mua vé" />
+                  <Button mnemonicParsing="false" styleClass="btnSubmit" text="Hủy bỏ" />
+               </children>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </HBox>
          </children>
-      </Pane>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets left="25.0" top="50.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+      <GridPane alignment="CENTER" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" styleClass="mainFlightDetail" vgap="5.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="A" GridPane.columnIndex="15" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="B" GridPane.columnIndex="15" GridPane.rowIndex="2">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="C" GridPane.columnIndex="15" GridPane.rowIndex="3">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="D" GridPane.columnIndex="15" GridPane.rowIndex="4">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="E" GridPane.columnIndex="15" GridPane.rowIndex="5">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="F" GridPane.columnIndex="15" GridPane.rowIndex="6">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="G" GridPane.columnIndex="15" GridPane.rowIndex="7">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="H" GridPane.columnIndex="15" GridPane.rowIndex="8">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="I" GridPane.columnIndex="15" GridPane.rowIndex="9">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="J" GridPane.columnIndex="15" GridPane.rowIndex="10">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="15" GridPane.columnIndex="14">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="14" GridPane.columnIndex="13">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="490.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="13" GridPane.columnIndex="12">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="12" GridPane.columnIndex="11">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="11" GridPane.columnIndex="10">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="530.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="1">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="570.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="2" GridPane.columnIndex="1">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="410.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="3" GridPane.columnIndex="2">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="370.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="4" GridPane.columnIndex="3">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="490.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="5" GridPane.columnIndex="4">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="450.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="6" GridPane.columnIndex="5">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="7" GridPane.columnIndex="6">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="610.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="8" GridPane.columnIndex="7">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="290.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="9" GridPane.columnIndex="8">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Label layoutX="10.0" layoutY="330.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="10" GridPane.columnIndex="9">
+               <styleClass>
+                  <String fx:value="btnSeat" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Button alignment="CENTER" layoutX="50.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" layoutX="50.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" layoutX="50.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="14" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" layoutX="50.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" layoutX="50.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="12" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="13" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="11" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="13" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="12" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="11" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" layoutX="50.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="10" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="14" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
    </center>
 </BorderPane>

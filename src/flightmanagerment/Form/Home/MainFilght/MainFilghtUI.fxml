@@ -96,8 +96,13 @@
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
+<<<<<<< HEAD
                         <Label styleClass="flightInfo" text="Ngày về: " />
                         <Label fx:id="flight_depart1" styleClass="flightInfo" text="30/10/2019" />
+=======
+                        <Label styleClass="flightInfo" text="Giờ đi: " />
+                        <Label styleClass="flightInfo" text="4:00 PM" />
+>>>>>>> Quoc_Huy_v2.0
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
