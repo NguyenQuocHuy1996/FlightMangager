@@ -13,30 +13,34 @@
    <center>
       <GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="main" vgap="15.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" styleClass="btnMagenta" text="17:45 PM" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="Đăng xuất" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" text="Đăng xuất" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <styleClass>
-                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
                   <String fx:value="btnHistoryBooking" />
                </styleClass></Button>
-            <Button mnemonicParsing="false" text="Báo cáo" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" text="Báo cáo" GridPane.columnIndex="2">
                <styleClass>
-                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
                   <String fx:value="btnReport" />
                </styleClass></Button>
-            <Button mnemonicParsing="false" text="Lịch sử đặt vé của khách hàng" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" text="Lịch sử đặt vé của khách hàng" GridPane.columnIndex="1">
                <styleClass>
-                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
                   <String fx:value="btnCustomerHistoryBooking" />
                </styleClass></Button>
-            <Button graphicTextGap="1.0" mnemonicParsing="false" text="Quản lý chuyến bay" GridPane.columnIndex="1">
+            <Button graphicTextGap="1.0" mnemonicParsing="false" text="Quản lý chuyến bay" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <styleClass>
-                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
                   <String fx:value="btnFlightManager" />
                </styleClass></Button>
-            <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" text="Tra cứu chuyến bay" textAlignment="CENTER" wrapText="true">
+            <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" text="Tra cứu chuyến bay" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
                <styleClass>
-                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
                   <String fx:value="btnFindFlight" />
                </styleClass>
                <opaqueInsets>
@@ -44,17 +48,31 @@
                </opaqueInsets></Button>
             <Button mnemonicParsing="false" text="Đổi mật khẩu" GridPane.rowIndex="2">
                <styleClass>
-                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
                   <String fx:value="btnChangePass" />
                </styleClass>
             </Button>
             <Button mnemonicParsing="false" text="Thông tin tài khoản" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <styleClass>
-                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
                   <String fx:value="btnInfo" />
                </styleClass>
             </Button>
-            <Button mnemonicParsing="false" styleClass="btnMagenta" text="Cấp tài khoản nhân viên" GridPane.columnIndex="2" />
+            <Button mnemonicParsing="false" text="Cấp tài khoản nhân viên">
+               <styleClass>
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
+                  <String fx:value="btnMetro" />
+               </styleClass></Button>
+            <Button layoutX="165.0" layoutY="175.0" mnemonicParsing="false" text="Quản lý hãng máy bay" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
+                  <String fx:value="btnCustomerHistoryBooking" />
+               </styleClass>
+            </Button>
          </children>
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

@@ -61,7 +61,6 @@
                <children>
                   <TableView maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" styleClass="mainCustomerHistoryBooking">
                     <columns>
-                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="STT" />
                         <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Mã chuyến bay" />
                         <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Hãng máy bay" />
                       <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Điểm đi" />

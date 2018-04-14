@@ -13,9 +13,10 @@
    <center>
       <GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="main" vgap="15.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" text="20/10/2018 17:45" GridPane.columnIndex="1">
+            <Label alignment="CENTER" text="20/10/2018 17:45" GridPane.columnIndex="2">
                <styleClass>
-                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
                   <String fx:value="btnMetro" />
                </styleClass></Label>
             <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" text="Tra cứu chuyến bay" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
@@ -23,35 +24,40 @@
                   <Insets />
                </opaqueInsets>
                <styleClass>
-                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
                   <String fx:value="btnMetro" />
                   <String fx:value="btnFindFlight" />
                </styleClass></Button>
             <Label alignment="CENTER" contentDisplay="CENTER" text="Xin chào " textAlignment="CENTER">
                <styleClass>
-                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
                   <String fx:value="btnMetro" />
                </styleClass></Label>
-            <Button mnemonicParsing="false" text="Đăng nhập" GridPane.columnIndex="2">
+            <Button mnemonicParsing="false" text="Đăng nhập" GridPane.rowIndex="2">
                <styleClass>
-                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
                   <String fx:value="btnChangePass" />
                   <String fx:value="btnMetro" />
                </styleClass>
             </Button>
-            <Button contentDisplay="TOP" graphicTextGap="0.0" layoutX="10.0" layoutY="243.0" mnemonicParsing="false" text="Xem lịch" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button contentDisplay="TOP" graphicTextGap="0.0" layoutX="10.0" layoutY="243.0" mnemonicParsing="false" text="Xem lịch bay" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <styleClass>
-                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
                   <String fx:value="btnMetro" />
                   <String fx:value="btnFindFlight" />
                </styleClass>
             </Button>
-            <Button layoutX="320.0" layoutY="25.0" mnemonicParsing="false" text="Đăng ký" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button layoutX="320.0" layoutY="25.0" mnemonicParsing="false" text="Đăng ký" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <styleClass>
-                  <String fx:value="btnMagenta" />
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
                   <String fx:value="btnChangePass" />
                   <String fx:value="btnMetro" />
                </styleClass>
