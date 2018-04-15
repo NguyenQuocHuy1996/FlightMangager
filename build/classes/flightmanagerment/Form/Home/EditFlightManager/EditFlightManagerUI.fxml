@@ -26,7 +26,7 @@
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <Label styleClass="userName" text="Xin chào" />
-                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="User" textAlignment="RIGHT" />
+                        <Label fx:id="lbl_userName" alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="User" textAlignment="RIGHT" />
                      </children>
                   </VBox>
                   <ImageView fitHeight="46.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
@@ -43,7 +43,7 @@
                </GridPane.margin>
             </HBox>
             <Separator prefHeight="0.0" prefWidth="1242.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" styleClass="btnSubmit" text="Quay về">
+            <Button mnemonicParsing="false" onAction="#btn_back" styleClass="btnSubmit" text="Quay về">
                <GridPane.margin>
                   <Insets left="25.0" />
                </GridPane.margin>
@@ -85,7 +85,7 @@
                      </styleClass>
                   </ComboBox>
                   <Label styleClass="textField" text="Hãng máy bay" />
-                  <ComboBox prefWidth="280.0" promptText="Chọn hãng máy bay">
+                  <ComboBox fx:id="cbb_brand" prefWidth="280.0" promptText="Chọn hãng máy bay">
                      <styleClass>
                         <String fx:value="inputField" />
                         <String fx:value="inputFieldisCheckBox" />
@@ -99,14 +99,14 @@
                   <TextField promptText="Mã chuyến bay" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
                   <Label styleClass="textField" text="Điểm đi" />
-                  <ComboBox prefWidth="280.0" promptText="Chọn điểm đi">
+                  <ComboBox fx:id="cbb_origin" prefWidth="280.0" promptText="Chọn điểm đi">
                      <styleClass>
                         <String fx:value="inputField" />
                         <String fx:value="inputFieldisCheckBox" />
                      </styleClass>
                   </ComboBox>
                   <Label styleClass="textField" text="Điểm đến" />
-                  <ComboBox prefWidth="280.0" promptText="Chọn điểm đến">
+                  <ComboBox fx:id="cbb_destination" prefWidth="280.0" promptText="Chọn điểm đến">
                      <styleClass>
                         <String fx:value="inputField" />
                         <String fx:value="inputFieldisCheckBox" />

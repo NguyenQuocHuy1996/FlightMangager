@@ -55,25 +55,25 @@ public class FlightManagerController implements Initializable {
     @FXML
     private TextField txt_flightNumber;
     @FXML
-    private TableColumn<Flight, Integer> idFlightCol;
+    private TableColumn<?, ?> idFlightCol;
     @FXML
-    private TableColumn<Flight, String> brandCol;
+    private TableColumn<?, ?> brandCol;
     @FXML
-    private TableColumn<Flight, String> flight_numberCol;
+    private TableColumn<?, ?> flight_numberCol;
     @FXML
-    private TableColumn<Flight, String> originCol;
+    private TableColumn<?, ?> originCol;
     @FXML
-    private TableColumn<Flight, String> destinationCol;
+    private TableColumn<?, ?> destinationCol;
     @FXML
-    private TableColumn<Flight, Date> departCol;
+    private TableColumn<?, ?> departCol;
     @FXML
-    private TableColumn<Flight, String> flight_departCol;
+    private TableColumn<?, ?> flight_departCol;
     @FXML
-    private TableColumn<Flight, Date> arrivalCol;
+    private TableColumn<?, ?> arrivalCol;
     @FXML
-    private TableColumn<Flight, String> flight_arrivalCol;
+    private TableColumn<?, ?> flight_arrivalCol;
     @FXML
-    private TableColumn<Flight, Integer> passengerCol;
+    private TableColumn<?, ?> passengerCol;
     @FXML
     private TableView<Flight> table;
 
@@ -92,70 +92,39 @@ public class FlightManagerController implements Initializable {
         Employee emp = new Employee();
         try {
             emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
-        } catch (SQLException ex) {
-            Logger.getLogger(FlightManagerController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        lbl_userName.setText(emp.getFirstName());
-        list = FXCollections.observableArrayList();
-        setCellTable();
-        try {
+            lbl_userName.setText(emp.getFirstName());
             loadDB();
+            ObservableList<String> list = CityDAO.getAllCity();
+            cbb_origin.setItems(list);
+            cbb_origin.getSelectionModel().select(1);
+            cbb_origin.setPromptText(cbb_origin.getConverter().toString(cbb_origin.getValue()));
+
+            cbb_destination.setItems(list);
+            cbb_destination.getSelectionModel().select(1);
+            cbb_destination.setPromptText(cbb_destination.getConverter().toString(cbb_destination.getValue()));
         } catch (SQLException ex) {
             Logger.getLogger(FlightManagerController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        ObservableList<String> list = CityDAO.getAllCity();
-        cbb_origin.setItems(list);
-        cbb_origin.getSelectionModel().select(1);
-        cbb_origin.setPromptText(cbb_origin.getConverter().toString(cbb_origin.getValue()));
 
-        cbb_destination.setItems(list);
-        cbb_destination.getSelectionModel().select(1);
-        cbb_destination.setPromptText(cbb_destination.getConverter().toString(cbb_destination.getValue()));
     }
 
     private void loadDB() throws SQLException {
+        setCellTable();
         list = FlightDAO.getAllFlight();
         table.setItems(list);
-
-//        try {
-//            connectDB = new ConnectDB();
-//            conn = connectDB.getConnect();
-//            String sql = "select * from flight";
-//            prest = conn.prepareStatement(sql);
-//            rs = prest.executeQuery();
-//            while (rs.next()) {
-//                int idFlight = rs.getInt("idFlight");
-//                String origin = rs.getString("origin");
-//                String destination = rs.getString("destination");
-//                Date depart = rs.getDate("depart");
-//                Date arrival = rs.getDate("arrival");
-//                int passenger = rs.getInt("passenger");
-//                String brand = rs.getString("brand");
-//                String flight_number = rs.getString("flight_number");
-//                String flight_depart = rs.getString("flight_depart");
-//                String flight_arrival = rs.getString("flight_arrival");
-//                double price = rs.getDouble("price");
-//
-//                Flight f = new Flight(idFlight, origin, destination, depart, arrival, passenger, brand, flight_number, flight_arrival, flight_depart, price);
-//                list.add(f);
-//            }
-//        } catch (Exception e) {
-//            System.out.println(e);
-//        }
-//        table.setItems(list);
     }
 
     private void setCellTable() {
-        idFlightCol.setCellValueFactory(new PropertyValueFactory<Flight, Integer>("idFlight"));
-        brandCol.setCellValueFactory(new PropertyValueFactory<Flight, String>("brand"));
-        flight_numberCol.setCellValueFactory(new PropertyValueFactory<Flight, String>("flight_number"));
-        originCol.setCellValueFactory(new PropertyValueFactory<Flight, String>("origin"));
-        destinationCol.setCellValueFactory(new PropertyValueFactory<Flight, String>("destination"));
-        departCol.setCellValueFactory(new PropertyValueFactory<Flight, Date>("depart"));
-        flight_departCol.setCellValueFactory(new PropertyValueFactory<Flight, String>("flight_depart"));
-        arrivalCol.setCellValueFactory(new PropertyValueFactory<Flight, Date>("arrival"));
-        flight_arrivalCol.setCellValueFactory(new PropertyValueFactory<Flight, String>("flight_arrival"));
-        passengerCol.setCellValueFactory(new PropertyValueFactory<Flight, Integer>("passenger"));
+        idFlightCol.setCellValueFactory(new PropertyValueFactory<>("idFlight"));
+        brandCol.setCellValueFactory(new PropertyValueFactory<>("brand"));
+        originCol.setCellValueFactory(new PropertyValueFactory<>("origin"));
+        destinationCol.setCellValueFactory(new PropertyValueFactory<>("destination"));
+        departCol.setCellValueFactory(new PropertyValueFactory<>("depart"));
+        flight_departCol.setCellValueFactory(new PropertyValueFactory<>("flight_depart"));
+        arrivalCol.setCellValueFactory(new PropertyValueFactory<>("arrival"));
+        flight_arrivalCol.setCellValueFactory(new PropertyValueFactory<>("flight_arrival"));
+        passengerCol.setCellValueFactory(new PropertyValueFactory<>("passenger"));
+        flight_numberCol.setCellValueFactory(new PropertyValueFactory<>("flight_number"));
     }
 
     @FXML
@@ -198,20 +167,34 @@ public class FlightManagerController implements Initializable {
 
     @FXML
     private void getID(MouseEvent event) {
-        table.getSelectionModel().getSelectedItem().getIdFlight();
+//        table.getSelectionModel().getSelectedItem().getIdFlight();
     }
 
     @FXML
-    private void btn_insert(ActionEvent event) {
-        
+    private void btn_insert(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/EditFlightManager/EditFlightManagerUI.fxml"));
+        Variable_Static.LinkUI(event, root, "Insert/Edit Flight");
     }
 
     @FXML
-    private void btn_update(ActionEvent event) {
+    private void btn_update(ActionEvent event) throws IOException {
+        Variable_Static.IDFLIGHT = table.getSelectionModel().getSelectedItem().getIdFlight(); // cho toàn cục
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/EditFlightManager/EditFlightManagerUI.fxml"));
+        Variable_Static.LinkUI(event, root, "Insert/Edit Flight");
+
     }
 
     @FXML
-    private void btn_delete(ActionEvent event) {
+    private void btn_delete(ActionEvent event) throws SQLException {
+        int function = FlightDAO.delete(table.getSelectionModel().getSelectedItem().getIdFlight());
+        if (function == 1) {
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setTitle("Deleted");
+            a.setContentText("Xóa thành công!");
+            a.show();
+            loadDB();
+        } else {
+        }
     }
 
 }

@@ -86,7 +86,7 @@ public class HistoryBookingController implements Initializable {
             Logger.getLogger(FlightManagerController.class.getName()).log(Level.SEVERE, null, ex);
         }
         lbl_userName.setText(cus.getFirstName());
-        setCellTable();
+//        setCellTable();
         list = FXCollections.observableArrayList();
 
     }

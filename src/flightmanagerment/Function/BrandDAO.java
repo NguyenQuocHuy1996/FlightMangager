@@ -15,6 +15,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -29,6 +30,29 @@ public class BrandDAO {
     private static PreparedStatement prest = null;
     private static ResultSet rs;
     private static Statement st;
+
+    public static ObservableList<String> getName() {
+        connectDB = new ConnectDB();
+        conn = connectDB.getConnect();
+        try {
+            ArrayList<String> list = new ArrayList<String>();
+            String sql = "Select name from brand";
+            prest = conn.prepareStatement(sql);
+            rs = prest.executeQuery();
+            ObservableList<String> data = null;
+            while (rs.next()) {
+//                int id = rs.getInt("idBrand");
+//                String code = rs.getString("code");
+                String name = rs.getString("name");
+                list.add(name);
+            }
+            data = FXCollections.observableArrayList(list);
+            return data;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+    }
 
     public static ObservableList<Brand> getAllBrand() throws SQLException {
         connectDB = new ConnectDB();
