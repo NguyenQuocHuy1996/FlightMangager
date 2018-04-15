@@ -111,7 +111,13 @@ public class ConfirmedFindFlightController implements Initializable {
             a.show();
         } else {
             Date date = Date.valueOf(depart.getValue()); // convert từ local date ( datePicker ) wa date sql
+            System.out.println(cbb_origin.getValue());
+            System.out.println(cbb_destination.getValue());
+            System.out.println(date);
             List<Flight> list = Variable_Static.searchFlight(cbb_origin.getValue(), cbb_destination.getValue(), date);
+            Variable_Static.ORIGIN = cbb_origin.getValue();
+            Variable_Static.DESTINATION = cbb_destination.getValue();
+            Variable_Static.DEPART = date;
             if (list == null) {
                 a.setTitle("Không có chuyến bay phù hợp");
                 a.setContentText("Hiện tại không có chuyến bay phù hợp với yêu cầu!");

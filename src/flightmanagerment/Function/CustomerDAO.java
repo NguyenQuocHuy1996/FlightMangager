@@ -14,6 +14,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -190,7 +192,73 @@ public class CustomerDAO {
 
     }
 
-    public static int update(Customer cus ) throws SQLException {
+    public static Boolean getNotification(String email) throws SQLException {
+
+        connectDB = new ConnectDB();
+        conn = connectDB.getConnect();
+        String sql = "select notification from customer where email = ?";
+        prest = conn.prepareStatement(sql);
+        prest.setString(1, email);
+        rs = prest.executeQuery();
+        while (rs.next()) {
+            Boolean status = rs.getBoolean("notification");
+            return status;
+        }
+        return false;
+    }
+
+    public static List<String> getCusWithNotification(Boolean notification) throws SQLException {
+        try {
+            List<String> list = new ArrayList<String>();
+            connectDB = new ConnectDB();
+            conn = connectDB.getConnect();
+            String sql = "select email from customer where notification = ?";
+            prest = conn.prepareStatement(sql);
+            prest.setBoolean(1, notification);
+            rs = prest.executeQuery();
+            while (rs.next()) {
+                String email = rs.getString("email");
+                list.add(email);
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+            // TODO: handle exception
+        } finally {
+            if (null != prest) {
+                prest.close();
+            }
+            if (null != conn) {
+                conn.close();
+            }
+        }
+        return null;
+    }
+
+    public static Boolean updateNotification(Boolean status, String email) throws SQLException {
+        try {
+            connectDB = new ConnectDB();
+            conn = connectDB.getConnect();
+            String sql = "update customer set notification = ? where email = ?";
+            prest = conn.prepareStatement(sql);
+            prest.setBoolean(1, status);
+            prest.setString(2, email);
+            prest.execute();
+            return status;
+        } catch (Exception e) {
+            System.out.println(e);
+            // TODO: handle exception
+        } finally {
+            if (null != prest) {
+                prest.close();
+            }
+            if (null != conn) {
+                conn.close();
+            }
+        }
+        return false;
+    }
+
+    public static int update(Customer cus) throws SQLException {
         try {
             connectDB = new ConnectDB();
             conn = connectDB.getConnect();

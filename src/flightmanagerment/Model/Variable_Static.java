@@ -20,6 +20,15 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import java.util.Properties;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 /**
  *
@@ -37,6 +46,37 @@ public final class Variable_Static {
     private static PreparedStatement prest = null;
     private static ResultSet rs;
     private static Statement st;
+
+    public static boolean SendMail(String To, String Text) {
+        try {
+            Properties props = new Properties();
+            props.put("mail.smtp.host", "smtp.gmail.com");
+            props.put("mail.smtp.socketFactory.port", "465");
+            props.put("mail.smtp.socketFactory.class",
+                    "javax.net.ssl.SSLSocketFactory");
+            props.put("mail.smtp.auth", "true");
+            props.put("mail.smtp.port", "465");
+
+            Session session = Session.getDefaultInstance(props,
+                    new javax.mail.Authenticator() {
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication("yacnadota001@gmail.com", "12343214a");
+                }
+            });
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress("yacnadota001@gmail.com"));
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(To));
+            message.setSubject("THÔNG BÁO CHUYẾN BAY MỚI");
+            message.setText(Text);
+
+            Transport.send(message);
+            return true;
+
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public static void LinkUI(ActionEvent event, Parent root, String title) throws IOException {
         Scene scene = new Scene(root);
@@ -102,8 +142,8 @@ public final class Variable_Static {
             }
             if (null != conn) {
                 conn.close();
-            }
-            return null;
+            }            
         }
+        return null;
     }
 }

@@ -28,6 +28,40 @@ public class Seat_TicketDAO {
     private static PreparedStatement prest;
     private static ResultSet rs;
 
+    public static double getCountStatusTrue(String depart, String year) throws SQLException {
+        connectDB = new ConnectDB();
+        conn = connectDB.getConnect();
+        String sql = "select Count(*) as total\n"
+                + "from seat_ticket S JOIN flight F ON S.idFlight = F.idFlight\n"
+                + "where status = true AND MONTH(F.depart) = ? AND YEAR(F.depart) = ?";
+        prest = conn.prepareStatement(sql);
+        prest.setString(1, depart);
+        prest.setString(2, year);
+        rs = prest.executeQuery();
+        while (rs.next()) {
+            Double count = rs.getDouble("total");
+            return count;
+        }
+        return 0;
+    }
+
+    public static double getCountStatusFalse(String depart, String year) throws SQLException {
+        connectDB = new ConnectDB();
+        conn = connectDB.getConnect();
+        String sql = "select Count(*) as total\n"
+                + "from seat_ticket S JOIN flight F ON S.idFlight = F.idFlight\n"
+                + "where status = false AND MONTH(F.depart) = ? AND YEAR(F.depart) = ?";
+        prest = conn.prepareStatement(sql);
+        prest.setString(1, depart);
+        prest.setString(2, year);
+        rs = prest.executeQuery();
+        while (rs.next()) {
+            Double count = rs.getDouble("total");
+            return count;
+        }
+        return 0;
+    }
+
     ///return 1: trả về tất cả dữ liệu của ghế theo id
     public int getAllSeat(int idFlight) throws SQLException {
         connectDB = new ConnectDB();
@@ -192,6 +226,30 @@ public class Seat_TicketDAO {
             // System.out.println("idFlight: " + idFlight);
         }
         return data;
+    }
+
+    public static int delete(int idFlight) throws SQLException {
+        try {
+            connectDB = new ConnectDB();
+            conn = connectDB.getConnect();
+            String sql = "delete from seat_ticket where idFlight = ?";
+            prest = conn.prepareStatement(sql);
+            prest.setInt(1, idFlight);
+            prest.execute();
+            System.out.println("Xóa thành công!");
+            return 1;
+        } catch (Exception e) {
+            System.out.println(e);
+            // TODO: handle exception
+        } finally {
+            if (null != prest) {
+                prest.close();
+            }
+            if (null != conn) {
+                conn.close();
+            }
+        }
+        return 0;
     }
 
     public int booking(Seat_Ticket seat) throws SQLException {

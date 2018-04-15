@@ -98,7 +98,7 @@
                      <children>
 
                         <Label styleClass="flightInfo" text="Giờ đi: " />
-                        <Label styleClass="flightInfo" text="4:00 PM" />
+                        <Label fx:id="flight_depart1" styleClass="flightInfo" text="4:00 PM" />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">

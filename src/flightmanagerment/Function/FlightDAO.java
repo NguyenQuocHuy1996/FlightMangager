@@ -7,6 +7,7 @@ package flightmanagerment.Function;
 
 import flightmanagerment.Config.ConnectDB;
 import flightmanagerment.Model.Flight;
+import flightmanagerment.Model.Variable_Static;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -100,6 +101,23 @@ public class FlightDAO {
                     conn.close();
                 }
 
+                String contentMail = "- Hãng chuyến bay : " + flight.getBrand() + "\n"
+                        + "- Số hiệu : " + flight.getFlight_number() + "\n"
+                        + "- Điểm đi : " + flight.getOrigin() + "\n"
+                        + "- Điểm đến : " + flight.getDestination() + "\n"
+                        + "- Ngày đi : " + flight.getDepart() + "\n"
+                        + "- Giờ đi : " + flight.getFlight_depart() + "\n"
+                        + "- Ngày đến : " + flight.getArrival() + "\n"
+                        + "- Giờ đến : " + flight.getFlight_arrival() + "\n"
+                        + "- Tổng số ghế dự kiến : " + flight.getPassenger() + "\n"
+                        + "\n"
+                        + "Đây là hệ thống mail tự động, vui lòng ko reply. Xin cảm ơn.\n"
+                        + "- Hệ thống quản trị chuyến bay.";
+
+                List<String> list = CustomerDAO.getCusWithNotification(Boolean.TRUE);
+                for (String string : list) {
+                    Variable_Static.SendMail(string, contentMail);
+                }
                 System.out.println("Thêm thành công");
                 return 1;
 

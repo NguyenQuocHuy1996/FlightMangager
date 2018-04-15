@@ -42,6 +42,8 @@ public class EmployeeDAO {
         return listt;
     }
 
+  
+
     public static int insert(Employee emp) throws SQLException {
         if ((emp.getEmail().equals("")) || (emp.getEmail() == null)) {
             return -1;

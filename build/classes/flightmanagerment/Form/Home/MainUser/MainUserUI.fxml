@@ -65,7 +65,7 @@
                </styleClass>
             </Button>
 
-            <Button alignment="CENTER" layoutX="165.0" layoutY="175.0" mnemonicParsing="false" onAction="#btn_notification" text="Nhận thông báo" GridPane.columnIndex="2">
+            <Button fx:id="notification" alignment="CENTER" layoutX="165.0" layoutY="175.0" mnemonicParsing="false" onAction="#btn_notification" text="Nhận thông báo" GridPane.columnIndex="2">
                <styleClass>
                   <String fx:value="btnMain" />
                   <String fx:value="btnThemeColor" />

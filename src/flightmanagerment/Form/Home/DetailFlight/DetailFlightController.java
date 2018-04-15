@@ -5,8 +5,14 @@
  */
 package flightmanagerment.Form.Home.DetailFlight;
 
+import flightmanagerment.Function.FlightDAO;
+import flightmanagerment.Model.Flight;
+import flightmanagerment.Model.Variable_Static;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +21,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 
 /**
  *
@@ -22,57 +29,19 @@ import javafx.scene.control.TextField;
  */
 public class DetailFlightController implements Initializable {
 
-//    @FXML
-//    private TextField txtEmail;
-//    @FXML
-//    private TextField txtPass;
-//    
-//    @FXML
-//    private void DetailFlight(ActionEvent event) {
-//        if((txtEmail.getText().equals("admin")) && (txtPass.getText().equals("admin123"))){
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setTitle("Dang nhap thanh cong");
-//            alert.show();
-//        }
-//    }
     @FXML
-    private void btn_flightSearch(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_flightManagement(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_historyBooking(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_historyBookingOfEmployee(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_report(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_infomation(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_logout(ActionEvent event) {
-
-    }
+    private GridPane gridPane;
+    private int num_passenger;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        try {
+            // TODO
+            Flight f = FlightDAO.getInfoFlight(Variable_Static.IDFLIGHT);
+            num_passenger = f.getPassenger();
+        } catch (SQLException ex) {
+            Logger.getLogger(DetailFlightController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }
