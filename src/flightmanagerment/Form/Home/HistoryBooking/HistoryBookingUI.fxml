@@ -61,14 +61,13 @@
               <columns>
 
                   <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Mã chuyến bay" />
-                  <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Hãng máy bay" />
-                <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Điểm đi" />
-                <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Điểm đến" />
-                  <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Ngay đi" />
-                  <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Giờ đi" />
-                  <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Ngày về" />
-                  <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Giờ về" />
+                  <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Điểm đi" />
+                  <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Điểm đến" />
+                  <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Mã ghế" />
                   <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Số ghế" />
+                <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Họ " />
+                <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Tên" />
+                  <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="CMND" />
               </columns>
             </TableView>
          </children>
