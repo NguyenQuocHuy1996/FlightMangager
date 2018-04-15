@@ -91,7 +91,7 @@
                               </Pane>
                            </children>
                         </VBox>
-                        <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" />
+                        <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
                </content>

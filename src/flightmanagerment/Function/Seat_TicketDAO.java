@@ -28,15 +28,15 @@ public class Seat_TicketDAO {
     private static PreparedStatement prest;
     private static ResultSet rs;
 
-    public static double getCountStatusTrue(String depart, String year) throws SQLException {
+    public static double getCountStatusTrue(int depart, int year) throws SQLException {
         connectDB = new ConnectDB();
         conn = connectDB.getConnect();
         String sql = "select Count(*) as total\n"
                 + "from seat_ticket S JOIN flight F ON S.idFlight = F.idFlight\n"
                 + "where status = true AND MONTH(F.depart) = ? AND YEAR(F.depart) = ?";
         prest = conn.prepareStatement(sql);
-        prest.setString(1, depart);
-        prest.setString(2, year);
+        prest.setInt(1, depart);
+        prest.setInt(2, year);
         rs = prest.executeQuery();
         while (rs.next()) {
             Double count = rs.getDouble("total");
@@ -45,15 +45,15 @@ public class Seat_TicketDAO {
         return 0;
     }
 
-    public static double getCountStatusFalse(String depart, String year) throws SQLException {
+    public static double getCountStatusFalse(int depart, int year) throws SQLException {
         connectDB = new ConnectDB();
         conn = connectDB.getConnect();
         String sql = "select Count(*) as total\n"
                 + "from seat_ticket S JOIN flight F ON S.idFlight = F.idFlight\n"
                 + "where status = false AND MONTH(F.depart) = ? AND YEAR(F.depart) = ?";
         prest = conn.prepareStatement(sql);
-        prest.setString(1, depart);
-        prest.setString(2, year);
+        prest.setInt(1, depart);
+        prest.setInt(2, year);
         rs = prest.executeQuery();
         while (rs.next()) {
             Double count = rs.getDouble("total");
