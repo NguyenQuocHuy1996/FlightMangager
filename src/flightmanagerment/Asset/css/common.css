@@ -294,7 +294,7 @@
     /*    End-Margin-top: 30px*/    
 }
 .mainCustomerHistoryBooking .setWidthColumn{
-    -fx-pref-width:150px;
+    -fx-pref-width:120px;
 }
 .mainInfoHistoryCustomer{
     -fx-pref-width:960px;

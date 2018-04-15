@@ -129,7 +129,6 @@
                   </HBox>
                   <TableView maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" styleClass="mainFlightManager">
                     <columns>
-                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="STT" />
                         <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Mã chuyến bay" />
                         <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Hãng máy bay" />
                         <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Số hiệu" />
@@ -140,6 +139,7 @@
                         <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Ngày đến" />
                         <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Giờ đến" />
                         <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Tổng số ghế" />
+                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Giá vé" />
                     </columns>
                      <VBox.margin>
                         <Insets top="25.0" />
