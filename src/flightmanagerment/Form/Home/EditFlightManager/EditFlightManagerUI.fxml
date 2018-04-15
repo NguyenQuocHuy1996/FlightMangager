@@ -70,15 +70,15 @@
                   <Label styleClass="textField" text="Số hiệu" />
                   <TextField promptText="Số hiệu" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
-                  <Label styleClass="textField" text="Ngày đi" />
-                  <ComboBox prefWidth="280.0" promptText="Chọn ngày đi">
+                  <Label styleClass="textField" text="Điểm đi" />
+                  <ComboBox prefWidth="280.0" promptText="Chọn điểm đi">
                      <styleClass>
                         <String fx:value="inputField" />
                         <String fx:value="inputFieldisCheckBox" />
                      </styleClass>
                   </ComboBox>
-                  <Label layoutX="10.0" layoutY="217.0" styleClass="textField" text="Giờ đi" />
-                  <ComboBox prefWidth="280.0" promptText="Chọn giờ đi">
+                  <Label styleClass="textField" text="Điểm đến" />
+                  <ComboBox prefWidth="280.0" promptText="Chọn điểm đến">
                      <styleClass>
                         <String fx:value="inputField" />
                         <String fx:value="inputFieldisCheckBox" />
@@ -98,20 +98,31 @@
                   <Label styleClass="textField" text="Mã chuyến bay" />
                   <TextField promptText="Mã chuyến bay" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
+<<<<<<< HEAD
                   <Label styleClass="textField" text="Điểm đi" />
                   <ComboBox fx:id="cbb_origin" prefWidth="280.0" promptText="Chọn điểm đi">
+=======
+                  <Label styleClass="textField" text="Ngày đi" />
+                  <DatePicker editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="280.0" promptText="Chọn ngày đi">
+>>>>>>> Quoc_Huy_v2.0
                      <styleClass>
                         <String fx:value="inputField" />
                         <String fx:value="inputFieldisCheckBox" />
                      </styleClass>
+<<<<<<< HEAD
                   </ComboBox>
                   <Label styleClass="textField" text="Điểm đến" />
                   <ComboBox fx:id="cbb_destination" prefWidth="280.0" promptText="Chọn điểm đến">
+=======
+                  </DatePicker>
+                  <Label styleClass="textField" text="Ngày đến" />
+                  <DatePicker editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="280.0" promptText="Chọn ngày đến">
+>>>>>>> Quoc_Huy_v2.0
                      <styleClass>
                         <String fx:value="inputField" />
                         <String fx:value="inputFieldisCheckBox" />
                      </styleClass>
-                  </ComboBox>
+                  </DatePicker>
                   <Label styleClass="textField" text="Giá vé" />
                   <TextField promptText="Giá vé" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
@@ -122,20 +133,12 @@
                   <Label styleClass="textField" text="Tổng số ghế" />
                   <TextField promptText="Tổng số ghế" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
-                  <Label styleClass="textField" text="Ngày đến" />
-                  <ComboBox prefWidth="280.0" promptText="Chọn ngày đến">
-                     <styleClass>
-                        <String fx:value="inputField" />
-                        <String fx:value="inputFieldisCheckBox" />
-                     </styleClass>
-                  </ComboBox>
+                  <Label styleClass="textField" text="Giờ đi" />
+                  <TextField layoutX="10.0" layoutY="524.0" promptText="Chọn giờ đi" styleClass="inputField" />
+                  <Separator layoutX="10.0" layoutY="512.0" prefWidth="200.0" styleClass="separatorForm" />
                   <Label layoutX="10.0" layoutY="148.0" styleClass="textField" text="Giờ đến" />
-                  <ComboBox prefWidth="280.0" promptText="Chọn giờ đến">
-                     <styleClass>
-                        <String fx:value="inputField" />
-                        <String fx:value="inputFieldisCheckBox" />
-                     </styleClass>
-                  </ComboBox>
+                  <TextField layoutX="10.0" layoutY="79.0" promptText="Chọn giờ đến" styleClass="inputField" />
+                  <Separator layoutX="10.0" layoutY="126.0" prefWidth="200.0" styleClass="separatorForm" />
                   <HBox alignment="CENTER" prefHeight="108.0" prefWidth="300.0" spacing="5.0">
                      <children>
                         <Button mnemonicParsing="false" styleClass="btnSubmit" text="Lưu thay đổi" />

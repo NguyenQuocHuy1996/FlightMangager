@@ -8,12 +8,20 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="FlightManagerment.jar" size="1240832" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.45-bin.jar" size="999810" download="eager" />
+=======
+    <jar href="FlightManagerment.jar" size="1207202" download="eager" />
+>>>>>>> Quoc_Huy_v2.0
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="FlightManagerment" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
+<<<<<<< HEAD
   <jfx:javafx-desc  width="800" height="600" main-class="flightmanagerment.Form.Home.Main.Main"  name="FlightManagerment" />
+=======
+  <jfx:javafx-desc  width="800" height="600" main-class="flightmanagerment.Form.Home.Report.Report"  name="FlightManagerment" />
+>>>>>>> Quoc_Huy_v2.0
   <update check="always"/>
 </jnlp>
