@@ -9,6 +9,7 @@ import flightmanagerment.Config.ConnectDB;
 import flightmanagerment.Function.CityDAO;
 import flightmanagerment.Function.EmployeeDAO;
 import flightmanagerment.Function.FlightDAO;
+import flightmanagerment.Function.Seat_TicketDAO;
 import flightmanagerment.Model.Employee;
 import flightmanagerment.Model.Flight;
 import flightmanagerment.Model.Variable_Static;
@@ -186,6 +187,7 @@ public class FlightManagerController implements Initializable {
 
     @FXML
     private void btn_delete(ActionEvent event) throws SQLException {
+        Seat_TicketDAO.delete(table.getSelectionModel().getSelectedItem().getIdFlight());
         int function = FlightDAO.delete(table.getSelectionModel().getSelectedItem().getIdFlight());
         if (function == 1) {
             Alert a = new Alert(Alert.AlertType.INFORMATION);

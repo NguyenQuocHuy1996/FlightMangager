@@ -22,6 +22,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -35,20 +36,11 @@ public class MainUserController implements Initializable {
 
     @FXML
     private Label lbl_userName;
+    @FXML
+    private Button notification;
 
-//    @FXML
-//    private TextField txtEmail;
-//    @FXML
-//    private TextField txtPass;
-//    
-//    @FXML
-//    private void MainUser(ActionEvent event) {
-//        if((txtEmail.getText().equals("admin")) && (txtPass.getText().equals("admin123"))){
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setTitle("Dang nhap thanh cong");
-//            alert.show();
-//        }
-//    }
+    private Boolean status;
+
     @FXML
     private void btn_flightSearch(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Confirmed_Find_Flight/ConfirmedFindFlightUI.fxml"));
@@ -66,9 +58,17 @@ public class MainUserController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         Customer cus = new Customer();
+
         try {
             cus = CustomerDAO.getCus(Variable_Static.USERNAME);
-            lbl_userName.setText(cus.getLastName()  );
+            lbl_userName.setText(cus.getLastName());
+            status = CustomerDAO.getNotification(Variable_Static.USERNAME);
+
+            if (status) {
+                notification.setText("Tắt thông báo!");
+            } else {
+                notification.setText("Bật thông báo!");
+            }
         } catch (SQLException ex) {
 //            Logger.getLogger(MainUserController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -93,7 +93,17 @@ public class MainUserController implements Initializable {
     }
 
     @FXML
-    private void btn_notification(ActionEvent event) {
+    private void btn_notification(ActionEvent event) throws SQLException {
+        if (status) {
+            CustomerDAO.updateNotification(Boolean.FALSE, Variable_Static.USERNAME);
+            status = CustomerDAO.getNotification(Variable_Static.USERNAME);
+            notification.setText("Bật thông báo!");
+        } else {
+            CustomerDAO.updateNotification(Boolean.TRUE, Variable_Static.USERNAME);
+            status = CustomerDAO.getNotification(Variable_Static.USERNAME);
+            notification.setText("Tắt thông báo!");
+        }
+
     }
 
 }

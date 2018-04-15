@@ -171,7 +171,7 @@ public class Employee {
         this.image = image;
     }
 
-    public Employee(String email, String password, String firstName, String lastName, Date dateOfBirth, String ic_Card, String education_level, String department, String homeTown, Boolean sex, String phoneNumber , String address_number, String address_street, String address_district, String address_city) {
+    public Employee(String email, String password, String firstName, String lastName, Date dateOfBirth, String ic_Card, String education_level, String department, String homeTown, Boolean sex, String phoneNumber, String address_number, String address_street, String address_district, String address_city) {
         this.email = email;
         this.password = password;
         this.firstName = firstName;

@@ -160,89 +160,124 @@ public class MainFilghtController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        Customer cus = new Customer();
-        Employee emp = new Employee();
+        Customer cus = null;
         try {
             cus = CustomerDAO.getCus(Variable_Static.USERNAME);
-            emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
-            if (cus != null) {
-                lbl_userName.setText(cus.getFirstName());
-            } else if (emp != null) {
-                lbl_userName.setText(emp.getFirstName());
-            } else {
-                lbl_userName.setText("Khách hàng");
-            }
-
-        } catch (SQLException ex) {
-//            Logger.getLogger(MainUserController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        try {
-            ArrayList<Flight> list = Variable_Static.searchFlight(Variable_Static.ORIGIN, Variable_Static.DESTINATION, Variable_Static.DEPART);
-            DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-            String date = df.format(Variable_Static.DEPART);
-
-            origin1.setText(Variable_Static.ORIGIN);
-            destination1.setText(Variable_Static.DESTINATION);
-            depart1.setText(date);
-            flight_depart1.setText(list.get(0).getFlight_depart());
-            flight_number1.setText(list.get(0).getFlight_number());
-
-            origin2.setText(Variable_Static.ORIGIN);
-            destination2.setText(Variable_Static.DESTINATION);
-            depart2.setText(date);
-            flight_depart2.setText(list.get(1).getFlight_depart());
-            flight_number2.setText(list.get(1).getFlight_number());
-
-            origin3.setText(Variable_Static.ORIGIN);
-            destination3.setText(Variable_Static.DESTINATION);
-            depart3.setText(date);
-            flight_depart3.setText(list.get(2).getFlight_depart());
-            flight_number3.setText(list.get(2).getFlight_number());
-
-            origin4.setText(Variable_Static.ORIGIN);
-            destination4.setText(Variable_Static.DESTINATION);
-            depart4.setText(date);
-            flight_depart4.setText(list.get(3).getFlight_depart());
-            flight_number4.setText(list.get(3).getFlight_number());
-
-            origin5.setText(Variable_Static.ORIGIN);
-            destination5.setText(Variable_Static.DESTINATION);
-            depart5.setText(date);
-            flight_depart5.setText(list.get(4).getFlight_depart());
-            flight_number5.setText(list.get(4).getFlight_number());
-
-            origin6.setText(Variable_Static.ORIGIN);
-            destination6.setText(Variable_Static.DESTINATION);
-            depart6.setText(date);
-            flight_depart6.setText(list.get(5).getFlight_depart());
-            flight_number6.setText(list.get(5).getFlight_number());
-
-            origin7.setText(Variable_Static.ORIGIN);
-            destination7.setText(Variable_Static.DESTINATION);
-            depart7.setText(date);
-            flight_depart7.setText(list.get(6).getFlight_depart());
-            flight_number7.setText(list.get(6).getFlight_number());
-
-            origin8.setText(Variable_Static.ORIGIN);
-            destination8.setText(Variable_Static.DESTINATION);
-            depart8.setText(date);
-            flight_depart8.setText(list.get(7).getFlight_depart());
-            flight_number8.setText(list.get(7).getFlight_number());
-
-            origin9.setText(Variable_Static.ORIGIN);
-            destination9.setText(Variable_Static.DESTINATION);
-            depart9.setText(date);
-            flight_depart9.setText(list.get(8).getFlight_depart());
-            flight_number9.setText(list.get(8).getFlight_number());
-
-            origin10.setText(Variable_Static.ORIGIN);
-            destination10.setText(Variable_Static.DESTINATION);
-            depart10.setText(date);
-            flight_depart10.setText(list.get(9).getFlight_depart());
-            flight_number10.setText(list.get(9).getFlight_number());
         } catch (SQLException ex) {
             Logger.getLogger(MainFilghtController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Employee emp = null;
+        try {
+            emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
+        } catch (SQLException ex) {
+            Logger.getLogger(MainFilghtController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (cus != null) {
+            lbl_userName.setText(cus.getFirstName());
+        } else if (emp != null) {
+            lbl_userName.setText(emp.getFirstName());
+        } else {
+            lbl_userName.setText("Khách hàng");
+        }
+
+        ArrayList<Flight> list = null;
+        try {
+            list = Variable_Static.searchFlight(Variable_Static.ORIGIN, Variable_Static.DESTINATION, Variable_Static.DEPART);
+        } catch (SQLException ex) {
+            Logger.getLogger(MainFilghtController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+//            DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+//            String date = df.format(Variable_Static.DEPART);
+        int countList = list.size();
+        int i = 1;
+        if (i <= countList) {
+            origin1.setText(Variable_Static.ORIGIN);
+            destination1.setText(Variable_Static.DESTINATION);
+            depart1.setText(Variable_Static.DEPART.toString());
+            flight_depart1.setText(list.get(0).getFlight_depart());
+            flight_number1.setText(list.get(0).getFlight_number());
+            i++;
+        }
+
+        if (i <= countList) {
+            origin2.setText(Variable_Static.ORIGIN);
+            destination2.setText(Variable_Static.DESTINATION);
+            depart2.setText(Variable_Static.DEPART.toString());
+            flight_depart2.setText(list.get(1).getFlight_depart());
+            flight_number2.setText(list.get(1).getFlight_number());
+            i++;
+        }
+
+        if (i <= countList) {
+            origin3.setText(Variable_Static.ORIGIN);
+            destination3.setText(Variable_Static.DESTINATION);
+            depart3.setText(Variable_Static.DEPART.toString());
+            flight_depart3.setText(list.get(2).getFlight_depart());
+            flight_number3.setText(list.get(2).getFlight_number());
+            i++;
+        }
+
+        if (i <= countList) {
+            origin4.setText(Variable_Static.ORIGIN);
+            destination4.setText(Variable_Static.DESTINATION);
+            depart4.setText(Variable_Static.DEPART.toString());
+            flight_depart4.setText(list.get(3).getFlight_depart());
+            flight_number4.setText(list.get(3).getFlight_number());
+            i++;
+        }
+
+        if (i <= countList) {
+            origin5.setText(Variable_Static.ORIGIN);
+            destination5.setText(Variable_Static.DESTINATION);
+            depart5.setText(Variable_Static.DEPART.toString());
+            flight_depart5.setText(list.get(4).getFlight_depart());
+            flight_number5.setText(list.get(4).getFlight_number());
+            i++;
+        }
+
+        if (i <= countList) {
+            origin6.setText(Variable_Static.ORIGIN);
+            destination6.setText(Variable_Static.DESTINATION);
+            depart6.setText(Variable_Static.DEPART.toString());
+            flight_depart6.setText(list.get(5).getFlight_depart());
+            flight_number6.setText(list.get(5).getFlight_number());
+            i++;
+        }
+
+        if (i <= countList) {
+            origin7.setText(Variable_Static.ORIGIN);
+            destination7.setText(Variable_Static.DESTINATION);
+            depart7.setText(Variable_Static.DEPART.toString());
+            flight_depart7.setText(list.get(6).getFlight_depart());
+            flight_number7.setText(list.get(6).getFlight_number());
+            i++;
+        }
+
+        if (i <= countList) {
+            origin8.setText(Variable_Static.ORIGIN);
+            destination8.setText(Variable_Static.DESTINATION);
+            depart8.setText(Variable_Static.DEPART.toString());
+            flight_depart8.setText(list.get(7).getFlight_depart());
+            flight_number8.setText(list.get(7).getFlight_number());
+            i++;
+        }
+
+        if (i <= countList) {
+            origin9.setText(Variable_Static.ORIGIN);
+            destination9.setText(Variable_Static.DESTINATION);
+            depart9.setText(Variable_Static.DEPART.toString());
+            flight_depart9.setText(list.get(8).getFlight_depart());
+            flight_number9.setText(list.get(8).getFlight_number());
+            i++;
+        }
+
+        if (i <= countList) {
+            origin10.setText(Variable_Static.ORIGIN);
+            destination10.setText(Variable_Static.DESTINATION);
+            depart10.setText(Variable_Static.DEPART.toString());
+            flight_depart10.setText(list.get(9).getFlight_depart());
+            flight_number10.setText(list.get(9).getFlight_number());
+            i++;
         }
 
     }

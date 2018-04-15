@@ -29,8 +29,37 @@ public class Customer {
     private String address_street;
     private String address_district;
     private String address_city;
+    private Boolean notification;
+
+    public Boolean getNotification() {
+        return notification;
+    }
+
+    public void setNotification(Boolean notification) {
+        this.notification = notification;
+    }
+
+    public Customer(Boolean notification) {
+        this.notification = notification;
+    }
 
     public Customer() {
+    }
+
+    public Customer(String email, String firstName, String lastName, Date dateOfBirth, String ic_Card, String homeTown, Boolean sex, String phoneNumber, String address_number, String address_street, String address_district, String address_city, Boolean notification) {
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.ic_Card = ic_Card;
+        this.homeTown = homeTown;
+        this.sex = sex;
+        this.phoneNumber = phoneNumber;
+        this.address_number = address_number;
+        this.address_street = address_street;
+        this.address_district = address_district;
+        this.address_city = address_city;
+        this.notification = notification;
     }
 
     public Customer(String email, String firstName, String lastName, Date dateOfBirth, String ic_Card, String homeTown, Boolean sex, String phoneNumber, String address_number, String address_street, String address_district, String address_city) {
