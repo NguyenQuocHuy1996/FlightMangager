@@ -55,7 +55,7 @@
       </GridPane>
    </top>
    <center>
-      <StackPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefWidth="200.0" styleClass="mainFlightManager" BorderPane.alignment="CENTER">
+      <StackPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" styleClass="mainFlightManager" BorderPane.alignment="CENTER">
          <children>
             <VBox maxHeight="1.7976931348623157E308" prefHeight="634.0" prefWidth="1314.0">
                <children>
