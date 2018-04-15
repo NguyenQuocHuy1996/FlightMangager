@@ -28,6 +28,21 @@ public class Flight {
     public Flight() {
     }
 
+    public Flight(String origin, String destination, Date depart, Date arrival, int passenger,
+            String brand, String flight_number, String flight_arrival, String flight_depart, Double price) {
+        super();
+        this.origin = origin;
+        this.destination = destination;
+        this.depart = depart;
+        this.arrival = arrival;
+        this.passenger = passenger;
+        this.brand = brand;
+        this.flight_number = flight_number;
+        this.flight_arrival = flight_arrival;
+        this.flight_depart = flight_depart;
+        this.price = price;
+    }
+
     public Flight(int idFlight, String origin, String destination, Date depart, Date arrival, int passenger,
             String brand, String flight_number, String flight_arrival, String flight_depart, Double price) {
         super();
