@@ -38,6 +38,8 @@ public final class Variable_Static {
 
     public static String USERNAME = "";
     public static int IDFLIGHT = 0;
+    public static int IDFLIGHTNEW = 0;
+
     public static String ORIGIN = "";
     public static String DESTINATION = "";
     public static Date DEPART = null;
@@ -142,7 +144,7 @@ public final class Variable_Static {
             }
             if (null != conn) {
                 conn.close();
-            }            
+            }
         }
         return null;
     }

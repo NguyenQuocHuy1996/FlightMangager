@@ -173,13 +173,16 @@ public class FlightManagerController implements Initializable {
 
     @FXML
     private void btn_insert(ActionEvent event) throws IOException {
+        Variable_Static.IDFLIGHTNEW = 0;
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/EditFlightManager/EditFlightManagerUI.fxml"));
         Variable_Static.LinkUI(event, root, "Insert/Edit Flight");
     }
 
     @FXML
     private void btn_update(ActionEvent event) throws IOException {
-        Variable_Static.IDFLIGHT = table.getSelectionModel().getSelectedItem().getIdFlight(); // cho toàn cục
+
+        Variable_Static.IDFLIGHTNEW = table.getSelectionModel().getSelectedItem().getIdFlight(); // cho toàn cục
+
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/EditFlightManager/EditFlightManagerUI.fxml"));
         Variable_Static.LinkUI(event, root, "Insert/Edit Flight");
 

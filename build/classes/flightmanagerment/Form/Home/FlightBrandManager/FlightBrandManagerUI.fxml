@@ -54,6 +54,7 @@
          </padding>
       </GridPane>
    </top>
+<<<<<<< HEAD
    <right>
       <GridPane alignment="TOP_CENTER" hgap="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -89,8 +90,10 @@
          </children>
       </GridPane>
    </right>
+=======
+>>>>>>> Quoc_Huy_v2.0
    <center>
-      <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="450.0" BorderPane.alignment="TOP_CENTER">
+      <VBox maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="450.0" BorderPane.alignment="TOP_CENTER">
          <children>
             <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0">
               <columns>
@@ -104,4 +107,44 @@
          </BorderPane.margin>
       </VBox>
    </center>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" styleClass="btnSubmit" text="Xóa" />
+            <GridPane alignment="TOP_CENTER" hgap="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <VBox prefHeight="472.0" prefWidth="745.0" spacing="10.0">
+                     <children>
+                        <Label styleClass="textField" text="Mã hãng bay" />
+                        <TextField promptText="Mã hãng bay" styleClass="inputField" />
+                        <Separator prefWidth="200.0" styleClass="separatorForm" />
+                        <Label layoutX="10.0" layoutY="10.0" styleClass="textField" text="Tên hãng bay" />
+                        <TextField layoutX="10.0" layoutY="79.0" promptText="Tên hãng bay" styleClass="inputField" />
+                        <Separator layoutX="10.0" layoutY="126.0" prefWidth="200.0" styleClass="separatorForm" />
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <HBox layoutX="76.0" layoutY="14.0" prefHeight="56.0" prefWidth="349.0" spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" styleClass="btnSubmit" text="Lưu thay đổi" />
+                                    <Button mnemonicParsing="false" styleClass="btnSubmit" text="Hủy bỏ" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Pane>
+                     </children>
+                     <GridPane.margin>
+                        <Insets right="100.0" />
+                     </GridPane.margin>
+                  </VBox>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </right>
 </BorderPane>

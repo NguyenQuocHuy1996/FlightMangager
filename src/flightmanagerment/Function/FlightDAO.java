@@ -177,9 +177,9 @@ public class FlightDAO {
         return data;
     }
 
-    public static int Edit() throws SQLException {
+    public static int Edit(Flight f) throws SQLException {
         try {
-            Flight f = new Flight();
+
             connectDB = new ConnectDB();
             conn = connectDB.getConnect();
             String sql = "update flight set origin = ?, destination = ?, depart = ?, arrival = ?, passenger = ?, brand = ?, flight_number = ?, flight_depart = ?, flight_arrival = ?, price = ? where idFlight = ?";
@@ -427,7 +427,7 @@ public class FlightDAO {
             if (null != conn) {
                 conn.close();
             }
-            return null;
         }
+        return null;
     }
 }
