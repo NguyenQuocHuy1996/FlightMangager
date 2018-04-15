@@ -59,18 +59,7 @@
          <children>
             <TableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1350.0">
               <columns>
-<<<<<<< HEAD
-                  <TableColumn fx:id="STTCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="STT" />
-                  <TableColumn fx:id="idFlightCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Mã chuyến bay" />
-                  <TableColumn fx:id="brandCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Hãng máy bay" />
-                <TableColumn fx:id="originCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Điểm đi" />
-                <TableColumn fx:id="destinationCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Điểm đến" />
-                  <TableColumn fx:id="departCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Ngay đi" />
-                  <TableColumn fx:id="flight_departCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Giờ đi" />
-                  <TableColumn fx:id="arrivalCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Ngày về" />
-                  <TableColumn fx:id="flight_arrivalCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Giờ về" />
-                  <TableColumn fx:id="passengerCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Số ghế" />
-=======
+
                   <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Mã chuyến bay" />
                   <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Hãng máy bay" />
                 <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Điểm đi" />
@@ -80,7 +69,6 @@
                   <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Ngày về" />
                   <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Giờ về" />
                   <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Số ghế" />
->>>>>>> Quoc_Huy_v2.0
               </columns>
             </TableView>
          </children>

@@ -61,7 +61,7 @@ public class LoginController implements Initializable {
                     Variable_Static.LinkUI(event, root, "Main Customer");
 
                 } else {
-                    a.setContentText("Mật khẩu không chính xác");
+                    a.setContentText("Tài khoản hoặc mật khẩu không chính xác");
                     a.show();
                 }
 

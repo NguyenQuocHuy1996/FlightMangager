@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="1003.0" prefWidth="1026.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.EditFlightManager.EditFlightManagerController">
+   <top>
+      <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="114.0" prefWidth="1242.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="TOP_RIGHT" minWidth="-Infinity" GridPane.columnIndex="1">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label styleClass="userName" text="Xin chào" />
+                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="User" textAlignment="RIGHT" />
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="46.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Asset/img/icon/user.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <GridPane.margin>
+                  <Insets right="25.0" />
+               </GridPane.margin>
+            </HBox>
+            <Separator prefHeight="0.0" prefWidth="1242.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" styleClass="btnSubmit" text="Quay về">
+               <GridPane.margin>
+                  <Insets left="25.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets top="25.0" />
+         </padding>
+      </GridPane>
+   </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Pane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="336.0" layoutY="21.0" styleClass="textField" text="XÁC NHẬN THÔNG TIN" textAlignment="CENTER" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="140.0" prefWidth="850.0" styleClass="btnThemeColor">
+                     <children>
+                        <Label layoutX="14.0" layoutY="1.0" styleClass="textField" text="Mã chuyến bay: ABC123" />
+                        <Label layoutX="755.0" layoutY="1.0" styleClass="textField" text="Số ghế: A1" />
+                     </children>
+                  </Pane>
+                  <Separator prefWidth="200.0" styleClass="separatorForm" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                     <children>
+                        <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0">
+                           <children>
+                              <Label styleClass="textField" text="Họ" />
+                              <TextField promptText="Họ người đi" styleClass="inputField" />
+                              <Separator prefWidth="200.0" styleClass="separatorForm" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0">
+                           <children>
+                              <Label styleClass="textField" text="Tên" />
+                              <TextField promptText="Tên người đi" styleClass="inputField" />
+                              <Separator prefWidth="200.0" styleClass="separatorForm" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Label styleClass="textField" text="Chứng minh nhân dân" />
+                  <TextField promptText="Chứng minh nhân dân người đi" styleClass="inputField" />
+                  <Separator prefWidth="200.0" styleClass="separatorForm" />
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="340.0" layoutY="11.0" mnemonicParsing="false" styleClass="btnSubmit" text="Xác nhận" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

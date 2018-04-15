@@ -13,38 +13,28 @@
    <center>
       <GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="main" vgap="15.0" BorderPane.alignment="CENTER">
          <children>
-<<<<<<< HEAD
-            <Label alignment="CENTER" styleClass="btnMagenta" text="17:45 PM" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#btn_historyBooking" text="Lịch sử đặt vé" GridPane.rowIndex="1">
-=======
+
             <Label alignment="CENTER" text="17:45 PM" GridPane.columnIndex="1">
                <styleClass>
                   <String fx:value="btnMain" />
                   <String fx:value="btnThemeColor" />
                   <String fx:value="btnMetro" />
                </styleClass></Label>
-            <Button mnemonicParsing="false" text="Lịch sử đặt vé" GridPane.rowIndex="1">
->>>>>>> Quoc_Huy_v2.0
+            <Button mnemonicParsing="false" onAction="#btn_historyBooking" text="Lịch sử đặt vé" GridPane.rowIndex="1">
                <styleClass>
                   <String fx:value="btnMain" />
                   <String fx:value="btnThemeColor" />
                   <String fx:value="btnHistoryBooking" />
                </styleClass></Button>
-<<<<<<< HEAD
-            <Button mnemonicParsing="false" onAction="#btn_logout" text="Đăng xuất" GridPane.columnIndex="1" GridPane.rowIndex="1">
-=======
-            <Button mnemonicParsing="false" text="Đăng xuất" GridPane.columnIndex="2" GridPane.rowIndex="2">
->>>>>>> Quoc_Huy_v2.0
+
+            <Button mnemonicParsing="false" onAction="#btn_logout" text="Đăng xuất" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <styleClass>
                   <String fx:value="btnMain" />
                   <String fx:value="btnThemeColor" />
                   <String fx:value="btnCustomerHistoryBooking" />
                </styleClass></Button>
-<<<<<<< HEAD
-            <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" onAction="#btn_flightSearch" text="Tra cứu chuyến bay" textAlignment="CENTER" wrapText="true">
-=======
-            <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" text="Tra cứu chuyến bay" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
->>>>>>> Quoc_Huy_v2.0
+
+            <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" onAction="#btn_flightSearch" text="Tra cứu chuyến bay" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <styleClass>
                   <String fx:value="btnMain" />
                   <String fx:value="btnThemeColor" />
@@ -53,18 +43,14 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></Button>
-<<<<<<< HEAD
-            <Label alignment="CENTER" contentDisplay="CENTER" styleClass="btnMagenta" text="Xin chào " textAlignment="CENTER" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" onAction="#btn_changePassword" text="Đổi mật khẩu" GridPane.rowIndex="2">
-=======
+
             <Label alignment="CENTER" contentDisplay="CENTER" text="Xin chào " textAlignment="CENTER">
                <styleClass>
                   <String fx:value="btnMain" />
                   <String fx:value="btnThemeColor" />
                   <String fx:value="btnMetro" />
                </styleClass></Label>
-            <Button mnemonicParsing="false" text="Đổi mật khẩu" GridPane.rowIndex="2">
->>>>>>> Quoc_Huy_v2.0
+            <Button mnemonicParsing="false" onAction="#btn_changePassword" text="Đổi mật khẩu" GridPane.rowIndex="2">
                <styleClass>
                   <String fx:value="btnMain" />
                   <String fx:value="btnThemeColor" />
@@ -78,11 +64,8 @@
                   <String fx:value="btnInfo" />
                </styleClass>
             </Button>
-<<<<<<< HEAD
-            <Button alignment="CENTER" layoutX="165.0" layoutY="175.0" mnemonicParsing="false" onAction="#btn_notification" text="Nhận thông báo" GridPane.columnIndex="1">
-=======
-            <Button alignment="CENTER" layoutX="165.0" layoutY="175.0" mnemonicParsing="false" text="Nhận thông báo" GridPane.columnIndex="2">
->>>>>>> Quoc_Huy_v2.0
+
+            <Button alignment="CENTER" layoutX="165.0" layoutY="175.0" mnemonicParsing="false" onAction="#btn_notification" text="Nhận thông báo" GridPane.columnIndex="2">
                <styleClass>
                   <String fx:value="btnMain" />
                   <String fx:value="btnThemeColor" />

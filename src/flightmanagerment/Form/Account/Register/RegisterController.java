@@ -62,7 +62,7 @@ public class RegisterController implements Initializable {
     }
 
     @FXML
-    private void btn_Register(ActionEvent event) throws SQLException {
+    private void btn_Register(ActionEvent event) throws SQLException, IOException {
         Alert a = new Alert(Alert.AlertType.ERROR);
         Customer cus = new Customer(email.getText(), password.getText(), firstName.getText(), lastName.getText());
         if (confirm_password.getText().equals(password.getText())) {
@@ -76,7 +76,9 @@ public class RegisterController implements Initializable {
                 a.setAlertType(type);
                 a.setTitle("Đăng ký thành công!");
                 a.setContentText("Chức mừng bạn đã đăng ký thành công ! - với email : " + cus.getEmail());
-                a.show();
+                a.showAndWait();
+                Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Login/LoginUI.fxml"));
+                Variable_Static.LinkUI(event, root, "Login");
             }
         } else {
             a.setTitle("ERROR");
