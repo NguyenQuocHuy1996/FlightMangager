@@ -171,6 +171,7 @@
 }
 .mainCustomerHistoryBooking{
     -fx-pref-width: 1350px;
+    -fx-pref-height: 600px;
     -fx-text-fill: black;
 }
 .main{
