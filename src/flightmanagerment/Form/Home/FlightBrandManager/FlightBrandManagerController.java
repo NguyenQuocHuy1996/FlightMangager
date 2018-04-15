@@ -57,7 +57,7 @@ public class FlightBrandManagerController implements Initializable {
             loadDB();
             Employee emp = new Employee();
             emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
-            lbl_userName.setText(emp.getFirstName());
+            lbl_userName.setText(emp.getLastName());
         } catch (SQLException ex) {
             Logger.getLogger(FlightBrandManagerController.class.getName()).log(Level.SEVERE, null, ex);
         }

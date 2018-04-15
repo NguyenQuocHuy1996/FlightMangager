@@ -21,7 +21,7 @@
                   <String fx:value="btnHistoryBooking" />
                </styleClass></Button>
 
-            <Button mnemonicParsing="false" text="Báo cáo" GridPane.columnIndex="2">
+            <Button mnemonicParsing="false" onAction="#btn_report" text="Báo cáo" GridPane.columnIndex="2">
                <styleClass>
                   <String fx:value="btnMain" />
                   <String fx:value="btnThemeColor" />

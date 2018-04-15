@@ -8,9 +8,11 @@ package flightmanagerment.Form.Home.HistoryBooking;
 import flightmanagerment.Form.Home.FlightManager.FlightManagerController;
 import flightmanagerment.Function.CustomerDAO;
 import flightmanagerment.Function.EmployeeDAO;
+import flightmanagerment.Function.Seat_FlightDAO;
 import flightmanagerment.Model.Customer;
 import flightmanagerment.Model.Employee;
 import flightmanagerment.Model.Flight;
+import flightmanagerment.Model.Seat_Flight;
 import flightmanagerment.Model.Variable_Static;
 import java.io.IOException;
 import java.net.URL;
@@ -29,6 +31,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
@@ -38,42 +41,43 @@ import javafx.scene.control.cell.PropertyValueFactory;
  */
 public class HistoryBookingController implements Initializable {
 
+    private ObservableList<Seat_Flight> list;
     @FXML
     private Label lbl_userName;
     @FXML
-    private TableColumn<?, ?> STTCol;
-    @FXML
     private TableColumn<?, ?> idFlightCol;
-    @FXML
-    private TableColumn<?, ?> brandCol;
     @FXML
     private TableColumn<?, ?> originCol;
     @FXML
     private TableColumn<?, ?> destinationCol;
     @FXML
-    private TableColumn<?, ?> departCol;
+    private TableColumn<?, ?> idSeatCol;
     @FXML
-    private TableColumn<?, ?> flight_departCol;
+    private TableColumn<?, ?> codeCol;
     @FXML
-    private TableColumn<?, ?> arrivalCol;
+    private TableColumn<?, ?> firstNameCol;
     @FXML
-    private TableColumn<?, ?> flight_arrivalCol;
+    private TableColumn<?, ?> lastNameCol;
     @FXML
-    private TableColumn<?, ?> passengerCol;
+    private TableColumn<?, ?> ic_cardCol;
+    @FXML
+    private TableView<Seat_Flight> table;
 
-    private ObservableList<Flight> list;
+    private void getDB() throws SQLException {
+        setCellTable();
+        list = Seat_FlightDAO.getAllSeat_Flight(Variable_Static.IDACCOUNT);
+        table.setItems(list);
+    }
 
     private void setCellTable() {
         idFlightCol.setCellValueFactory(new PropertyValueFactory<>("idFlight"));
-        brandCol.setCellValueFactory(new PropertyValueFactory<>("brand"));
-//        .setCellValueFactory(new PropertyValueFactory<>("flight_number"));
+        idSeatCol.setCellValueFactory(new PropertyValueFactory<>("idSeat"));
         originCol.setCellValueFactory(new PropertyValueFactory<>("origin"));
         destinationCol.setCellValueFactory(new PropertyValueFactory<>("destination"));
-        departCol.setCellValueFactory(new PropertyValueFactory<>("depart"));
-        flight_departCol.setCellValueFactory(new PropertyValueFactory<>("flight_depart"));
-        arrivalCol.setCellValueFactory(new PropertyValueFactory<>("arrival"));
-        flight_arrivalCol.setCellValueFactory(new PropertyValueFactory<>("flight_arrival"));
-        passengerCol.setCellValueFactory(new PropertyValueFactory<>("passenger"));
+        codeCol.setCellValueFactory(new PropertyValueFactory<>("code"));
+        firstNameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+        lastNameCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        ic_cardCol.setCellValueFactory(new PropertyValueFactory<>("ic_card"));
     }
 
     @Override
@@ -85,10 +89,12 @@ public class HistoryBookingController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(FlightManagerController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        lbl_userName.setText(cus.getFirstName());
-//        setCellTable();
-        list = FXCollections.observableArrayList();
-
+        lbl_userName.setText(cus.getLastName());
+        try {
+            getDB();
+        } catch (SQLException ex) {
+            Logger.getLogger(HistoryBookingController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML

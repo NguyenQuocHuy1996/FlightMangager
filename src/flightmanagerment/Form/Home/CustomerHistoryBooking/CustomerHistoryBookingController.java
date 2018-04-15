@@ -52,8 +52,6 @@ public class CustomerHistoryBookingController implements Initializable {
     private TableColumn<?, ?> flight_arrivalCol;
     @FXML
     private TableColumn<?, ?> passengerCol;
-    @FXML
-    private TableView<Flight> tableView;
 
     private ObservableList<Flight> list;
 
@@ -61,24 +59,31 @@ public class CustomerHistoryBookingController implements Initializable {
     private Label lbl_userName;
     @FXML
     private TableColumn<?, ?> priceCol;
+    @FXML
+    private TableView<Flight> table;
+    @FXML
+    private TableColumn<?, ?> flight_numberCol;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
             Employee emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
-            lbl_userName.setText(emp.getFirstName());
+            lbl_userName.setText(emp.getLastName());
 
+        } catch (SQLException ex) {
+            Logger.getLogger(CustomerHistoryBookingController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
             loadDB();
         } catch (SQLException ex) {
             Logger.getLogger(CustomerHistoryBookingController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     private void loadDB() throws SQLException {
         setCellTable();
         list = FlightDAO.getAllFlight();
-        tableView.setItems(list);
+        table.setItems(list);
     }
 
     private void setCellTable() {
@@ -92,6 +97,7 @@ public class CustomerHistoryBookingController implements Initializable {
         flight_arrivalCol.setCellValueFactory(new PropertyValueFactory<>("flight_arrival"));
         passengerCol.setCellValueFactory(new PropertyValueFactory<>("passenger"));
         priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
+        flight_numberCol.setCellValueFactory(new PropertyValueFactory<>("flight_number"));
     }
 
     @FXML

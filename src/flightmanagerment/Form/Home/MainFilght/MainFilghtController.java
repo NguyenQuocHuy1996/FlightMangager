@@ -31,6 +31,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -173,9 +174,9 @@ public class MainFilghtController implements Initializable {
             Logger.getLogger(MainFilghtController.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (cus != null) {
-            lbl_userName.setText(cus.getFirstName());
+            lbl_userName.setText(cus.getLastName());
         } else if (emp != null) {
-            lbl_userName.setText(emp.getFirstName());
+            lbl_userName.setText(emp.getLastName());
         } else {
             lbl_userName.setText("Khách hàng");
         }
@@ -297,6 +298,11 @@ public class MainFilghtController implements Initializable {
             Variable_Static.LinkUI(event, root, "Main");
         }
 
+    }
+
+    @FXML
+    private void btn_Choose1(MouseEvent event) {
+        System.out.println("sadasd");
     }
 
 }

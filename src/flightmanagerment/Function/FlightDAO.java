@@ -115,9 +115,11 @@ public class FlightDAO {
                         + "- Hệ thống quản trị chuyến bay.";
 
                 List<String> list = CustomerDAO.getCusWithNotification(Boolean.TRUE);
-                for (String string : list) {
-                    Variable_Static.SendMail(string, contentMail);
-                }
+                Variable_Static.SendMail("nguyenngocphuongou@gmail.com", contentMail);
+
+//                for (String string : list) {
+//                    Variable_Static.SendMail(string, contentMail);
+//                }
                 System.out.println("Thêm thành công");
                 return 1;
 

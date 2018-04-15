@@ -70,9 +70,9 @@ public class ConfirmedFindFlightController implements Initializable {
             cus = CustomerDAO.getCus(Variable_Static.USERNAME);
             emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
             if (cus != null) {
-                lbl_userName.setText(cus.getFirstName());
+                lbl_userName.setText(cus.getLastName());
             } else if (emp != null) {
-                lbl_userName.setText(emp.getFirstName());
+                lbl_userName.setText(emp.getLastName());
             } else {
                 lbl_userName.setText("Khách hàng");
             }

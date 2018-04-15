@@ -54,7 +54,7 @@ public class MainStaffController implements Initializable {
         Employee emp = new Employee();
         try {
             emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
-            lbl_userName.setText(emp.getFirstName());
+            lbl_userName.setText(emp.getLastName());
         } catch (SQLException ex) {
 //            Logger.getLogger(MainStaffController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -109,6 +109,12 @@ public class MainStaffController implements Initializable {
     private void btn_flightBrand(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/FlightBrandManager/FlightBrandManagerUI.fxml"));
         Variable_Static.LinkUI(event, root, "Flight Brand");
+    }
+
+    @FXML
+    private void btn_report(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Report/ReportUI.fxml"));
+        Variable_Static.LinkUI(event, root, "Report");
     }
 
 }

@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="730.0" prefWidth="769.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="730.0" prefWidth="769.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.Report.ReportController">
    <top>
       <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="114.0" prefWidth="1242.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -26,7 +26,7 @@
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <Label styleClass="userName" text="Xin chào" />
-                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="User" textAlignment="RIGHT" />
+                        <Label fx:id="lbl_userName" alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="User" textAlignment="RIGHT" />
                      </children>
                   </VBox>
                   <ImageView fitHeight="46.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
@@ -43,7 +43,7 @@
                </GridPane.margin>
             </HBox>
             <Separator prefHeight="0.0" prefWidth="1242.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" styleClass="btnSubmit" text="Quay về">
+            <Button mnemonicParsing="false" onAction="#btn_back" styleClass="btnSubmit" text="Quay về">
                <GridPane.margin>
                   <Insets left="25.0" />
                </GridPane.margin>
@@ -71,14 +71,14 @@
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <Label styleClass="textField" text="Báo cáo tháng" />
-                              <ComboBox prefWidth="150.0">
+                              <ComboBox fx:id="cbb_month" prefWidth="150.0">
                                  <styleClass>
                                     <String fx:value="inputField" />
                                     <String fx:value="inputFieldisCheckBox" />
                                  </styleClass>
                               </ComboBox>
                               <Label layoutX="10.0" layoutY="10.0" styleClass="textField" text="Báo cáo năm" />
-                              <ComboBox prefWidth="150.0">
+                              <ComboBox fx:id="cbb_year" prefWidth="150.0">
                                  <styleClass>
                                     <String fx:value="inputField" />
                                     <String fx:value="inputFieldisCheckBox" />
@@ -86,7 +86,7 @@
                               </ComboBox>
                               <Pane prefHeight="109.0" prefWidth="444.0">
                                  <children>
-                                    <Button layoutX="253.0" layoutY="30.0" mnemonicParsing="false" styleClass="btnSubmit" text="Lập báo cáo" />
+                                    <Button layoutX="253.0" layoutY="30.0" mnemonicParsing="false" onAction="#btn_create" styleClass="btnSubmit" text="Lập báo cáo" />
                                  </children>
                               </Pane>
                            </children>

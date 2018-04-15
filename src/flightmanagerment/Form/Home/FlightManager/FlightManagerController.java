@@ -48,7 +48,7 @@ import javafx.stage.Stage;
  * @author Quoc Huy
  */
 public class FlightManagerController implements Initializable {
-
+    
     @FXML
     private TextField txt_idFlight;
     @FXML
@@ -77,44 +77,46 @@ public class FlightManagerController implements Initializable {
     private TableColumn<?, ?> passengerCol;
     @FXML
     private TableView<Flight> table;
-
+    
     private ObservableList<Flight> list;
-
+    
     @FXML
     private Label lbl_userName;
     @FXML
     private ComboBox<String> cbb_origin;
     @FXML
     private ComboBox<String> cbb_destination;
-
+    @FXML
+    private TableColumn<?, ?> priceCol;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         Employee emp = new Employee();
         try {
             emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
-            lbl_userName.setText(emp.getFirstName());
+            lbl_userName.setText(emp.getLastName());
             loadDB();
             ObservableList<String> list = CityDAO.getAllCity();
             cbb_origin.setItems(list);
             cbb_origin.getSelectionModel().select(1);
             cbb_origin.setPromptText(cbb_origin.getConverter().toString(cbb_origin.getValue()));
-
+            
             cbb_destination.setItems(list);
             cbb_destination.getSelectionModel().select(1);
             cbb_destination.setPromptText(cbb_destination.getConverter().toString(cbb_destination.getValue()));
         } catch (SQLException ex) {
             Logger.getLogger(FlightManagerController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
     }
-
+    
     private void loadDB() throws SQLException {
         setCellTable();
         list = FlightDAO.getAllFlight();
         table.setItems(list);
     }
-
+    
     private void setCellTable() {
         idFlightCol.setCellValueFactory(new PropertyValueFactory<>("idFlight"));
         brandCol.setCellValueFactory(new PropertyValueFactory<>("brand"));
@@ -126,8 +128,9 @@ public class FlightManagerController implements Initializable {
         flight_arrivalCol.setCellValueFactory(new PropertyValueFactory<>("flight_arrival"));
         passengerCol.setCellValueFactory(new PropertyValueFactory<>("passenger"));
         flight_numberCol.setCellValueFactory(new PropertyValueFactory<>("flight_number"));
+        priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
     }
-
+    
     @FXML
     private void btn_back(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
@@ -141,7 +144,7 @@ public class FlightManagerController implements Initializable {
 //        stage.setTitle("Main Staff ");
 //        stage.show();
     }
-
+    
     @FXML
     private void btn_search(ActionEvent event) throws SQLException {
         if (txt_idFlight.getText().equals("")) {
@@ -163,31 +166,31 @@ public class FlightManagerController implements Initializable {
                 a.show();
             }
         }
-
+        
     }
-
+    
     @FXML
     private void getID(MouseEvent event) {
 //        table.getSelectionModel().getSelectedItem().getIdFlight();
     }
-
+    
     @FXML
     private void btn_insert(ActionEvent event) throws IOException {
         Variable_Static.IDFLIGHTNEW = 0;
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/EditFlightManager/EditFlightManagerUI.fxml"));
         Variable_Static.LinkUI(event, root, "Insert/Edit Flight");
     }
-
+    
     @FXML
     private void btn_update(ActionEvent event) throws IOException {
-
+        
         Variable_Static.IDFLIGHTNEW = table.getSelectionModel().getSelectedItem().getIdFlight(); // cho toàn cục
 
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/EditFlightManager/EditFlightManagerUI.fxml"));
         Variable_Static.LinkUI(event, root, "Insert/Edit Flight");
-
+        
     }
-
+    
     @FXML
     private void btn_delete(ActionEvent event) throws SQLException {
         Seat_TicketDAO.delete(table.getSelectionModel().getSelectedItem().getIdFlight());
@@ -201,5 +204,5 @@ public class FlightManagerController implements Initializable {
         } else {
         }
     }
-
+    
 }

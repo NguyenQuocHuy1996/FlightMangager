@@ -61,6 +61,7 @@ public class MainUserController implements Initializable {
 
         try {
             cus = CustomerDAO.getCus(Variable_Static.USERNAME);
+            Variable_Static.IDACCOUNT = cus.getIdAccount();
             lbl_userName.setText(cus.getLastName());
             status = CustomerDAO.getNotification(Variable_Static.USERNAME);
 

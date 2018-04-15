@@ -220,6 +220,7 @@ public class CustomerDAO {
                 String email = rs.getString("email");
                 list.add(email);
             }
+            return list;
         } catch (Exception ex) {
             System.out.println(ex);
             // TODO: handle exception

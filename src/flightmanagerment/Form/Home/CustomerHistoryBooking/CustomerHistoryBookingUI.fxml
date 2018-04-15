@@ -60,34 +60,22 @@
             <VBox maxHeight="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0">
                <children>
 
-                  <TableView fx:id="tableView" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" onMouseClicked="#getInfoHistoryBooking" prefHeight="0.0" prefWidth="0.0" styleClass="mainCustomerHistoryBooking">
+                  <TableView fx:id="table" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" onMouseClicked="#getInfoHistoryBooking" prefHeight="0.0" prefWidth="0.0" styleClass="mainCustomerHistoryBooking">
 
                     <columns>
-<<<<<<< HEAD
+
                         <TableColumn fx:id="idFlightCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Mã chuyến bay" />
                         <TableColumn fx:id="brandCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Hãng máy bay" />
+                        <TableColumn fx:id="flight_numberCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Số hiệu" />
                       <TableColumn fx:id="originCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Điểm đi" />
                       <TableColumn fx:id="destinationCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Điểm đến" />
                         <TableColumn fx:id="departCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Ngày đi" />
                         <TableColumn fx:id="flight_departCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Giờ đi" />
-                        <TableColumn fx:id="arrivalCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Ngày về" />
-                        <TableColumn fx:id="flight_arrivalCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Giờ về" />
+                        <TableColumn fx:id="arrivalCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Ngày đến" />
+                        <TableColumn fx:id="flight_arrivalCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Giờ đến" />
                         <TableColumn fx:id="passengerCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Tổng số ghế" />
-                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Vé đã bán" />
                         <TableColumn fx:id="priceCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Giá vé" />
-=======
-                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Mã chuyến bay" />
-                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Hãng máy bay" />
-                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Số hiệu" />
-                      <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Điểm đi" />
-                      <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Điểm đến" />
-                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Ngày đi" />
-                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Giờ đi" />
-                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Ngày đến" />
-                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Giờ đến" />
-                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Tổng số ghế" />
-                        <TableColumn maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Giá vé" />
->>>>>>> Quoc_Huy_v2.0
+
                     </columns>
                      <VBox.margin>
                         <Insets top="25.0" />

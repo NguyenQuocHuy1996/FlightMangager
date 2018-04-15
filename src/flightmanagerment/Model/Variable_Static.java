@@ -36,6 +36,7 @@ import javax.mail.internet.MimeMessage;
  */
 public final class Variable_Static {
 
+    public static int IDACCOUNT = 0;
     public static String USERNAME = "";
     public static int IDFLIGHT = 0;
     public static int IDFLIGHTNEW = 0;
