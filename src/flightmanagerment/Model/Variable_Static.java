@@ -13,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.event.ActionEvent;
@@ -36,6 +37,7 @@ import javax.mail.internet.MimeMessage;
  */
 public final class Variable_Static {
 
+    public static int IDFLIGHTSEAT = 0;
     public static int IDACCOUNT = 0;
     public static String USERNAME = "";
     public static int IDFLIGHT = 0;
@@ -49,6 +51,11 @@ public final class Variable_Static {
     private static PreparedStatement prest = null;
     private static ResultSet rs;
     private static Statement st;
+    
+    public static int numberseatchoose = 0;
+    public static int currentnumberseat = 0;
+    public static List<String> currentlistseat = new ArrayList<String>();
+    
 
     public static boolean SendMail(String To, String Text) {
         try {
@@ -63,11 +70,11 @@ public final class Variable_Static {
             Session session = Session.getDefaultInstance(props,
                     new javax.mail.Authenticator() {
                 protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication("yacnadota001@gmail.com", "12343214a");
+                    return new PasswordAuthentication("systemflightmanager@gmail.com", "12343214a");
                 }
             });
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("yacnadota001@gmail.com"));
+            message.setFrom(new InternetAddress("systemflightmanager@gmail.com"));
             message.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse(To));
             message.setSubject("THÔNG BÁO CHUYẾN BAY MỚI");
@@ -81,9 +88,9 @@ public final class Variable_Static {
         }
     }
 
-    public static void LinkUI(ActionEvent event, Parent root, String title) throws IOException {
+    public static void LinkUI(ActionEvent ev, Parent root, String title) throws IOException {
         Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) ev.getSource()).getScene().getWindow();
         stage.hide();
         stage.setScene(scene);
         stage.setMaximized(true);

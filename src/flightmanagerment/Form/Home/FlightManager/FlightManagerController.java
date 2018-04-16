@@ -169,10 +169,7 @@ public class FlightManagerController implements Initializable {
         
     }
     
-    @FXML
-    private void getID(MouseEvent event) {
-//        table.getSelectionModel().getSelectedItem().getIdFlight();
-    }
+
     
     @FXML
     private void btn_insert(ActionEvent event) throws IOException {
@@ -201,7 +198,6 @@ public class FlightManagerController implements Initializable {
             a.setContentText("Xóa thành công!");
             a.show();
             loadDB();
-        } else {
         }
     }
     

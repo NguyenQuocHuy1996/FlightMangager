@@ -5,7 +5,12 @@
  */
 package flightmanagerment.Form.Home.Ticket;
 
+import flightmanagerment.Function.Seat_TicketDAO;
+import flightmanagerment.Model.Seat_Ticket;
+import flightmanagerment.Model.Variable_Static;
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,57 +27,40 @@ import javafx.scene.control.TextField;
  */
 public class TicketController implements Initializable {
 
-//    @FXML
-//    private TextField txtEmail;
-//    @FXML
-//    private TextField txtPass;
-//    
-//    @FXML
-//    private void Ticket(ActionEvent event) {
-//        if((txtEmail.getText().equals("admin")) && (txtPass.getText().equals("admin123"))){
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setTitle("Dang nhap thanh cong");
-//            alert.show();
-//        }
-//    }
     @FXML
-    private void btn_flightSearch(ActionEvent event) {
-
-    }
-
+    private TextField txt_firstname;
     @FXML
-    private void btn_flightManagement(ActionEvent event) {
-
-    }
-
+    private TextField txt_lastname;
     @FXML
-    private void btn_historyBooking(ActionEvent event) {
+    private TextField txt_iccard;
 
-    }
-
-    @FXML
-    private void btn_historyBookingOfEmployee(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_report(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_infomation(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_logout(ActionEvent event) {
-
-    }
+    String currentseat = "";
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        currentseat = Variable_Static.currentlistseat.get(Variable_Static.currentnumberseat);
+    }
+
+    @FXML
+    private void btn_submit(ActionEvent event) throws SQLException, IOException {
+        Seat_Ticket t = new Seat_Ticket();
+        t.setIdAccount(Variable_Static.IDACCOUNT);
+        t.setFirstName(txt_firstname.getText());
+        t.setLastName(txt_lastname.getText());
+        t.setIc_Card(txt_iccard.getText());
+        t.setStatus(Boolean.TRUE);
+        t.setIdFlight(Variable_Static.IDFLIGHTSEAT);
+        t.setCode(currentseat);
+        Seat_TicketDAO.booking(t);
+        if (Variable_Static.currentnumberseat >= Variable_Static.numberseatchoose - 1) {
+//            Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Ticket/TicketUI.fxml"));
+//            Variable_Static.LinkUI(event, root, "Ticket");
+            System.out.println("Qua form thanh toán");
+        } else {
+            Variable_Static.currentnumberseat++;
+            Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Ticket/TicketUI.fxml"));
+            Variable_Static.LinkUI(event, root, "Ticket");
+        }
     }
 
 }

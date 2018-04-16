@@ -14,7 +14,7 @@
       <GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="main" vgap="15.0" BorderPane.alignment="CENTER">
          <children>
 
-            <Label alignment="CENTER" text="17:45 PM" GridPane.columnIndex="1">
+            <Label fx:id="lbl_Time" alignment="CENTER" text="17:45 PM" GridPane.columnIndex="1">
                <styleClass>
                   <String fx:value="btnMain" />
                   <String fx:value="btnThemeColor" />

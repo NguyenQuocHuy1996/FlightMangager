@@ -11,6 +11,7 @@ import flightmanagerment.Model.Variable_Static;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -64,6 +65,13 @@ public class RegisterController implements Initializable {
     @FXML
     private void btn_Register(ActionEvent event) throws SQLException, IOException {
         Alert a = new Alert(Alert.AlertType.ERROR);
+        Boolean check = false;
+        List<String> list = CustomerDAO.getEmail();
+        for (String string : list) {
+            if (email.getText().equals(string)) {
+                check = true;
+            }
+        }
         Customer cus = new Customer(email.getText(), password.getText(), firstName.getText(), lastName.getText());
         if (confirm_password.getText().equals(password.getText())) {
             int function = CustomerDAO.insert(cus);
@@ -72,13 +80,22 @@ public class RegisterController implements Initializable {
                 a.setContentText("Vui lòng nhập đầy đủ thông tin!");
                 a.show();
             } else {
-                Alert.AlertType type = Alert.AlertType.INFORMATION;
-                a.setAlertType(type);
-                a.setTitle("Đăng ký thành công!");
-                a.setContentText("Chức mừng bạn đã đăng ký thành công ! - với email : " + cus.getEmail());
-                a.showAndWait();
-                Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Login/LoginUI.fxml"));
-                Variable_Static.LinkUI(event, root, "Login");
+                if (!check) {
+                    Alert.AlertType type = Alert.AlertType.INFORMATION;
+                    a.setAlertType(type);
+                    a.setTitle("Đăng ký thành công!");
+                    a.setContentText("Chức mừng bạn đã đăng ký thành công ! - với email : " + cus.getEmail());
+                    a.showAndWait();
+                    Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Account/Login/LoginUI.fxml"));
+                    Variable_Static.LinkUI(event, root, "Login");
+                } else {
+                    Alert.AlertType type = Alert.AlertType.ERROR;
+                    a.setAlertType(type);
+                    a.setTitle("ERROR");
+                    a.setContentText("Email đã tồn tại");
+                    a.show();
+                }
+
             }
         } else {
             a.setTitle("ERROR");

@@ -17,6 +17,7 @@ import java.net.URL;
 import java.sql.Blob;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -95,6 +96,13 @@ public class RegisterStaffController implements Initializable {
     @FXML
     private void btn_RegisterStaff(ActionEvent event) throws SQLException, IOException {
         Alert a = new Alert(Alert.AlertType.ERROR);
+        Boolean check = false;
+        List<String> list = EmployeeDAO.getEmail();
+        for (String string : list) {
+            if (email.getText().equals(string)) {
+                check = true;
+            }
+        }
         Boolean sex;
         if (sex_male.isSelected()) {
             sex = true;
@@ -110,13 +118,21 @@ public class RegisterStaffController implements Initializable {
                 a.setContentText("Vui lòng nhập đầy đủ thông tin!");
                 a.show();
             } else {
-                Alert.AlertType type = Alert.AlertType.INFORMATION;
-                a.setAlertType(type);
-                a.setTitle("Đăng ký thành công!");
-                a.setContentText("Chức mừng bạn đã đăng ký thành công ! - với email : " + emp.getEmail());
-                a.showAndWait();
-                Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
-                Variable_Static.LinkUI(event, root, "Main Staff");
+                if (!check) {
+                    Alert.AlertType type = Alert.AlertType.INFORMATION;
+                    a.setAlertType(type);
+                    a.setTitle("Đăng ký thành công!");
+                    a.setContentText("Chức mừng bạn đã đăng ký thành công ! - với email : " + emp.getEmail());
+                    a.showAndWait();
+                    Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
+                    Variable_Static.LinkUI(event, root, "Main Staff");
+                } else {
+                    Alert.AlertType type = Alert.AlertType.ERROR;
+                    a.setAlertType(type);
+                    a.setTitle("ERROR");
+                    a.setContentText("Email đã tồn tại");
+                    a.show();
+                }
             }
         } else {
             a.setTitle("ERROR");

@@ -15,6 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -31,6 +32,26 @@ public class EmployeeDAO {
     private static ResultSet rs;
     private static Statement st;
 
+    public static List<String> getEmail() {
+        try {
+            List<String> list = new ArrayList<String>();
+            connectDB = new ConnectDB();
+            conn = connectDB.getConnect();
+            String sql = "select email from employee";
+            prest = conn.prepareStatement(sql);
+            rs = prest.executeQuery();
+            while (rs.next()) {
+                String email = rs.getString("email");
+                list.add(email);
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+    }
+
     public static ObservableList<String> getDepartment() {
         ArrayList<String> list = new ArrayList<>();
         list.add("Trưởng phòng");
@@ -41,8 +62,6 @@ public class EmployeeDAO {
         ObservableList<String> listt = FXCollections.observableArrayList(list);
         return listt;
     }
-
-  
 
     public static int insert(Employee emp) throws SQLException {
         if ((emp.getEmail().equals("")) || (emp.getEmail() == null)) {

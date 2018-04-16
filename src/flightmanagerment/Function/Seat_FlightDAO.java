@@ -28,6 +28,24 @@ public class Seat_FlightDAO {
     private static ResultSet rs;
     private static Statement st;
 
+    public static double getPrice(int depart, int year) throws SQLException {
+        connectDB = new ConnectDB();
+        conn = connectDB.getConnect();
+        String sql = "SELECT  Sum(price) as Total\n"
+                + "					 FROM seat_ticket S JOIN flight F ON S.idFlight = F.idFlight\n"
+                + "					 WHERE status = 1 and month(F.depart) = ?AND YEAR(F.depart) = ?";
+
+        prest = conn.prepareStatement(sql);
+        prest.setInt(1, depart);
+        prest.setInt(2, year);
+        rs = prest.executeQuery();
+        while (rs.next()) {
+            Double price = rs.getDouble("Total");
+            return price;
+        }
+        return 0;
+    }
+
     public static ObservableList<Seat_Flight> getAllSeat_Flight(int idAccount) throws SQLException {
         connectDB = new ConnectDB();
         conn = connectDB.getConnect();

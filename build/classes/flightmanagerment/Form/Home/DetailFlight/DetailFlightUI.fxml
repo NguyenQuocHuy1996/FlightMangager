@@ -26,7 +26,7 @@
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <Label styleClass="userName" text="Xin chào" />
-                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="User" textAlignment="RIGHT" />
+                        <Label fx:id="lbl_userName" alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="User" textAlignment="RIGHT" />
                      </children>
                   </VBox>
                   <ImageView fitHeight="46.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
@@ -43,7 +43,7 @@
                </GridPane.margin>
             </HBox>
             <Separator prefHeight="0.0" prefWidth="1242.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" styleClass="btnSubmit" text="Quay về">
+            <Button mnemonicParsing="false" onAction="#btn_back" styleClass="btnSubmit" text="Quay về">
                <GridPane.margin>
                   <Insets left="25.0" />
                </GridPane.margin>
@@ -61,67 +61,67 @@
                <children>
 
                   <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Mã chuyến bay:" />
-                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+                  <Label fx:id="lbl_idFlight" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="410.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
                <children>
                   <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Hãng máy bay:" />
-                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+                  <Label fx:id="lbl_brand" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="549.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
                <children>
                   <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Giá vé:" />
-                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+                  <Label fx:id="lbl_price" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
                <children>
                   <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Điểm đi:" />
-                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+                  <Label fx:id="lbl_origin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
                <children>
                   <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Điểm đến:" />
-                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+                  <Label fx:id="lbl_destination" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="538.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
                <children>
                   <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Ngày đi:" />
-                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+                  <Label fx:id="lbl_depart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="110.0" prefHeight="25.0" prefWidth="250.0" spacing="5.0">
                <children>
                   <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="50.0" styleClass="textField" text="Giờ đi:" />
-                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+                  <Label fx:id="lbl_flightDepart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="557.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
                <children>
                   <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Ngày đến:" />
-                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+                  <Label fx:id="lbl_arrval" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="210.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
                <children>
                   <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Giờ đến:" />
-                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+                  <Label fx:id="lbl_flightArrival" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="210.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
                <children>
                   <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="Tổng số ghế:" />
-                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
+                  <Label fx:id="lbl_passenger" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="textField" text="10" />
                </children>
             </HBox>
             <HBox prefHeight="56.0" prefWidth="220.0" spacing="5.0">
                <children>
-                  <Button mnemonicParsing="false" styleClass="btnSubmit" text="Mua vé" />
-                  <Button mnemonicParsing="false" styleClass="btnSubmit" text="Hủy bỏ" />
+                  <Button mnemonicParsing="false" onAction="#btn_buy" styleClass="btnSubmit" text="Mua vé" />
+                  <Button mnemonicParsing="false" onAction="#btn_reset" styleClass="btnSubmit" text="Hủy bỏ" />
                </children>
                <VBox.margin>
                   <Insets top="30.0" />
@@ -320,36 +320,6 @@
                   <String fx:value="btnThemeColor" />
                </styleClass>
             </Label>
-            <Button alignment="CENTER" layoutX="50.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" layoutX="50.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" layoutX="50.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="14" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" layoutX="50.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" layoutX="50.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="9" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="12" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="13" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="8" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="9" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="11" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="13" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="12" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="11" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" layoutX="50.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="10" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="14" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.columnIndex="10" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btnSeat" text="A1" textAlignment="CENTER" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </center>

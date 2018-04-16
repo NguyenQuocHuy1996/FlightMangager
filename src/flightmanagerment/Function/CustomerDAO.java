@@ -30,6 +30,26 @@ public class CustomerDAO {
     private static ResultSet rs;
     private static Statement st;
 
+    public static List<String> getEmail() {
+        try {
+            List<String> list = new ArrayList<String>();
+            connectDB = new ConnectDB();
+            conn = connectDB.getConnect();
+            String sql = "select email from customer";
+            prest = conn.prepareStatement(sql);
+            rs = prest.executeQuery();
+            while (rs.next()) {
+                String email = rs.getString("email");
+                list.add(email);
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+    }
+
     public static int delete(int idAccount) throws SQLException {
         try {
             connectDB = new ConnectDB();

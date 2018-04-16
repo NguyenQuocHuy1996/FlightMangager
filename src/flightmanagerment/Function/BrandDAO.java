@@ -73,13 +73,13 @@ public class BrandDAO {
         return data;
     }
 
-    public static int delete(int idBrand) throws SQLException {
+    public static int delete(String code) throws SQLException {
         try {
             connectDB = new ConnectDB();
             conn = connectDB.getConnect();
-            String sql = "delete from customer where idBrand = ?";
+            String sql = "delete from brand where code = ?";
             prest = conn.prepareStatement(sql);
-            prest.setInt(1, idBrand);
+            prest.setString(1, code);
             prest.execute();
             System.out.println("Xóa thành công!");
             return 1;

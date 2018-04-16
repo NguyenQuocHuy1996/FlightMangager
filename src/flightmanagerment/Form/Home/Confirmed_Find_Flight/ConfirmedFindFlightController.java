@@ -118,7 +118,7 @@ public class ConfirmedFindFlightController implements Initializable {
             Variable_Static.ORIGIN = cbb_origin.getValue();
             Variable_Static.DESTINATION = cbb_destination.getValue();
             Variable_Static.DEPART = date;
-            if (list == null) {
+            if (list.size() == 0) {
                 a.setTitle("Không có chuyến bay phù hợp");
                 a.setContentText("Hiện tại không có chuyến bay phù hợp với yêu cầu!");
                 a.show();

@@ -221,13 +221,13 @@ public class InfoController implements Initializable {
 
     @FXML
     private void btn_clickMouse(MouseEvent event) {
-        String Url = "/flightmanagerment/Asset/img/background-2.jpg";
-        if (!Url.isEmpty()) {
-            Image img = new Image(Main.class.getResource(Url).toString());
-            Image.setImage(img);
-            Image.setFitHeight(300);
-            Image.setFitWidth(300);
-        }
+//        String Url = "/flightmanagerment/Asset/img/background-2.jpg";
+//        if (!Url.isEmpty()) {
+//            Image img = new Image(Main.class.getResource(Url).toString());
+//            Image.setImage(img);
+//            Image.setFitHeight(300);
+//            Image.setFitWidth(300);
+//        }
     }
 
     @FXML

@@ -43,6 +43,8 @@ public class ReportController implements Initializable {
     private ComboBox<Integer> cbb_year;
     @FXML
     private StackPane stackPane;
+    @FXML
+    private StackPane stackPane1;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -71,7 +73,6 @@ public class ReportController implements Initializable {
         Variable_Static.LinkUI(event, root, "Main Staff");
     }
 
-    @FXML
     private void btn_create(ActionEvent event) throws SQLException {
         PieChart chart = new PieChart();
         chart.setTitle("Biểu đồ thể hiện số vé bán được trong tháng: " + cbb_month.getValue() + " năm: " + cbb_year.getValue());
@@ -80,6 +81,14 @@ public class ReportController implements Initializable {
 
         this.stackPane.getChildren().clear();
         this.stackPane.getChildren().add(chart);
+    }
+
+    @FXML
+    private void btn_create1(ActionEvent event) {
+    }
+
+    @FXML
+    private void btn_create2(ActionEvent event) {
     }
 
 }

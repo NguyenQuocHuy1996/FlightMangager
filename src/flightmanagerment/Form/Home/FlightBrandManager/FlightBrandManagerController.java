@@ -101,4 +101,16 @@ public class FlightBrandManagerController implements Initializable {
         list = BrandDAO.getAllBrand();
         table.setItems(list);
     }
+
+    @FXML
+    private void btn_delete(ActionEvent event) throws SQLException {
+        int function = BrandDAO.delete(table.getSelectionModel().getSelectedItem().getCode());
+        if (function == 1) {
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setTitle("Deleted");
+            a.setContentText("Xóa thành công!");
+            a.show();
+            loadDB();
+        }
+    }
 }

@@ -252,7 +252,7 @@ public class Seat_TicketDAO {
         return 0;
     }
 
-    public int booking(Seat_Ticket seat) throws SQLException {
+    public static int booking(Seat_Ticket seat) throws SQLException {
 //        Scanner sc = new Scanner(System.in);
 //        System.out.println("Nhập id chuyến bay cần update: ");
 //        seat.setIdFlight(Integer.parseInt(sc.nextLine()));
@@ -273,17 +273,16 @@ public class Seat_TicketDAO {
         try {
             connectDB = new ConnectDB();
             conn = connectDB.getConnect();
-            String sql = "update seat_ticket set idAccount = ?, firstName = ?, lastName = ?, ic_card = ?, old = ?,status = ? where idFlight = ? and code = ?";
+            String sql = "update seat_ticket set idAccount = ?, firstName = ?, lastName = ?, ic_card = ?, status = ? where idFlight = ? and code = ?";
             prest = conn.prepareStatement(sql);
             prest.setInt(1, seat.getIdAccount());
             prest.setString(2, seat.getFirstName());
             prest.setString(3, seat.getLastName());
             prest.setString(4, seat.getIc_Card());
-            prest.setInt(5, seat.getOld());
 
-            prest.setBoolean(6, seat.getStatus());
-            prest.setInt(7, seat.getIdFlight());
-            prest.setString(8, seat.getCode());
+            prest.setBoolean(5, seat.getStatus());
+            prest.setInt(6, seat.getIdFlight());
+            prest.setString(7, seat.getCode());
             prest.execute();
             System.out.println("update thành công");
             return 1;
@@ -333,16 +332,17 @@ public class Seat_TicketDAO {
 //        return 0;
 //    }
     ///return status: trả về trạng thái của ghế
-    public static boolean getInfoSeat(int idSeat) throws SQLException {
+    public static Boolean getInfoSeat(int idFlight, String code) throws SQLException {
         try {
+            List<Boolean> list = new ArrayList<>();
             connectDB = new ConnectDB();
             conn = connectDB.getConnect();
-            String sql = "select * from seat_ticket where idSeat = ?";
+            String sql = "select * from seat_ticket where idFlight = ? and code = ?";
             prest = conn.prepareStatement(sql);
-            prest.setInt(1, idSeat);
+            prest.setInt(1, idFlight);
+            prest.setString(2, code);
             rs = prest.executeQuery();
             while (rs.next()) {
-                int id = rs.getInt(idSeat);
                 Boolean status = rs.getBoolean("status");
                 return status;
             }
@@ -355,7 +355,7 @@ public class Seat_TicketDAO {
             if (null != conn) {
                 conn.close();
             }
-            return false;
         }
+        return false;
     }
 }
