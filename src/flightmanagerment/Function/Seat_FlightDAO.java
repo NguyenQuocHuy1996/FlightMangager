@@ -8,11 +8,14 @@ package flightmanagerment.Function;
 import flightmanagerment.Config.ConnectDB;
 import flightmanagerment.Model.Flight;
 import flightmanagerment.Model.Seat_Flight;
+import flightmanagerment.Model.Seat_Ticket;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -27,6 +30,41 @@ public class Seat_FlightDAO {
     private static PreparedStatement prest = null;
     private static ResultSet rs;
     private static Statement st;
+
+    public static List<Seat_Flight> getSeatID(int idAccout) throws SQLException {
+        try {
+            List<Seat_Flight> list = new ArrayList<Seat_Flight>();
+            connectDB = new ConnectDB();
+            conn = connectDB.getConnect();
+            String sql = "select S.idFlight, code, firstName, lastName, ic_card, price from seat_ticket S JOIN flight F ON S.idFlight = F.idFlight\n"
+                    + "Where idAccount = ?;";
+            prest = conn.prepareStatement(sql);
+            prest.setInt(1, idAccout);
+            rs = prest.executeQuery();
+            while (rs.next()) {
+                int idFlight = rs.getInt("idFlight");
+                String code = rs.getString("code");
+                String firstName = rs.getString("firstName");
+                String lastName = rs.getString("lastName");
+                String ic_card = rs.getString("ic_card");
+                Double price = rs.getDouble("price");
+                Seat_Flight sf = new Seat_Flight(idFlight, ic_card, code, firstName, lastName, price);
+                list.add(sf);
+            }
+            return list;
+        } catch (Exception ex) {
+            System.out.println(ex);
+            // TODO: handle exception
+        } finally {
+            if (null != prest) {
+                prest.close();
+            }
+            if (null != conn) {
+                conn.close();
+            }
+        }
+        return null;
+    }
 
     public static double getPrice(int depart, int year) throws SQLException {
         connectDB = new ConnectDB();

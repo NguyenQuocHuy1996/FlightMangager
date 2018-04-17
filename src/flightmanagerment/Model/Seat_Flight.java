@@ -11,14 +11,32 @@ package flightmanagerment.Model;
  */
 public class Seat_Flight {
 
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
     private int idFlight;
     private int idSeat;
     private String origin;
     private String destination;
     private String ic_card;
+    private Double price;
 
     public Seat_Flight() {
 
+    }
+
+    public Seat_Flight(int idFlight, String ic_card, String code, String firstName, String lastName, Double price) {
+        this.idFlight = idFlight;
+        this.ic_card = ic_card;
+        this.code = code;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.price = price;
     }
 
     public Seat_Flight(int idFlight, int idSeat, String origin, String destination, String ic_card, String code, String firstName, String lastName) {

@@ -64,8 +64,8 @@ public class TicketController implements Initializable {
                 lbl_userName.setText("Khách hàng");
             }
             currentseat = Variable_Static.currentlistseat.get(Variable_Static.currentnumberseat);
-            lbl_idFlight.setText(Integer.toString(Variable_Static.IDFLIGHTSEAT));
-            lbl_Code.setText(currentseat);
+            lbl_idFlight.setText(("Mã chuyến bay: " + Variable_Static.IDFLIGHTSEAT));
+            lbl_Code.setText("Số ghế: " + currentseat);
         } catch (SQLException ex) {
             Logger.getLogger(TicketController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -78,57 +78,44 @@ public class TicketController implements Initializable {
 
         cus = CustomerDAO.getCus(Variable_Static.USERNAME);
         emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
-        Seat_Ticket t = new Seat_Ticket();
-        t.setIdAccount(Variable_Static.IDACCOUNT);
-        t.setFirstName(txt_firstname.getText());
-        t.setLastName(txt_lastname.getText());
-        t.setIc_Card(txt_iccard.getText());
-        t.setStatus(Boolean.TRUE);
-        t.setIdFlight(Variable_Static.IDFLIGHTSEAT);
-        t.setCode(currentseat);
-        Seat_TicketDAO.booking(t);
-        if (Variable_Static.currentnumberseat >= Variable_Static.numberseatchoose - 1) {
-            Alert a = new Alert(Alert.AlertType.INFORMATION);
+
+        if (txt_firstname.getText().equals("") || txt_lastname.getText().equals("") || txt_iccard.getText().equals("")) {
+            Alert a = new Alert(Alert.AlertType.ERROR);
             a.setTitle("ERROR");
-            a.setContentText("Thanh toán thành công");
-            a.showAndWait();
-//            if (txt_firstname.getText().equals("") || txt_lastname.getText().equals("") || txt_iccard.getText().equals("")) {
-//                Alert a = new Alert(Alert.AlertType.ERROR);
-//                a.setTitle("ERROR");
-//                a.setContentText("Vui lòng nhập đủ thông tin");
-//                a.show();
-//
-//            } else {
-//                Seat_Ticket t = new Seat_Ticket();
-//                t.setIdAccount(Variable_Static.IDACCOUNT);
-//                t.setFirstName(txt_firstname.getText());
-//                t.setLastName(txt_lastname.getText());
-//                t.setIc_Card(txt_iccard.getText());
-//                t.setStatus(Boolean.TRUE);
-//                t.setIdFlight(Variable_Static.IDFLIGHTSEAT);
-//                t.setCode(currentseat);
-//                Seat_TicketDAO.booking(t);
-//                if (Variable_Static.currentnumberseat >= Variable_Static.numberseatchoose - 1) {
-//                    Alert a = new Alert(Alert.AlertType.INFORMATION);
-//                    a.setTitle("ERROR");
-//                    a.setContentText("Thanh toán thành công");
-//                    a.showAndWait();
-//                    if (cus != null) {
-//                        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainUser/MainUserUI.fxml"));
-//                        Variable_Static.LinkUI(event, root, "Main Customer");
-//                    } else if (emp != null) {
-//                        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
-//                        Variable_Static.LinkUI(event, root, "Main Staff");
-//                    } else {
-//                        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Main/MainUI.fxml"));
-//                        Variable_Static.LinkUI(event, root, "Main");
-//                    }
-//                } else {
-//                    Variable_Static.currentnumberseat++;
-//                    Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Ticket/TicketUI.fxml"));
-//                    Variable_Static.LinkUI(event, root, "Ticket");
-//                }
-//            }
+            a.setContentText("Vui lòng nhập đủ thông tin");
+            a.show();
+
+        } else {
+            Seat_Ticket t = new Seat_Ticket();
+            t.setIdAccount(Variable_Static.IDACCOUNT);
+            t.setFirstName(txt_firstname.getText());
+            t.setLastName(txt_lastname.getText());
+            t.setIc_Card(txt_iccard.getText());
+            t.setStatus(Boolean.TRUE);
+            t.setIdFlight(Variable_Static.IDFLIGHTSEAT);
+            t.setCode(currentseat);
+            Seat_TicketDAO.booking(t,t.getIdAccount());
+            if (Variable_Static.currentnumberseat >= Variable_Static.numberseatchoose - 1) {
+                Alert a = new Alert(Alert.AlertType.INFORMATION);
+                a.setTitle("ERROR");
+                a.setContentText("Thanh toán thành công");
+                
+                a.showAndWait();
+                if (cus != null) {
+                    Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainUser/MainUserUI.fxml"));
+                    Variable_Static.LinkUI(event, root, "Main Customer");
+                } else if (emp != null) {
+                    Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
+                    Variable_Static.LinkUI(event, root, "Main Staff");
+                } else {
+                    Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Main/MainUI.fxml"));
+                    Variable_Static.LinkUI(event, root, "Main");
+                }
+            } else {
+                Variable_Static.currentnumberseat++;
+                Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Ticket/TicketUI.fxml"));
+                Variable_Static.LinkUI(event, root, "Ticket");
+            }
         }
     }
 

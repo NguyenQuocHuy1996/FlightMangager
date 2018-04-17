@@ -6,8 +6,11 @@
 package flightmanagerment.Function;
 
 import flightmanagerment.Config.ConnectDB;
+import flightmanagerment.Model.Customer;
 import flightmanagerment.Model.Flight;
+import flightmanagerment.Model.Seat_Flight;
 import flightmanagerment.Model.Seat_Ticket;
+import flightmanagerment.Model.Variable_Static;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -30,6 +33,8 @@ public class Seat_TicketDAO {
     private static PreparedStatement prest;
     private static ResultSet rs;
     private static Statement st;
+
+    private static String contentMail;
 
     public static double getCountStatusTrue(int depart, int year) throws SQLException {
         connectDB = new ConnectDB();
@@ -54,7 +59,7 @@ public class Seat_TicketDAO {
         String sql = "select * from seat_ticket where idFlight = ? and status = 1";
         prest = conn.prepareStatement(sql);
         prest.setInt(1, idFlight);
- 
+
         rs = prest.executeQuery();
 
         ObservableList<Seat_Ticket> data = FXCollections.observableArrayList();
@@ -267,7 +272,7 @@ public class Seat_TicketDAO {
         return 0;
     }
 
-    public static int booking(Seat_Ticket seat) throws SQLException {
+    public static int booking(Seat_Ticket seat, int idAccount) throws SQLException {
 //        Scanner sc = new Scanner(System.in);
 //        System.out.println("Nhập id chuyến bay cần update: ");
 //        seat.setIdFlight(Integer.parseInt(sc.nextLine()));
@@ -300,6 +305,20 @@ public class Seat_TicketDAO {
             prest.setString(7, seat.getCode());
             prest.execute();
             System.out.println("update thành công");
+
+            List<Seat_Flight> list = Seat_FlightDAO.getSeatID(idAccount);
+            for (Seat_Flight sf : list) {
+                contentMail = "Ticket:\n"
+                        + "Mã chuyến bay: " + sf.getIdFlight() + "\n"
+                        + "Số ghế: " + sf.getCode() + "\n"
+                        + "Họ: " + sf.getFirstName() + "\n"
+                        + "Tên: " + sf.getLastName() + "\n"
+                        + "CMND: " + sf.getIc_card() + "\n"
+                        + "Giá: " + sf.getPrice();
+            }
+
+            Customer cus = CustomerDAO.getCus(idAccount);
+            Variable_Static.SendMail(cus.getEmail(), contentMail);
             return 1;
 
         } catch (Exception e) {
