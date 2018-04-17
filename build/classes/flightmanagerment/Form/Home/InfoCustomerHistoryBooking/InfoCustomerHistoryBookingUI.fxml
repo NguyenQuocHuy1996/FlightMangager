@@ -54,32 +54,6 @@
          </padding>
       </GridPane>
    </top>
-   <center>
-      <StackPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefWidth="800.0" BorderPane.alignment="CENTER_RIGHT">
-         <children>
-            <VBox maxHeight="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <TableView fx:id="tableSold" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="800.0" styleClass="mainInfoHistoryCustomer">
-                    <columns>
-                        <TableColumn fx:id="idFlightCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Mã chuyến bay" />
-                        <TableColumn fx:id="firstNameCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Họ" />
-                        <TableColumn fx:id="lastNameCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Tên" />
-                        <TableColumn fx:id="icCardCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="CMND" />
-                        <TableColumn fx:id="codeCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Số ghế" />
-                        <TableColumn fx:id="statusCol" maxWidth="-Infinity" minWidth="112.5" prefWidth="112.5" resizable="false" styleClass="setWidthColumn" text="Tình trạng" />
-                    </columns>
-                     <VBox.margin>
-                        <Insets top="25.0" />
-                     </VBox.margin>
-                  </TableView>
-               </children>
-            </VBox>
-         </children>
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-      </StackPane>
-   </center>
    <left>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="250.0" styleClass="mainInfoFlight" BorderPane.alignment="TOP_LEFT">
          <children>
@@ -152,4 +126,20 @@
          </BorderPane.margin>
       </VBox>
    </left>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tableSold" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="idFlightCol" prefWidth="75.0" text="Mã chuyến bay" />
+                <TableColumn fx:id="firstNameCol" prefWidth="75.0" text="Họ" />
+                  <TableColumn fx:id="lastNameCol" prefWidth="75.0" text="Tên" />
+                  <TableColumn fx:id="icCardCol" prefWidth="75.0" text="CMND" />
+                  <TableColumn fx:id="codeCol" prefWidth="75.0" text="Số ghế" />
+                  <TableColumn fx:id="statusCol" prefWidth="75.0" text="Tình Trạng" />
+              </columns>
+            </TableView>
+         </children>
+      </StackPane>
+   </center>
 </BorderPane>
