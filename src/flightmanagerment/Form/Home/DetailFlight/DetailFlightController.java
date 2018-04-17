@@ -203,10 +203,18 @@ public class DetailFlightController implements Initializable {
 
     @FXML
     private void btn_buy(ActionEvent event) throws IOException {
-        Variable_Static.numberseatchoose = list.size(); // 3
-        Variable_Static.currentlistseat = list; // list
-        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Ticket/TicketUI.fxml"));
-        Variable_Static.LinkUI(event, root, "Ticket");
+        if (list.isEmpty()) {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setTitle("ERROR");
+            a.setContentText("Vui lòng chọn ghế");
+            a.show();
+        } else {
+            Variable_Static.numberseatchoose = list.size(); // 3
+            Variable_Static.currentlistseat = list; // list
+            Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Ticket/TicketUI.fxml"));
+            Variable_Static.LinkUI(event, root, "Ticket");
+        }
+
     }
 
     @FXML
@@ -216,6 +224,8 @@ public class DetailFlightController implements Initializable {
     }
 
     @FXML
-    private void btn_back(ActionEvent event) {
+    private void btn_back(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainFilght/MainFilghtUI.fxml"));
+        Variable_Static.LinkUI(event, root, "Flight Main");
     }
 }

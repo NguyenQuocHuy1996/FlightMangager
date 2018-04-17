@@ -11,9 +11,13 @@ import flightmanagerment.Model.Variable_Static;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,6 +29,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 /**
  *
@@ -34,6 +39,8 @@ public class MainStaffController implements Initializable {
 
     @FXML
     private Label lbl_userName;
+    @FXML
+    private Label lbl_Time;
 
 //    @FXML
 //    private TextField txtEmail;
@@ -51,6 +58,15 @@ public class MainStaffController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1000), e -> {
+            Date dateCreated = new Date();
+
+            SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            String time = date.format(dateCreated);
+            lbl_Time.setText(time);
+        }));
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
         Employee emp = new Employee();
         try {
             emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
@@ -68,7 +84,6 @@ public class MainStaffController implements Initializable {
         Variable_Static.LinkUI(event, root, "Login");
     }
 
-    @FXML
     private void btn_historyBooking(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/CustomerHistoryBooking/CustomerHistoryBookingUI.fxml"));
         Variable_Static.LinkUI(event, root, "History Booking of Staff");
@@ -77,11 +92,12 @@ public class MainStaffController implements Initializable {
 
     @FXML
     private void btn_flightManagerment(ActionEvent event) throws IOException {
+//        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/FlightManager/FlightManagerUI.fxml"));
+//        Variable_Static.LinkUI(event, root, "Flight Manager");
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/FlightManager/FlightManagerUI.fxml"));
-        Variable_Static.LinkUI(event, root, "Flight Manager");
+        Variable_Static.LinkUI(event, root, "Find Flight");
     }
 
-    @FXML
     private void btn_flightSearch(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Confirmed_Find_Flight/ConfirmedFindFlightUI.fxml"));
         Variable_Static.LinkUI(event, root, "Find Flight");

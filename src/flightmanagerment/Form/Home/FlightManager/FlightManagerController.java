@@ -200,5 +200,9 @@ public class FlightManagerController implements Initializable {
             loadDB();
         }
     }
+
+    @FXML
+    private void getID(MouseEvent event) {
+    }
     
 }

@@ -180,18 +180,6 @@ public class FlightDAO {
 
             data.add(f);
 
-//            System.out.println("--------------------");
-//            System.out.println("idFlight: " + idFlight);
-//            System.out.println("origin: " + origin);
-//            System.out.println("destination: " + destination);
-//            System.out.println("depart: " + depart);
-//            System.out.println("arrival: " + arrival);
-//            System.out.println("passenger: " + passenger);
-//            System.out.println("brand: " + brand);
-//            System.out.println("flight_number: " + flight_number);
-//            System.out.println("flight_depart: " + flight_depart);
-//            System.out.println("flight_arrival: " + flight_arrival);
-//            System.out.println("price: " + price);
         }
         return data;
     }

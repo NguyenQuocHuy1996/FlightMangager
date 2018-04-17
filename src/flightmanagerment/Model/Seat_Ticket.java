@@ -32,6 +32,17 @@ public class Seat_Ticket {
     public Seat_Ticket() {
     }
 
+    public Seat_Ticket(String code, Boolean status, String firstName, String lastName, String ic_Card,
+            int idFlight) {
+        super();
+        this.code = code;
+        this.status = status;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.ic_Card = ic_Card;
+        this.idFlight = idFlight;
+    }
+
     public Seat_Ticket(int idSeat, String code, Boolean status, String firstName, String lastName, String ic_Card, int old,
             int idFlight, int idAccount) {
         super();

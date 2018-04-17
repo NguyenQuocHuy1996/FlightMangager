@@ -200,9 +200,9 @@
 .flightWrapper{
     -fx-padding: 10;
     -fx-pref-width: 220px;
-    -fx-pref-height: 350px;
+    -fx-pref-height: 250px;
 }
-.flightWrapper label{
+.flightWrapperlabel{
     -fx-font-size:10px;
 }
 .flightInfoHeight{
@@ -212,7 +212,7 @@
 .flightInfo{
     /*    -fx-text-fill:black;*/
     /*    -fx-padding: 15 0 15 0;*/
-    -fx-font-size: 14px;
+    -fx-font-size: 10px;
 }
 
 /*Style input form*/

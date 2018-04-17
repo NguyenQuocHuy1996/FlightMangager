@@ -59,6 +59,7 @@
          <children>
             <VBox maxHeight="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0">
                <children>
+                  <Button mnemonicParsing="false" onAction="#btnDetail" styleClass="btnSubmit" text="Xem chi tiet" />
 
                   <TableView fx:id="table" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" onMouseClicked="#getInfoHistoryBooking" prefHeight="0.0" prefWidth="0.0" styleClass="mainCustomerHistoryBooking">
 

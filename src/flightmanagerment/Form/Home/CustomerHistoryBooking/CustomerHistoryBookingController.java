@@ -110,4 +110,11 @@ public class CustomerHistoryBookingController implements Initializable {
     private void getInfoHistoryBooking(MouseEvent event) {
     }
 
+    @FXML
+    private void btnDetail(ActionEvent event) throws IOException {
+        Variable_Static.IDFSEAT = table.getSelectionModel().getSelectedItem().getIdFlight();
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/InfoCustomerHistoryBooking/InfoCustomerHistoryBookingUI.fxml"));
+        Variable_Static.LinkUI(event, root, "Detail HistoryBooking");
+    }
+
 }

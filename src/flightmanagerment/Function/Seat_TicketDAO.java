@@ -6,12 +6,14 @@
 package flightmanagerment.Function;
 
 import flightmanagerment.Config.ConnectDB;
+import flightmanagerment.Model.Flight;
 import flightmanagerment.Model.Seat_Ticket;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.collections.FXCollections;
@@ -27,6 +29,7 @@ public class Seat_TicketDAO {
     private static ConnectDB connectDB;
     private static PreparedStatement prest;
     private static ResultSet rs;
+    private static Statement st;
 
     public static double getCountStatusTrue(int depart, int year) throws SQLException {
         connectDB = new ConnectDB();
@@ -43,6 +46,29 @@ public class Seat_TicketDAO {
             return count;
         }
         return 0;
+    }
+
+    public static ObservableList<Seat_Ticket> getAllSeat(int idFlight) throws SQLException {
+        connectDB = new ConnectDB();
+        conn = connectDB.getConnect();
+        String sql = "select * from seat_ticket where idFlight = ? and status = 1";
+        prest = conn.prepareStatement(sql);
+        prest.setInt(1, idFlight);
+ 
+        rs = prest.executeQuery();
+
+        ObservableList<Seat_Ticket> data = FXCollections.observableArrayList();
+        while (rs.next()) {
+            String firstName = rs.getString("firstName");
+            String lastName = rs.getString("lastName");
+            String ic_card = rs.getString("ic_card");
+            String code = rs.getString("code");
+            Boolean status = true;
+
+            Seat_Ticket s = new Seat_Ticket(code, status, firstName, lastName, ic_card, idFlight);
+            data.add(s);
+        }
+        return data;
     }
 
     public static double getCountStatusFalse(int depart, int year) throws SQLException {
@@ -63,7 +89,7 @@ public class Seat_TicketDAO {
     }
 
     ///return 1: trả về tất cả dữ liệu của ghế theo id
-    public int getAllSeat(int idFlight) throws SQLException {
+    public int getSeatt(int idFlight) throws SQLException {
         connectDB = new ConnectDB();
         conn = connectDB.getConnect();
         String sql = "select * from seat_ticket where idFlight = ?";
@@ -72,23 +98,12 @@ public class Seat_TicketDAO {
         rs = prest.executeQuery();
         while (rs.next()) {
 
-            int idSeat = rs.getInt("idSeat");
             String code = rs.getString("code");
             Boolean status = rs.getBoolean("status");
             String firstName = rs.getString("firstName");
             String lastName = rs.getString("lastName");
             String ic_Card = rs.getString("ic_Card");
-            int old = rs.getInt("old");
 
-            System.out.println("--------------------");
-            System.out.println("idSeat: " + idSeat);
-            System.out.println("code: " + code);
-            System.out.println("status: " + status);
-            System.out.println("firstName: " + firstName);
-            System.out.println("lastName: " + lastName);
-            System.out.println("ic_Card: " + ic_Card);
-            System.out.println("old: " + old);
-            System.out.println("idFlight: " + idFlight);
         }
         return 1;
     }
