@@ -96,7 +96,7 @@
             <VBox prefHeight="313.0" prefWidth="293.0" spacing="10.0" GridPane.columnIndex="1">
                <children>
                   <Label styleClass="textField" text="Mã chuyến bay" />
-                  <TextField fx:id="txt_idFlight" promptText="Mã chuyến bay" styleClass="inputField" />
+                  <TextField fx:id="txt_idFlight" alignment="CENTER" editable="false" promptText="Mã chuyến bay" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
 
                   <Label styleClass="textField" text="Ngày đi" />

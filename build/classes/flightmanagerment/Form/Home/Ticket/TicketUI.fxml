@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="1003.0" prefWidth="1026.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.EditFlightManager.EditFlightManagerController">
+<BorderPane prefHeight="1003.0" prefWidth="1026.0" stylesheets="@../../../Asset/css/common.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightmanagerment.Form.Home.Ticket.TicketController">
    <top>
       <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="114.0" prefWidth="1242.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -26,7 +26,7 @@
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <Label styleClass="userName" text="Xin chào" />
-                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="User" textAlignment="RIGHT" />
+                        <Label fx:id="lbl_userName" alignment="TOP_RIGHT" contentDisplay="RIGHT" styleClass="userName" text="User" textAlignment="RIGHT" />
                      </children>
                   </VBox>
                   <ImageView fitHeight="46.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
@@ -43,7 +43,7 @@
                </GridPane.margin>
             </HBox>
             <Separator prefHeight="0.0" prefWidth="1242.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" styleClass="btnSubmit" text="Quay về">
+            <Button mnemonicParsing="false" onAction="#btn_back" styleClass="btnSubmit" text="Quay về">
                <GridPane.margin>
                   <Insets left="25.0" />
                </GridPane.margin>
@@ -81,8 +81,8 @@
                   </Pane>
                   <Pane prefHeight="140.0" prefWidth="850.0" styleClass="btnThemeColor">
                      <children>
-                        <Label layoutX="14.0" layoutY="1.0" styleClass="textField" text="Mã chuyến bay: ABC123" />
-                        <Label layoutX="755.0" layoutY="1.0" styleClass="textField" text="Số ghế: A1" />
+                        <Label fx:id="lbl_idFlight" layoutX="14.0" layoutY="1.0" styleClass="textField" text="Mã chuyến bay: ABC123" />
+                        <Label fx:id="lbl_Code" layoutX="755.0" layoutY="1.0" styleClass="textField" text="Số ghế: A1" />
                      </children>
                   </Pane>
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
@@ -91,25 +91,25 @@
                         <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0">
                            <children>
                               <Label styleClass="textField" text="Họ" />
-                              <TextField promptText="Họ người đi" styleClass="inputField" />
+                              <TextField fx:id="txt_firstname" promptText="Họ người đi" styleClass="inputField" />
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
                            </children>
                         </VBox>
                         <VBox layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0">
                            <children>
                               <Label styleClass="textField" text="Tên" />
-                              <TextField promptText="Tên người đi" styleClass="inputField" />
+                              <TextField fx:id="txt_lastname" promptText="Tên người đi" styleClass="inputField" />
                               <Separator prefWidth="200.0" styleClass="separatorForm" />
                            </children>
                         </VBox>
                      </children>
                   </HBox>
                   <Label styleClass="textField" text="Chứng minh nhân dân" />
-                  <TextField promptText="Chứng minh nhân dân người đi" styleClass="inputField" />
+                  <TextField fx:id="txt_iccard" promptText="Chứng minh nhân dân người đi" styleClass="inputField" />
                   <Separator prefWidth="200.0" styleClass="separatorForm" />
                   <Pane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="340.0" layoutY="11.0" mnemonicParsing="false" styleClass="btnSubmit" text="Xác nhận" />
+                        <Button layoutX="340.0" layoutY="11.0" mnemonicParsing="false" onAction="#btn_submit" styleClass="btnSubmit" text="Xác nhận" />
                      </children>
                   </Pane>
                </children>

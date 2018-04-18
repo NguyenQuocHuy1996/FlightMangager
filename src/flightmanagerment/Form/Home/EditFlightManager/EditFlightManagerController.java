@@ -42,29 +42,17 @@ import javafx.scene.control.cell.PropertyValueFactory;
  */
 public class EditFlightManagerController implements Initializable {
 
-    @FXML
     private Label lbl_userName;
-    @FXML
     private ComboBox<String> cbb_brand;
-    @FXML
     private ComboBox<String> cbb_origin;
-    @FXML
     private ComboBox<String> cbb_destination;
-    @FXML
     private TextField txt_flightNumber;
-    @FXML
     private TextField txt_idFlight;
-    @FXML
     private DatePicker datePicker_Depart;
-    @FXML
     private DatePicker datePicker_Arrival;
-    @FXML
     private TextField txt_price;
-    @FXML
     private TextField txt_passenger;
-    @FXML
     private TextField txt_flightDepart;
-    @FXML
     private TextField txt_flightArrival;
 
     @Override
@@ -122,13 +110,11 @@ public class EditFlightManagerController implements Initializable {
         txt_passenger.setText(passenger);
     }
 
-    @FXML
     private void btn_back(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/FlightManager/FlightManagerUI.fxml"));
         Variable_Static.LinkUI(event, root, "Flight Manager");
     }
 
-    @FXML
     private void btn_insert(ActionEvent event) throws SQLException, IOException {
 
         if (txt_idFlight.getText().equals("")) {
@@ -167,7 +153,6 @@ public class EditFlightManagerController implements Initializable {
 
     }
 
-    @FXML
     private void btn_reset(ActionEvent event) {
         txt_flightArrival.setText("");
         txt_flightDepart.setText("");

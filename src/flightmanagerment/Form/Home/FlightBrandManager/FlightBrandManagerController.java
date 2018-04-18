@@ -57,7 +57,7 @@ public class FlightBrandManagerController implements Initializable {
             loadDB();
             Employee emp = new Employee();
             emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
-            lbl_userName.setText(emp.getFirstName());
+            lbl_userName.setText(emp.getLastName());
         } catch (SQLException ex) {
             Logger.getLogger(FlightBrandManagerController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -100,5 +100,17 @@ public class FlightBrandManagerController implements Initializable {
         setCellTable();
         list = BrandDAO.getAllBrand();
         table.setItems(list);
+    }
+
+    @FXML
+    private void btn_delete(ActionEvent event) throws SQLException {
+        int function = BrandDAO.delete(table.getSelectionModel().getSelectedItem().getCode());
+        if (function == 1) {
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setTitle("Deleted");
+            a.setContentText("Xóa thành công!");
+            a.show();
+            loadDB();
+        }
     }
 }

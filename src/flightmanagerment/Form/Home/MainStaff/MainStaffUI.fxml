@@ -21,18 +21,11 @@
                   <String fx:value="btnHistoryBooking" />
                </styleClass></Button>
 
-            <Button mnemonicParsing="false" text="Báo cáo" GridPane.columnIndex="2">
+            <Button mnemonicParsing="false" onAction="#btn_report" text="Báo cáo" GridPane.columnIndex="2">
                <styleClass>
                   <String fx:value="btnMain" />
                   <String fx:value="btnThemeColor" />
                   <String fx:value="btnReport" />
-               </styleClass></Button>
-
-            <Button mnemonicParsing="false" onAction="#btn_historyBooking" text="Lịch sử đặt vé của khách hàng" GridPane.columnIndex="1">
-               <styleClass>
-                  <String fx:value="btnMain" />
-                  <String fx:value="btnThemeColor" />
-                  <String fx:value="btnCustomerHistoryBooking" />
                </styleClass></Button>
 
             <Button graphicTextGap="1.0" mnemonicParsing="false" onAction="#btn_flightManagerment" text="Quản lý chuyến bay" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -41,16 +34,6 @@
                   <String fx:value="btnThemeColor" />
                   <String fx:value="btnFlightManager" />
                </styleClass></Button>
-
-            <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" onAction="#btn_flightSearch" text="Tra cứu chuyến bay" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
-               <styleClass>
-                  <String fx:value="btnMain" />
-                  <String fx:value="btnThemeColor" />
-                  <String fx:value="btnFindFlight" />
-               </styleClass>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets></Button>
             <Button mnemonicParsing="false" onAction="#btn_changePassword" text="Đổi mật khẩu" GridPane.rowIndex="2">
                <styleClass>
                   <String fx:value="btnMain" />
@@ -73,6 +56,20 @@
                   <String fx:value="btnMetro" />
                </styleClass></Button>
             <Button layoutX="165.0" layoutY="175.0" mnemonicParsing="false" onAction="#btn_flightBrand" text="Quản lý hãng máy bay" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
+                  <String fx:value="btnCustomerHistoryBooking" />
+               </styleClass>
+            </Button>
+            <Label fx:id="lbl_Time" text="17/4/2018" GridPane.columnIndex="1">
+               <styleClass>
+                  <String fx:value="btnMetro" />
+                  <String fx:value="btnMain" />
+                  <String fx:value="btnThemeColor" />
+               </styleClass>
+            </Label>
+            <Button graphicTextGap="1.0" layoutX="165.0" layoutY="175.0" mnemonicParsing="false" onAction="#btn_historyBooking" text="Lịch sử đặt vé của khách hàng" GridPane.rowIndex="1">
                <styleClass>
                   <String fx:value="btnMain" />
                   <String fx:value="btnThemeColor" />

@@ -70,9 +70,9 @@ public class ConfirmedFindFlightController implements Initializable {
             cus = CustomerDAO.getCus(Variable_Static.USERNAME);
             emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
             if (cus != null) {
-                lbl_userName.setText(cus.getFirstName());
+                lbl_userName.setText(cus.getLastName());
             } else if (emp != null) {
-                lbl_userName.setText(emp.getFirstName());
+                lbl_userName.setText(emp.getLastName());
             } else {
                 lbl_userName.setText("Khách hàng");
             }
@@ -118,7 +118,7 @@ public class ConfirmedFindFlightController implements Initializable {
             Variable_Static.ORIGIN = cbb_origin.getValue();
             Variable_Static.DESTINATION = cbb_destination.getValue();
             Variable_Static.DEPART = date;
-            if (list == null) {
+            if (list.size() == 0) {
                 a.setTitle("Không có chuyến bay phù hợp");
                 a.setContentText("Hiện tại không có chuyến bay phù hợp với yêu cầu!");
                 a.show();

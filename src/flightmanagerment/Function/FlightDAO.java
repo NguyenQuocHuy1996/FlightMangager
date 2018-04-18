@@ -58,6 +58,21 @@ public class FlightDAO {
             return -10;
         } else {
             try {
+                String[] array = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
+                ArrayList<String> arraySeat = new ArrayList<>();
+                int p = 1;
+                for (int k = 1; k <= 10; k++) {
+                    if (p > flight.getPassenger()) {
+                        break;
+                    }
+                    for (int j = 1; j <= 15; j++) {
+                        if (p > flight.getPassenger()) {
+                            break;
+                        }
+                        arraySeat.add(array[k - 1] + j);
+                        p++;
+                    }
+                }
                 connectDB = new ConnectDB();
                 conn = connectDB.getConnect();
                 String sql = " insert into flight (origin, destination, depart, arrival, passenger, brand, flight_number, flight_depart, flight_arrival, price)"
@@ -83,9 +98,11 @@ public class FlightDAO {
                     generatedKey = rs.getInt(1);
                     System.out.println(generatedKey);
                 }
+
                 for (int i = 0; i < flight.getPassenger(); i++) {
                     prest = conn.prepareStatement(query);
-                    prest.setString(1, "");
+
+                    prest.setString(1, arraySeat.get(i));
                     prest.setBoolean(2, false);
                     prest.setString(3, "");
                     prest.setString(4, "");
@@ -115,6 +132,8 @@ public class FlightDAO {
                         + "- Hệ thống quản trị chuyến bay.";
 
                 List<String> list = CustomerDAO.getCusWithNotification(Boolean.TRUE);
+//                Variable_Static.SendMail("nguyenngocphuongou@gmail.com", contentMail);
+
                 for (String string : list) {
                     Variable_Static.SendMail(string, contentMail);
                 }
@@ -161,18 +180,6 @@ public class FlightDAO {
 
             data.add(f);
 
-//            System.out.println("--------------------");
-//            System.out.println("idFlight: " + idFlight);
-//            System.out.println("origin: " + origin);
-//            System.out.println("destination: " + destination);
-//            System.out.println("depart: " + depart);
-//            System.out.println("arrival: " + arrival);
-//            System.out.println("passenger: " + passenger);
-//            System.out.println("brand: " + brand);
-//            System.out.println("flight_number: " + flight_number);
-//            System.out.println("flight_depart: " + flight_depart);
-//            System.out.println("flight_arrival: " + flight_arrival);
-//            System.out.println("price: " + price);
         }
         return data;
     }

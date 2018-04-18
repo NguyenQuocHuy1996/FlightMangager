@@ -11,9 +11,13 @@ import flightmanagerment.Model.Variable_Static;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,6 +31,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 /**
  *
@@ -40,6 +45,8 @@ public class MainUserController implements Initializable {
     private Button notification;
 
     private Boolean status;
+    @FXML
+    private Label lbl_Time;
 
     @FXML
     private void btn_flightSearch(ActionEvent event) throws IOException {
@@ -57,10 +64,20 @@ public class MainUserController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1000), e -> {
+            Date dateCreated = new Date();
+
+            SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            String time = date.format(dateCreated);
+            lbl_Time.setText(time);
+        }));
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
         Customer cus = new Customer();
 
         try {
             cus = CustomerDAO.getCus(Variable_Static.USERNAME);
+            Variable_Static.IDACCOUNT = cus.getIdAccount();
             lbl_userName.setText(cus.getLastName());
             status = CustomerDAO.getNotification(Variable_Static.USERNAME);
 

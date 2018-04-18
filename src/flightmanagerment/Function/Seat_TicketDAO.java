@@ -6,12 +6,17 @@
 package flightmanagerment.Function;
 
 import flightmanagerment.Config.ConnectDB;
+import flightmanagerment.Model.Customer;
+import flightmanagerment.Model.Flight;
+import flightmanagerment.Model.Seat_Flight;
 import flightmanagerment.Model.Seat_Ticket;
+import flightmanagerment.Model.Variable_Static;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.collections.FXCollections;
@@ -27,16 +32,19 @@ public class Seat_TicketDAO {
     private static ConnectDB connectDB;
     private static PreparedStatement prest;
     private static ResultSet rs;
+    private static Statement st;
 
-    public static double getCountStatusTrue(String depart, String year) throws SQLException {
+    private static String contentMail;
+
+    public static double getCountStatusTrue(int depart, int year) throws SQLException {
         connectDB = new ConnectDB();
         conn = connectDB.getConnect();
         String sql = "select Count(*) as total\n"
                 + "from seat_ticket S JOIN flight F ON S.idFlight = F.idFlight\n"
                 + "where status = true AND MONTH(F.depart) = ? AND YEAR(F.depart) = ?";
         prest = conn.prepareStatement(sql);
-        prest.setString(1, depart);
-        prest.setString(2, year);
+        prest.setInt(1, depart);
+        prest.setInt(2, year);
         rs = prest.executeQuery();
         while (rs.next()) {
             Double count = rs.getDouble("total");
@@ -45,15 +53,38 @@ public class Seat_TicketDAO {
         return 0;
     }
 
-    public static double getCountStatusFalse(String depart, String year) throws SQLException {
+    public static ObservableList<Seat_Ticket> getAllSeat(int idFlight) throws SQLException {
+        connectDB = new ConnectDB();
+        conn = connectDB.getConnect();
+        String sql = "select * from seat_ticket where idFlight = ? and status = 1";
+        prest = conn.prepareStatement(sql);
+        prest.setInt(1, idFlight);
+
+        rs = prest.executeQuery();
+
+        ObservableList<Seat_Ticket> data = FXCollections.observableArrayList();
+        while (rs.next()) {
+            String firstName = rs.getString("firstName");
+            String lastName = rs.getString("lastName");
+            String ic_card = rs.getString("ic_card");
+            String code = rs.getString("code");
+            Boolean status = true;
+
+            Seat_Ticket s = new Seat_Ticket(code, status, firstName, lastName, ic_card, idFlight);
+            data.add(s);
+        }
+        return data;
+    }
+
+    public static double getCountStatusFalse(int depart, int year) throws SQLException {
         connectDB = new ConnectDB();
         conn = connectDB.getConnect();
         String sql = "select Count(*) as total\n"
                 + "from seat_ticket S JOIN flight F ON S.idFlight = F.idFlight\n"
                 + "where status = false AND MONTH(F.depart) = ? AND YEAR(F.depart) = ?";
         prest = conn.prepareStatement(sql);
-        prest.setString(1, depart);
-        prest.setString(2, year);
+        prest.setInt(1, depart);
+        prest.setInt(2, year);
         rs = prest.executeQuery();
         while (rs.next()) {
             Double count = rs.getDouble("total");
@@ -63,7 +94,7 @@ public class Seat_TicketDAO {
     }
 
     ///return 1: trả về tất cả dữ liệu của ghế theo id
-    public int getAllSeat(int idFlight) throws SQLException {
+    public int getSeatt(int idFlight) throws SQLException {
         connectDB = new ConnectDB();
         conn = connectDB.getConnect();
         String sql = "select * from seat_ticket where idFlight = ?";
@@ -72,23 +103,12 @@ public class Seat_TicketDAO {
         rs = prest.executeQuery();
         while (rs.next()) {
 
-            int idSeat = rs.getInt("idSeat");
             String code = rs.getString("code");
             Boolean status = rs.getBoolean("status");
             String firstName = rs.getString("firstName");
             String lastName = rs.getString("lastName");
             String ic_Card = rs.getString("ic_Card");
-            int old = rs.getInt("old");
 
-            System.out.println("--------------------");
-            System.out.println("idSeat: " + idSeat);
-            System.out.println("code: " + code);
-            System.out.println("status: " + status);
-            System.out.println("firstName: " + firstName);
-            System.out.println("lastName: " + lastName);
-            System.out.println("ic_Card: " + ic_Card);
-            System.out.println("old: " + old);
-            System.out.println("idFlight: " + idFlight);
         }
         return 1;
     }
@@ -252,7 +272,7 @@ public class Seat_TicketDAO {
         return 0;
     }
 
-    public int booking(Seat_Ticket seat) throws SQLException {
+    public static int booking(Seat_Ticket seat, int idAccount) throws SQLException {
 //        Scanner sc = new Scanner(System.in);
 //        System.out.println("Nhập id chuyến bay cần update: ");
 //        seat.setIdFlight(Integer.parseInt(sc.nextLine()));
@@ -273,19 +293,32 @@ public class Seat_TicketDAO {
         try {
             connectDB = new ConnectDB();
             conn = connectDB.getConnect();
-            String sql = "update seat_ticket set idAccount = ?, firstName = ?, lastName = ?, ic_card = ?, old = ?,status = ? where idFlight = ? and code = ?";
+            String sql = "update seat_ticket set idAccount = ?, firstName = ?, lastName = ?, ic_card = ?, status = ? where idFlight = ? and code = ?";
             prest = conn.prepareStatement(sql);
             prest.setInt(1, seat.getIdAccount());
             prest.setString(2, seat.getFirstName());
             prest.setString(3, seat.getLastName());
             prest.setString(4, seat.getIc_Card());
-            prest.setInt(5, seat.getOld());
 
-            prest.setBoolean(6, seat.getStatus());
-            prest.setInt(7, seat.getIdFlight());
-            prest.setString(8, seat.getCode());
+            prest.setBoolean(5, seat.getStatus());
+            prest.setInt(6, seat.getIdFlight());
+            prest.setString(7, seat.getCode());
             prest.execute();
             System.out.println("update thành công");
+
+            List<Seat_Flight> list = Seat_FlightDAO.getSeatID(idAccount);
+            for (Seat_Flight sf : list) {
+                contentMail = "Ticket:\n"
+                        + "Mã chuyến bay: " + sf.getIdFlight() + "\n"
+                        + "Số ghế: " + sf.getCode() + "\n"
+                        + "Họ: " + sf.getFirstName() + "\n"
+                        + "Tên: " + sf.getLastName() + "\n"
+                        + "CMND: " + sf.getIc_card() + "\n"
+                        + "Giá: " + sf.getPrice();
+            }
+
+            Customer cus = CustomerDAO.getCus(idAccount);
+            Variable_Static.SendMail(cus.getEmail(), contentMail);
             return 1;
 
         } catch (Exception e) {
@@ -333,16 +366,17 @@ public class Seat_TicketDAO {
 //        return 0;
 //    }
     ///return status: trả về trạng thái của ghế
-    public static boolean getInfoSeat(int idSeat) throws SQLException {
+    public static Boolean getInfoSeat(int idFlight, String code) throws SQLException {
         try {
+            List<Boolean> list = new ArrayList<>();
             connectDB = new ConnectDB();
             conn = connectDB.getConnect();
-            String sql = "select * from seat_ticket where idSeat = ?";
+            String sql = "select * from seat_ticket where idFlight = ? and code = ?";
             prest = conn.prepareStatement(sql);
-            prest.setInt(1, idSeat);
+            prest.setInt(1, idFlight);
+            prest.setString(2, code);
             rs = prest.executeQuery();
             while (rs.next()) {
-                int id = rs.getInt(idSeat);
                 Boolean status = rs.getBoolean("status");
                 return status;
             }
@@ -355,7 +389,7 @@ public class Seat_TicketDAO {
             if (null != conn) {
                 conn.close();
             }
-            return false;
         }
+        return false;
     }
 }

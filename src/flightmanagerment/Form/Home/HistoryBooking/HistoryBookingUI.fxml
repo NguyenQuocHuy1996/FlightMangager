@@ -57,17 +57,17 @@
    <center>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1350.0">
+            <TableView fx:id="table" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1350.0">
               <columns>
 
-                  <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Mã chuyến bay" />
-                  <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Điểm đi" />
-                  <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Điểm đến" />
-                  <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Mã ghế" />
-                  <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Số ghế" />
-                <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Họ " />
-                <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Tên" />
-                  <TableColumn maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="CMND" />
+                  <TableColumn fx:id="idFlightCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Mã chuyến bay" />
+                  <TableColumn fx:id="originCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Điểm đi" />
+                  <TableColumn fx:id="destinationCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Điểm đến" />
+                  <TableColumn fx:id="idSeatCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Mã ghế" />
+                  <TableColumn fx:id="codeCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Số ghế" />
+                <TableColumn fx:id="firstNameCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Họ " />
+                <TableColumn fx:id="lastNameCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="Tên" />
+                  <TableColumn fx:id="ic_cardCol" maxWidth="-Infinity" minWidth="135.0" prefWidth="135.0" resizable="false" text="CMND" />
               </columns>
             </TableView>
          </children>

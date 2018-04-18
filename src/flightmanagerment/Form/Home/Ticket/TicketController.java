@@ -5,8 +5,19 @@
  */
 package flightmanagerment.Form.Home.Ticket;
 
+import flightmanagerment.Function.CustomerDAO;
+import flightmanagerment.Function.EmployeeDAO;
+import flightmanagerment.Function.Seat_TicketDAO;
+import flightmanagerment.Model.Customer;
+import flightmanagerment.Model.Employee;
+import flightmanagerment.Model.Seat_Ticket;
+import flightmanagerment.Model.Variable_Static;
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,57 +33,96 @@ import javafx.scene.control.TextField;
  */
 public class TicketController implements Initializable {
 
-//    @FXML
-//    private TextField txtEmail;
-//    @FXML
-//    private TextField txtPass;
-//    
-//    @FXML
-//    private void Ticket(ActionEvent event) {
-//        if((txtEmail.getText().equals("admin")) && (txtPass.getText().equals("admin123"))){
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setTitle("Dang nhap thanh cong");
-//            alert.show();
-//        }
-//    }
     @FXML
-    private void btn_flightSearch(ActionEvent event) {
-
-    }
-
+    private TextField txt_firstname;
     @FXML
-    private void btn_flightManagement(ActionEvent event) {
-
-    }
-
+    private TextField txt_lastname;
     @FXML
-    private void btn_historyBooking(ActionEvent event) {
+    private TextField txt_iccard;
 
-    }
-
+    String currentseat = "";
     @FXML
-    private void btn_historyBookingOfEmployee(ActionEvent event) {
-
-    }
-
+    private Label lbl_userName;
     @FXML
-    private void btn_report(ActionEvent event) {
-
-    }
-
+    private Label lbl_idFlight;
     @FXML
-    private void btn_infomation(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btn_logout(ActionEvent event) {
-
-    }
+    private Label lbl_Code;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
+        Customer cus = new Customer();
+        Employee emp = new Employee();
+        try {
+            cus = CustomerDAO.getCus(Variable_Static.USERNAME);
+            emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
+            if (cus != null) {
+                lbl_userName.setText(cus.getLastName());
+            } else if (emp != null) {
+                lbl_userName.setText(emp.getLastName());
+            } else {
+                lbl_userName.setText("Khách hàng");
+            }
+            currentseat = Variable_Static.currentlistseat.get(Variable_Static.currentnumberseat);
+            lbl_idFlight.setText(("Mã chuyến bay: " + Variable_Static.IDFLIGHTSEAT));
+            lbl_Code.setText("Số ghế: " + currentseat);
+        } catch (SQLException ex) {
+            Logger.getLogger(TicketController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void btn_submit(ActionEvent event) throws SQLException, IOException {
+        Customer cus = new Customer();
+        Employee emp = new Employee();
+
+        cus = CustomerDAO.getCus(Variable_Static.USERNAME);
+        emp = EmployeeDAO.getEmp(Variable_Static.USERNAME);
+
+        if (txt_firstname.getText().equals("") || txt_lastname.getText().equals("") || txt_iccard.getText().equals("")) {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setTitle("ERROR");
+            a.setContentText("Vui lòng nhập đủ thông tin");
+            a.show();
+
+        } else {
+            Seat_Ticket t = new Seat_Ticket();
+            t.setIdAccount(Variable_Static.IDACCOUNT);
+            t.setFirstName(txt_firstname.getText());
+            t.setLastName(txt_lastname.getText());
+            t.setIc_Card(txt_iccard.getText());
+            t.setStatus(Boolean.TRUE);
+            t.setIdFlight(Variable_Static.IDFLIGHTSEAT);
+            t.setCode(currentseat);
+            Seat_TicketDAO.booking(t,t.getIdAccount());
+            if (Variable_Static.currentnumberseat >= Variable_Static.numberseatchoose - 1) {
+                Alert a = new Alert(Alert.AlertType.INFORMATION);
+                a.setTitle("ERROR");
+                a.setContentText("Thanh toán thành công");
+                
+                a.showAndWait();
+                if (cus != null) {
+                    Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainUser/MainUserUI.fxml"));
+                    Variable_Static.LinkUI(event, root, "Main Customer");
+                } else if (emp != null) {
+                    Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/MainStaff/MainStaffUI.fxml"));
+                    Variable_Static.LinkUI(event, root, "Main Staff");
+                } else {
+                    Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Main/MainUI.fxml"));
+                    Variable_Static.LinkUI(event, root, "Main");
+                }
+            } else {
+                Variable_Static.currentnumberseat++;
+                Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/Ticket/TicketUI.fxml"));
+                Variable_Static.LinkUI(event, root, "Ticket");
+            }
+        }
+    }
+
+    @FXML
+    private void btn_back(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/flightmanagerment/Form/Home/DetailFlight/DetailFlightUI.fxml"));
+        Variable_Static.LinkUI(event, root, "Detail Flight");
     }
 
 }

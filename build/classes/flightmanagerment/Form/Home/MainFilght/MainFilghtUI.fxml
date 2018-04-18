@@ -56,7 +56,7 @@
       </GridPane>
    </top>
    <center>
-      <GridPane hgap="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" vgap="10.0" BorderPane.alignment="CENTER">
+      <GridPane hgap="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1100.0" vgap="10.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -69,431 +69,431 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0">
+            <VBox fx:id="s" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btn_Choose1" prefHeight="300.0" prefWidth="220.0">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/img/plane.jpg" />
-                     </image>
-                  </ImageView>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label fx:id="origin1" styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin1" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label fx:id="destination1" styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination1" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label fx:id="depart1" styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart1" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
 
                         <Label styleClass="flightInfo" text="Giờ đi: " />
-                        <Label fx:id="flight_depart1" styleClass="flightInfo" text="4:00 PM" />
+                        <Label fx:id="flight_depart1" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label fx:id="flight_number1" styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number1" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btn1" layoutX="15.0" layoutY="3.0" mnemonicParsing="false" onAction="#btn_Choose1" styleClass="btnSubmit" text="Xem chi tiết" />
+                     </children>
+                  </Pane>
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
                   <String fx:value="btnWhite" />
                </styleClass>
             </VBox>
-            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="1">
+            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btn_Choose2" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="1">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/img/plane.jpg" />
-                     </image>
-                  </ImageView>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label fx:id="origin2" styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin2" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label fx:id="destination2" styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination2" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label fx:id="depart2" styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart2" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
-                        <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label fx:id="flight_depart2" styleClass="flightInfo" text="30/10/2019" />
+                        <Label styleClass="flightInfo" text="Giờ đi: " />
+                        <Label fx:id="flight_depart2" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label fx:id="flight_number2" styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number2" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btn2" layoutX="15.0" layoutY="3.0" mnemonicParsing="false" onAction="#btn_Choose2" styleClass="btnSubmit" text="Xem chi tiết" />
+                     </children>
+                  </Pane>
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
                   <String fx:value="btnWhite" />
                </styleClass>
             </VBox>
-            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="2">
+            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btn_Choose3" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="2">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/img/plane.jpg" />
-                     </image>
-                  </ImageView>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label fx:id="origin3" styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin3" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label fx:id="destination3" styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination3" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label fx:id="depart3" styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart3" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
-                        <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label fx:id="flight_depart3" styleClass="flightInfo" text="30/10/2019" />
+                        <Label styleClass="flightInfo" text="Giờ đi: " />
+                        <Label fx:id="flight_depart3" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label fx:id="flight_number3" styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number3" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btn3" layoutX="15.0" layoutY="3.0" mnemonicParsing="false" onAction="#btn_Choose3" styleClass="btnSubmit" text="Xem chi tiết" />
+                     </children>
+                  </Pane>
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
                   <String fx:value="btnWhite" />
                </styleClass>
             </VBox>
-            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="3">
+            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btn_Choose4" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="3">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/img/plane.jpg" />
-                     </image>
-                  </ImageView>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label fx:id="origin4" styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin4" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label fx:id="destination4" styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination4" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label fx:id="depart4" styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart4" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
-                        <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label fx:id="flight_depart4" styleClass="flightInfo" text="30/10/2019" />
+                        <Label styleClass="flightInfo" text="Giờ đi: " />
+                        <Label fx:id="flight_depart4" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label fx:id="flight_number4" styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number4" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btn4" layoutX="15.0" layoutY="3.0" mnemonicParsing="false" onAction="#btn_Choose4" styleClass="btnSubmit" text="Xem chi tiết" />
+                     </children>
+                  </Pane>
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
                   <String fx:value="btnWhite" />
                </styleClass>
             </VBox>
-            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="4">
+            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btn_Choose5" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="4">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/img/plane.jpg" />
-                     </image>
-                  </ImageView>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label fx:id="origin5" styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin5" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label fx:id="destination5" styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination5" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label fx:id="depart5" styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart5" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
-                        <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label fx:id="flight_depart5" styleClass="flightInfo" text="30/10/2019" />
+                        <Label styleClass="flightInfo" text="Giờ đi: " />
+                        <Label fx:id="flight_depart5" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label fx:id="flight_number5" styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number5" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btn5" layoutX="23.0" layoutY="3.0" mnemonicParsing="false" onAction="#btn_Choose5" styleClass="btnSubmit" text="Xem chi tiết" />
+                     </children>
+                  </Pane>
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
                   <String fx:value="btnWhite" />
                </styleClass>
             </VBox>
-            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.rowIndex="1">
+            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btn_Choose6" prefHeight="300.0" prefWidth="220.0" GridPane.rowIndex="1">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/img/plane.jpg" />
-                     </image>
-                  </ImageView>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label fx:id="origin6" styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin6" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label fx:id="destination6" styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination6" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label fx:id="depart6" styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart6" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
-                        <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label fx:id="flight_depart6" styleClass="flightInfo" text="30/10/2019" />
+                        <Label styleClass="flightInfo" text="Giờ đi: " />
+                        <Label fx:id="flight_depart6" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label fx:id="flight_number6" styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number6" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btn6" layoutX="15.0" layoutY="3.0" mnemonicParsing="false" onAction="#btn_Choose6" styleClass="btnSubmit" text="Xem chi tiết" />
+                     </children>
+                  </Pane>
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
                   <String fx:value="btnWhite" />
                </styleClass>
             </VBox>
-            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btn_Choose7" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/img/plane.jpg" />
-                     </image>
-                  </ImageView>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label fx:id="origin7" styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin7" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label fx:id="destination7" styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination7" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label fx:id="depart7" styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart7" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
-                        <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label fx:id="flight_depart7" styleClass="flightInfo" text="30/10/2019" />
+                        <Label styleClass="flightInfo" text="Giờ đi: " />
+                        <Label fx:id="flight_depart7" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label fx:id="flight_number7" styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number7" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btn7" layoutX="15.0" layoutY="3.0" mnemonicParsing="false" onAction="#btn_Choose7" styleClass="btnSubmit" text="Xem chi tiết" />
+                     </children>
+                  </Pane>
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
                   <String fx:value="btnWhite" />
                </styleClass>
             </VBox>
-            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btn_Choose8" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/img/plane.jpg" />
-                     </image>
-                  </ImageView>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label fx:id="origin8" styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin8" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label fx:id="destination8" styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination8" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label fx:id="depart8" styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart8" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
-                        <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label fx:id="flight_depart8" styleClass="flightInfo" text="30/10/2019" />
+                        <Label styleClass="flightInfo" text="Giờ đi: " />
+                        <Label fx:id="flight_depart8" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label fx:id="flight_number8" styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number8" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btn8" layoutX="15.0" layoutY="3.0" mnemonicParsing="false" onAction="#btn_Choose8" styleClass="btnSubmit" text="Xem chi tiết" />
+                     </children>
+                  </Pane>
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
                   <String fx:value="btnWhite" />
                </styleClass>
             </VBox>
-            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btn_Choose9" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/img/plane.jpg" />
-                     </image>
-                  </ImageView>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label fx:id="origin9" styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin9" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label fx:id="destination9" styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination9" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label fx:id="depart9" styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart9" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
-                        <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label fx:id="flight_depart9" styleClass="flightInfo" text="30/10/2019" />
+                        <Label styleClass="flightInfo" text="Giờ đi: " />
+                        <Label fx:id="flight_depart9" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label fx:id="flight_number9" styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number9" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btn9" layoutX="15.0" layoutY="3.0" mnemonicParsing="false" onAction="#btn_Choose9" styleClass="btnSubmit" text="Xem chi tiết" />
+                     </children>
+                  </Pane>
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
                   <String fx:value="btnWhite" />
                </styleClass>
             </VBox>
-            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btn_Choose10" prefHeight="300.0" prefWidth="220.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/img/plane.jpg" />
-                     </image>
-                  </ImageView>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đi: " />
-                        <Label fx:id="origin10" styleClass="flightInfo" text="Hồ Chí Minh" />
+                        <Label fx:id="origin10" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Điểm đến: " />
-                        <Label fx:id="destination10" styleClass="flightInfo" text="Hà Nội" />
+                        <Label fx:id="destination10" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Ngày đi: " />
-                        <Label fx:id="depart10" styleClass="flightInfo" text="30/10/2018" />
+                        <Label fx:id="depart10" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
-                        <Label styleClass="flightInfo" text="Ngày về: " />
-                        <Label fx:id="flight_depart10" styleClass="flightInfo" text="30/10/2019" />
+                        <Label styleClass="flightInfo" text="Giờ đi: " />
+                        <Label fx:id="flight_depart10" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" styleClass="flightInfoHeight">
                      <children>
                         <Label styleClass="flightInfo" text="Số hiệu: " />
-                        <Label fx:id="flight_number10" styleClass="flightInfo" text="MH370" />
+                        <Label fx:id="flight_number10" styleClass="flightInfo" text=" " />
                      </children>
                   </HBox>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btn10" layoutX="15.0" layoutY="3.0" mnemonicParsing="false" onAction="#btn_Choose10" styleClass="btnSubmit" text="Xem chi tiết" />
+                     </children>
+                  </Pane>
                </children>
                <styleClass>
                   <String fx:value="flightWrapper" />
